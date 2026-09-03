@@ -72,7 +72,7 @@
       </a>
       
       <!-- Links com Sublinhado Expansivo Suave -->
-      <div class="hidden md:flex items-center gap-8 text-sm font-semibold text-stone-700">
+      <div class="hidden md:flex items-center gap-7 text-sm font-semibold text-stone-700">
         
         <a href="#home" class="relative group py-1 hover:text-brand-leaf transition-colors duration-200">
           <span>Home</span>
@@ -81,6 +81,11 @@
 
         <a href="#projeto" class="relative group py-1 hover:text-brand-leaf transition-colors duration-200">
           <span>Projeto</span>
+          <span class="absolute bottom-0 left-0 w-0 h-[2.5px] bg-brand-leaf rounded-full transition-all duration-300 ease-out group-hover:w-full"></span>
+        </a>
+
+        <a href="#analise-competitiva" class="relative group py-1 hover:text-brand-leaf transition-colors duration-200">
+          <span>Análise Competitiva</span>
           <span class="absolute bottom-0 left-0 w-0 h-[2.5px] bg-brand-leaf rounded-full transition-all duration-300 ease-out group-hover:w-full"></span>
         </a>
 
@@ -186,7 +191,7 @@
       <!-- Cabeçalho -->
       <div class="pb-10 border-b border-brand-border">
         <span class="text-xs uppercase tracking-widest font-mono text-brand-leaf block mb-2">
-          // Entregas &bull; Documentação
+          // Entregas &bull; Documentação de IHC
         </span>
         <h2 class="text-4xl font-extrabold text-brand-dark tracking-tight">Projeto</h2>
         <p class="text-sm text-brand-muted mt-2 max-w-xl">
@@ -247,12 +252,360 @@
           </div>
         </article>
 
-        <!-- 2. Mapa de Empatia -->
-        <article class="p-8 card-squircle">
+        <!-- 2. ANÁLISE COMPETITIVA -->
+        <article id="analise-competitiva" class="p-8 card-squircle scroll-mt-24">
           <div class="flex flex-col sm:flex-row sm:items-baseline justify-between pb-6 border-b border-brand-border gap-2">
             <div>
               <span class="text-xs font-mono text-brand-muted">Etapa 02</span>
-              <h3 class="text-2xl font-bold text-brand-dark mt-1">2. Mapa de Empatia</h3>
+              <h3 class="text-2xl font-bold text-brand-dark mt-1">2. Análise Competitiva de Mercado</h3>
+            </div>
+            <span class="text-xs font-mono text-brand-leaf uppercase">// Benchmarking de IHC</span>
+          </div>
+
+          <!-- 2.1 Contexto e Objetivo -->
+          <div class="mt-6 bg-stone-50 p-6 rounded-2xl border border-brand-border">
+            <h4 class="font-mono text-xs font-bold text-brand-dark uppercase tracking-wider mb-2">// 1. Contexto e Objetivo</h4>
+            <p class="text-xs text-brand-muted leading-relaxed">
+              O grupo identificou como problema de design a <strong>baixa consciência financeira entre jovens e adolescentes</strong>, que muitas vezes só têm contato com organização financeira por meio de conteúdos informais em redes sociais, como planilhas compartilhadas no Instagram. Para endereçar esse problema, propomos o <strong>Poupay</strong>: um aplicativo amigável, voltado a jovens e adolescentes, que combina conteúdo educacional sobre finanças com um gestor de gastos e rendas automatizado e eficiente. Esta análise mapeia o cenário atual de soluções — diretas, indiretas e inspiradoras — para identificar oportunidades e riscos para o design do Poupay.
+            </p>
+          </div>
+
+          <!-- 2.2 Metodologia de Seleção -->
+          <div class="mt-6">
+            <h4 class="font-mono text-xs font-bold text-brand-dark uppercase tracking-wider mb-3">// 2. Metodologia de Seleção (9 Soluções Analisadas)</h4>
+            <div class="grid md:grid-cols-3 gap-4 text-xs">
+              <div class="p-4 rounded-xl border border-emerald-200 bg-brand-leafLight">
+                <span class="font-bold text-brand-leaf block mb-1">5 Concorrentes Diretos</span>
+                <p class="text-stone-700 leading-relaxed">Produtos com combinação parecida de gestão automatizada de dinheiro e conteúdo educacional financeiro para jovens.</p>
+              </div>
+              <div class="p-4 rounded-xl border border-amber-200 bg-amber-50">
+                <span class="font-bold text-amber-800 block mb-1">2 Concorrentes Indiretos</span>
+                <p class="text-stone-700 leading-relaxed">Soluções que organizam a vida financeira, mas não são pensadas para jovens nem priorizam educação.</p>
+              </div>
+              <div class="p-4 rounded-xl border border-sky-200 bg-sky-50">
+                <span class="font-bold text-sky-800 block mb-1">2 Inspiradores</span>
+                <p class="text-stone-700 leading-relaxed">Outros domínios que criam hábitos voluntários recorrentes que exigem esforço contínuo.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2.3 CONCORRENTES DIRETOS -->
+          <div class="mt-8 space-y-6">
+            <h4 class="font-mono text-xs font-bold text-brand-dark uppercase tracking-wider">// 3. Concorrentes Diretos</h4>
+
+            <!-- 3.1 Mozper -->
+            <div class="p-6 rounded-2xl border border-brand-border bg-white space-y-3 text-xs">
+              <div class="flex flex-wrap items-center justify-between gap-2 border-b border-brand-border pb-3">
+                <h5 class="font-bold text-sm text-brand-dark">3.1 Mozper (Brasil, 2022)</h5>
+                <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-brand-leafLight text-brand-leaf border border-emerald-200">App + Cartão Visa</span>
+              </div>
+              <p class="text-stone-700"><strong>O que é:</strong> App + cartão de débito Visa para crianças e adolescentes, controlado pelos pais. Oferece categorização de gastos, mesada, missões domésticas remuneradas, poupança por objetivo e bloqueio em tempo real.</p>
+              <p class="text-brand-muted"><strong>Por que foi selecionado:</strong> Une os dois pilares do Poupay (gestão automatizada + educação prática) com foco amigável e intuitivo.</p>
+              <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                <div class="p-3 bg-emerald-50/60 rounded-xl border border-emerald-100">
+                  <span class="font-bold text-emerald-800 block mb-1">Pontos Positivos (UX):</span>
+                  <ul class="list-disc pl-4 space-y-1 text-stone-700">
+                    <li>Modo duplo claro (pai/filho), reduzindo confusão.</li>
+                    <li>Linguagem que não subestima o jovem.</li>
+                    <li>Entrega do cartão como parte da experiência física.</li>
+                  </ul>
+                </div>
+                <div class="p-3 bg-red-50/60 rounded-xl border border-red-100">
+                  <span class="font-bold text-red-800 block mb-1">Pontos Negativos (UX):</span>
+                  <ul class="list-disc pl-4 space-y-1 text-stone-700">
+                    <li>Mensalidade de R$ 25/mês como barreira de entrada.</li>
+                    <li>Cadastro restrito ao responsável (sem autonomia).</li>
+                    <li>Quase nenhuma funcionalidade de investimento.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="p-3 bg-brand-leafLight rounded-xl border border-emerald-200 text-brand-leaf font-medium">
+                💡 <strong>Pontos de inspiração:</strong> Separar a experiência por perfil (responsável vs. jovem) e usar tarefas do dia a dia como gatilho de aprendizado prático.
+              </div>
+            </div>
+
+            <!-- 3.2 Mooney -->
+            <div class="p-6 rounded-2xl border border-brand-border bg-white space-y-3 text-xs">
+              <div class="flex flex-wrap items-center justify-between gap-2 border-b border-brand-border pb-3">
+                <h5 class="font-bold text-sm text-brand-dark">3.2 Mooney (Brasil, 2020)</h5>
+                <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-brand-leafLight text-brand-leaf border border-emerald-200">Edfintech Gamificada</span>
+              </div>
+              <p class="text-stone-700"><strong>O que é:</strong> Pets virtuais ("Mooners") que evoluem com o progresso do usuário, cofrinhos para metas, missões customizáveis e trilha educacional do ensino infantil ao médio.</p>
+              <p class="text-brand-muted"><strong>Por que foi selecionado:</strong> Proposta mais próxima da missão do Poupay: conteúdo educacional + organização financeira gamificada.</p>
+              <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                <div class="p-3 bg-emerald-50/60 rounded-xl border border-emerald-100">
+                  <span class="font-bold text-emerald-800 block mb-1">Pontos Positivos (UX):</span>
+                  <ul class="list-disc pl-4 space-y-1 text-stone-700">
+                    <li>Mascote cria vínculo emocional e recompensa visível.</li>
+                    <li>Conecta sala de aula ao uso prático do dinheiro.</li>
+                    <li>Linguagem lúdica bem avaliada nas lojas.</li>
+                  </ul>
+                </div>
+                <div class="p-3 bg-red-50/60 rounded-xl border border-red-100">
+                  <span class="font-bold text-red-800 block mb-1">Pontos Negativos (UX):</span>
+                  <ul class="list-disc pl-4 space-y-1 text-stone-700">
+                    <li>Dependência excessiva de distribuição via escolas.</li>
+                    <li>Estética infantilizada para adolescentes mais velhos.</li>
+                    <li>Menos foco em automação real de despesas diárias.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="p-3 bg-brand-leafLight rounded-xl border border-emerald-200 text-brand-leaf font-medium">
+                💡 <strong>Pontos de inspiração:</strong> Mascote que evolui com o progresso financeiro real e trilhas segmentadas por faixa etária (pré-adolescente x adolescente).
+              </div>
+            </div>
+
+            <!-- 3.3 NextJoy -->
+            <div class="p-6 rounded-2xl border border-brand-border bg-white space-y-3 text-xs">
+              <div class="flex flex-wrap items-center justify-between gap-2 border-b border-brand-border pb-3">
+                <h5 class="font-bold text-sm text-brand-dark">3.3 NextJoy (Next / Bradesco, Brasil)</h5>
+                <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-brand-leafLight text-brand-leaf border border-emerald-200">Conta Digital Menores</span>
+              </div>
+              <p class="text-stone-700"><strong>O que é:</strong> Conta gratuita para 0 a 17 anos com personagens Disney/Marvel/Star Wars, mesada programada, missões com recompensas não financeiras e trilhas por idade.</p>
+              <p class="text-brand-muted"><strong>Por que foi selecionado:</strong> Solução bancária de grande porte unindo gestão de mesada com educação temática.</p>
+              <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                <div class="p-3 bg-emerald-50/60 rounded-xl border border-emerald-100">
+                  <span class="font-bold text-emerald-800 block mb-1">Pontos Positivos (UX):</span>
+                  <ul class="list-disc pl-4 space-y-1 text-stone-700">
+                    <li>Forte apelo visual através de parcerias com personagens.</li>
+                    <li>Mesada programada com automação da transferência.</li>
+                    <li>Múltiplos formatos: vídeos, histórias e quizzes.</li>
+                  </ul>
+                </div>
+                <div class="p-3 bg-red-50/60 rounded-xl border border-red-100">
+                  <span class="font-bold text-red-800 block mb-1">Pontos Negativos (UX):</span>
+                  <ul class="list-disc pl-4 space-y-1 text-stone-700">
+                    <li>Transferência limitada apenas entre pais e filhos.</li>
+                    <li>Obrigação do responsável ser correntista Next.</li>
+                    <li>Relatos de instabilidade no Pix e demora na liberação.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="p-3 bg-brand-leafLight rounded-xl border border-emerald-200 text-brand-leaf font-medium">
+                💡 <strong>Pontos de inspiração:</strong> Identidade visual própria e marcante e funcionalidade de mesada automática configurável logo na tela inicial.
+              </div>
+            </div>
+
+            <!-- 3.4 C6 Yellow -->
+            <div class="p-6 rounded-2xl border border-brand-border bg-white space-y-3 text-xs">
+              <div class="flex flex-wrap items-center justify-between gap-2 border-b border-brand-border pb-3">
+                <h5 class="font-bold text-sm text-brand-dark">3.4 C6 Yellow (C6 Bank, Brasil)</h5>
+                <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-brand-leafLight text-brand-leaf border border-emerald-200">Conta Jovem + CDB</span>
+              </div>
+              <p class="text-stone-700"><strong>O que é:</strong> Conta digital gratuita para menores de 17 anos e meio, com cartão personalizável (nome e cor), Pix, metas de economia e investimento em CDB de liquidez diária.</p>
+              <p class="text-brand-muted"><strong>Por que foi selecionado:</strong> Combina automação bancária (cartão + Pix) com metas e camada real de investimento para jovens.</p>
+              <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                <div class="p-3 bg-emerald-50/60 rounded-xl border border-emerald-100">
+                  <span class="font-bold text-emerald-800 block mb-1">Pontos Positivos (UX):</span>
+                  <ul class="list-disc pl-4 space-y-1 text-stone-700">
+                    <li>Personalização de cartão eleva senso de identidade.</li>
+                    <li>Permite investimento real (CDB) desde cedo.</li>
+                    <li>Onboarding com verificação por selfie ágil.</li>
+                  </ul>
+                </div>
+                <div class="p-3 bg-red-50/60 rounded-xl border border-red-100">
+                  <span class="font-bold text-red-800 block mb-1">Pontos Negativos (UX):</span>
+                  <ul class="list-disc pl-4 space-y-1 text-stone-700">
+                    <li>Conteúdo educacional raso e estritamente comercial.</li>
+                    <li>Leque restrito apenas a CDB.</li>
+                    <li>Dependência total da conta dos pais no C6.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="p-3 bg-brand-leafLight rounded-xl border border-emerald-200 text-brand-leaf font-medium">
+                💡 <strong>Pontos de inspiração:</strong> Personalização visual (avatar, cor) no perfil e metas com feedback de progresso visual imediato.
+              </div>
+            </div>
+
+            <!-- 3.5 Greenlight -->
+            <div class="p-6 rounded-2xl border border-brand-border bg-white space-y-3 text-xs">
+              <div class="flex flex-wrap items-center justify-between gap-2 border-b border-brand-border pb-3">
+                <h5 class="font-bold text-sm text-brand-dark">3.5 Greenlight (EUA — Referência Global)</h5>
+                <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-brand-leafLight text-brand-leaf border border-emerald-200">Líder Mundial Youth Fintech</span>
+              </div>
+              <p class="text-stone-700"><strong>O que é:</strong> Organização do dinheiro em potes "Spend / Save / Give / Invest", tarefas domésticas remuneradas, limites por categoria e notificações em tempo real.</p>
+              <p class="text-brand-muted"><strong>Por que foi selecionado:</strong> Parâmetro internacional mais maduro de boas práticas em finanças para jovens.</p>
+              <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                <div class="p-3 bg-emerald-50/60 rounded-xl border border-emerald-100">
+                  <span class="font-bold text-emerald-800 block mb-1">Pontos Positivos (UX):</span>
+                  <ul class="list-disc pl-4 space-y-1 text-stone-700">
+                    <li>Divisão em potes com propósito claro facilita alocação.</li>
+                    <li>Ciclo tarefa &rarr; recompensa treina trabalho e renda.</li>
+                    <li>Planos que crescem de acordo com a idade.</li>
+                  </ul>
+                </div>
+                <div class="p-3 bg-red-50/60 rounded-xl border border-red-100">
+                  <span class="font-bold text-red-800 block mb-1">Pontos Negativos (UX):</span>
+                  <ul class="list-disc pl-4 space-y-1 text-stone-700">
+                    <li>100% por assinatura (sem plano gratuito).</li>
+                    <li>Controle muito centralizado nos pais (baixa autonomia).</li>
+                    <li>Excesso de funções acumuladas que podem sobrecarregar.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="p-3 bg-brand-leafLight rounded-xl border border-emerald-200 text-brand-leaf font-medium">
+                💡 <strong>Pontos de inspiração:</strong> Organizar o dinheiro em categorias com propósito claro (gastar, guardar, doar) e liberar investimentos conforme o nível de maturidade no app.
+              </div>
+            </div>
+          </div>
+
+          <!-- 2.4 CONCORRENTES INDIRETOS -->
+          <div class="mt-8 space-y-6">
+            <h4 class="font-mono text-xs font-bold text-brand-dark uppercase tracking-wider">// 4. Concorrentes Indiretos</h4>
+
+            <!-- 4.1 Mobills / Organizze -->
+            <div class="p-6 rounded-2xl border border-brand-border bg-white space-y-3 text-xs">
+              <div class="flex flex-wrap items-center justify-between gap-2 border-b border-brand-border pb-3">
+                <h5 class="font-bold text-sm text-brand-dark">4.1 Mobills / Organizze (Apps Genéricos de Controle)</h5>
+                <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-amber-100 text-amber-800 border border-amber-200">Controle Geral</span>
+              </div>
+              <p class="text-stone-700"><strong>O que é:</strong> Registro de receitas e despesas, relatórios gráficos e Open Finance voltados ao público geral adulto.</p>
+              <p class="text-brand-muted"><strong>Por que foi selecionado:</strong> Resolvem a necessidade básica de organizar o dinheiro, sendo adotados por jovens na falta de alternativa dedicada.</p>
+              <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                <div class="p-3 bg-emerald-50/60 rounded-xl border border-emerald-100">
+                  <span class="font-bold text-emerald-800 block mb-1">Pontos Positivos (UX):</span>
+                  <ul class="list-disc pl-4 space-y-1 text-stone-700">
+                    <li>Interface enxuta e gráficos claros.</li>
+                    <li>Automação via Open Finance e importação de notificações.</li>
+                  </ul>
+                </div>
+                <div class="p-3 bg-red-50/60 rounded-xl border border-red-100">
+                  <span class="font-bold text-red-800 block mb-1">Pontos Negativos (UX):</span>
+                  <ul class="list-disc pl-4 space-y-1 text-stone-700">
+                    <li>Zero conteúdo educativo (pressupõe conhecimento prévio).</li>
+                    <li>Tom adulto, pouco lúdico e funções presas a paywall.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="p-3 bg-brand-leafLight rounded-xl border border-emerald-200 text-brand-leaf font-medium">
+                💡 <strong>Pontos de inspiração:</strong> Gráficos por categoria com visual amigável e automação de extrato fora de paywall.
+              </div>
+            </div>
+
+            <!-- 4.2 Redes Sociais e Planilhas -->
+            <div class="p-6 rounded-2xl border border-brand-border bg-white space-y-3 text-xs">
+              <div class="flex flex-wrap items-center justify-between gap-2 border-b border-brand-border pb-3">
+                <h5 class="font-bold text-sm text-brand-dark">4.2 Conteúdo em Redes Sociais & Planilhas (Instagram/TikTok)</h5>
+                <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-amber-100 text-amber-800 border border-amber-200">Prática Atual</span>
+              </div>
+              <p class="text-stone-700"><strong>O que é:</strong> Seguir criadores de conteúdo e preencher planilhas manuais compartilhadas no Instagram e TikTok.</p>
+              <p class="text-brand-muted"><strong>Por que foi selecionado:</strong> Comportamento que hoje supre, de forma improvisada, a necessidade que o Poupay pretende resolver.</p>
+              <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                <div class="p-3 bg-emerald-50/60 rounded-xl border border-emerald-100">
+                  <span class="font-bold text-emerald-800 block mb-1">Pontos Positivos (UX):</span>
+                  <ul class="list-disc pl-4 space-y-1 text-stone-700">
+                    <li>Vídeos curtos e linguagem informal que geram conexão.</li>
+                    <li>Acesso gratuito e sem fricção de cadastro.</li>
+                  </ul>
+                </div>
+                <div class="p-3 bg-red-50/60 rounded-xl border border-red-100">
+                  <span class="font-bold text-red-800 block mb-1">Pontos Negativos (UX):</span>
+                  <ul class="list-disc pl-4 space-y-1 text-stone-700">
+                    <li>Planilha manual gera taxa altíssima de abandono.</li>
+                    <li>Sem automação, lembretes ou trilhas estruturadas.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="p-3 bg-brand-leafLight rounded-xl border border-emerald-200 text-brand-leaf font-medium">
+                💡 <strong>Pontos de inspiração:</strong> Microlições em formato de cards deslizáveis e comunicação próxima com exemplos do dia a dia.
+              </div>
+            </div>
+          </div>
+
+          <!-- 2.5 INSPIRADORES -->
+          <div class="mt-8 space-y-6">
+            <h4 class="font-mono text-xs font-bold text-brand-dark uppercase tracking-wider">// 5. Inspiradores de Engajamento</h4>
+
+            <!-- 5.1 Duolingo -->
+            <div class="p-6 rounded-2xl border border-brand-border bg-white space-y-3 text-xs">
+              <div class="flex flex-wrap items-center justify-between gap-2 border-b border-brand-border pb-3">
+                <h5 class="font-bold text-sm text-brand-dark">5.1 Duolingo (Domínio: Idiomas)</h5>
+                <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-sky-100 text-sky-800 border border-sky-200">Hábitos & Gamificação</span>
+              </div>
+              <p class="text-stone-700"><strong>O que é:</strong> App de idiomas com sequências diárias (streak), XP, ligas, mascote Duo e notificações personalizadas.</p>
+              <p class="text-brand-muted"><strong>Por que foi selecionado:</strong> Referência mundial na criação de hábitos diários voluntários em temas que exigem esforço contínuo.</p>
+              <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                <div class="p-3 bg-emerald-50/60 rounded-xl border border-emerald-100">
+                  <span class="font-bold text-emerald-800 block mb-1">Pontos Positivos (UX):</span>
+                  <ul class="list-disc pl-4 space-y-1 text-stone-700">
+                    <li>Streak diário gera retorno recorrente ao app.</li>
+                    <li>Sensação de progresso mesmo em sessões rápidas.</li>
+                  </ul>
+                </div>
+                <div class="p-3 bg-red-50/60 rounded-xl border border-red-100">
+                  <span class="font-bold text-red-800 block mb-1">Pontos Negativos (UX):</span>
+                  <ul class="list-disc pl-4 space-y-1 text-stone-700">
+                    <li>Aversão à perda (perder streak) pode gerar ansiedade.</li>
+                    <li>Notificações por vezes consideradas invasivas.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="p-3 bg-brand-leafLight rounded-xl border border-emerald-200 text-brand-leaf font-medium">
+                💡 <strong>Pontos de inspiração:</strong> Sequência de bons hábitos financeiros diários e microlições, evitando mecânicas punitivas já que finanças é um tema sensível.
+              </div>
+            </div>
+
+            <!-- 5.2 Strava -->
+            <div class="p-6 rounded-2xl border border-brand-border bg-white space-y-3 text-xs">
+              <div class="flex flex-wrap items-center justify-between gap-2 border-b border-brand-border pb-3">
+                <h5 class="font-bold text-sm text-brand-dark">5.2 Strava (Domínio: Atividade Física)</h5>
+                <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-sky-100 text-sky-800 border border-sky-200">Reconhecimento Social</span>
+              </div>
+              <p class="text-stone-700"><strong>O que é:</strong> Rede social esportiva com desafios mensais, medalhas, recordes pessoais e "kudos" (reconhecimento entre pares).</p>
+              <p class="text-brand-muted"><strong>Por que foi selecionado:</strong> Mostra como transformar o progresso em metas individuais em algo visível e socialmente reconhecido.</p>
+              <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                <div class="p-3 bg-emerald-50/60 rounded-xl border border-emerald-100">
+                  <span class="font-bold text-emerald-800 block mb-1">Pontos Positivos (UX):</span>
+                  <ul class="list-disc pl-4 space-y-1 text-stone-700">
+                    <li>Desafios e metas que motivam sem competição forçada.</li>
+                    <li>"Kudos" gera reforço social positivo entre colegas.</li>
+                  </ul>
+                </div>
+                <div class="p-3 bg-red-50/60 rounded-xl border border-red-100">
+                  <span class="font-bold text-red-800 block mb-1">Pontos Negativos (UX):</span>
+                  <ul class="list-disc pl-4 space-y-1 text-stone-700">
+                    <li>Exposição excessiva de dados em dinheiro geraria constrangimento.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="p-3 bg-brand-leafLight rounded-xl border border-emerald-200 text-brand-leaf font-medium">
+                💡 <strong>Pontos de inspiração:</strong> Marcos visuais para metas alcançadas (ex: 1ª reserva) e celebração social segura sem expor valores em reais.
+              </div>
+            </div>
+          </div>
+
+          <!-- 2.6 SÍNTESE E OPORTUNIDADES -->
+          <div class="mt-8 p-6 bg-brand-leafLight rounded-2xl border border-emerald-200 text-xs space-y-3">
+            <h4 class="font-mono font-bold text-brand-leaf uppercase tracking-wider">// 6. Síntese — Oportunidades de Design para o Poupay</h4>
+            <div class="grid sm:grid-cols-2 gap-3 text-stone-800">
+              <div class="p-3 bg-white rounded-xl border border-emerald-100">
+                <strong>1. Três Pilares Integrados:</strong> Nenhum concorrente direto une com equilíbrio automação de gastos + educação + gamificação leve — esse é o diferencial central do Poupay.
+              </div>
+              <div class="p-3 bg-white rounded-xl border border-emerald-100">
+                <strong>2. Autonomia Progressiva:</strong> Diferente de soluções centradas apenas nos pais, permitir liberdade gradual conforme a maturidade do jovem.
+              </div>
+              <div class="p-3 bg-white rounded-xl border border-emerald-100">
+                <strong>3. Identidade Não-Infantilizada:</strong> Identidade visual e linguagem adaptáveis por faixa etária, evitando mascotes puramente infantis.
+              </div>
+              <div class="p-3 bg-white rounded-xl border border-emerald-100">
+                <strong>4. Automação Aberta:</strong> Pix e importação de extratos gratuitos e essenciais para combater o abandono das planilhas manuais.
+              </div>
+              <div class="p-3 bg-white rounded-xl border border-emerald-100">
+                <strong>5. Hábitos Sem Culpa:</strong> Microconteúdos e sequências positivas sem mecânicas punitivas ou de pressão psicológica sobre saldo.
+              </div>
+              <div class="p-3 bg-white rounded-xl border border-emerald-100">
+                <strong>6. Celebração com Privacidade:</strong> Compartilhamento de conquistas de metas sem expor valores numéricos ou gerar comparações.
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. Mapa de Empatia -->
+        <article class="p-8 card-squircle">
+          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between pb-6 border-b border-brand-border gap-2">
+            <div>
+              <span class="text-xs font-mono text-brand-muted">Etapa 03</span>
+              <h3 class="text-2xl font-bold text-brand-dark mt-1">3. Mapa de Empatia</h3>
             </div>
             <span class="text-xs font-mono text-brand-muted">// Persona: Estudante / Estagiário</span>
           </div>
@@ -299,12 +652,12 @@
           </div>
         </article>
 
-        <!-- 3. Dashboard e Relatório dos Forms -->
+        <!-- 4. Dashboard e Relatório dos Forms -->
         <article class="p-8 card-squircle">
           <div class="flex flex-col sm:flex-row sm:items-baseline justify-between pb-6 border-b border-brand-border gap-2">
             <div>
-              <span class="text-xs font-mono text-brand-muted">Etapa 03</span>
-              <h3 class="text-2xl font-bold text-brand-dark mt-1">3. Relatório da Pesquisa (Forms)</h3>
+              <span class="text-xs font-mono text-brand-muted">Etapa 04</span>
+              <h3 class="text-2xl font-bold text-brand-dark mt-1">4. Relatório da Pesquisa (Forms)</h3>
             </div>
             <span class="text-xs font-mono text-brand-leaf uppercase">// Dados Quantitativos</span>
           </div>
@@ -336,12 +689,12 @@
           </div>
         </article>
 
-        <!-- 4. Protótipo Interativo Figma -->
+        <!-- 5. Protótipo Interativo Figma -->
         <article class="p-8 card-squircle">
           <div class="flex flex-col sm:flex-row sm:items-baseline justify-between pb-6 border-b border-brand-border gap-2">
             <div>
-              <span class="text-xs font-mono text-brand-muted">Etapa 04</span>
-              <h3 class="text-2xl font-bold text-brand-dark mt-1">4. Protótipo Interativo (Figma)</h3>
+              <span class="text-xs font-mono text-brand-muted">Etapa 05</span>
+              <h3 class="text-2xl font-bold text-brand-dark mt-1">5. Protótipo Interativo (Figma)</h3>
             </div>
             <a href="#" target="_blank" class="text-xs font-mono text-brand-leaf hover:underline">
               Abrir no Figma &rarr;
@@ -436,7 +789,6 @@
         <!-- 1. Guilherme Delavale Brito -->
         <div class="p-7 card-squircle flex flex-col items-center text-center">
           <div class="relative w-28 h-28 rounded-2xl bg-brand-leafLight border border-emerald-200 overflow-hidden mb-4 flex items-center justify-center">
-            <!-- Para colocar a foto depois, use: <img src="caminho-da-foto.jpg" alt="Guilherme" class="w-full h-full object-cover"> -->
             <span class="font-bold text-2xl text-brand-leaf">GB</span>
           </div>
           <h3 class="text-base font-bold text-brand-dark">Guilherme Delavale Brito</h3>
@@ -486,6 +838,7 @@
       <div class="flex gap-6 font-semibold">
         <a href="#home" class="hover:text-brand-dark transition-colors">Home</a>
         <a href="#projeto" class="hover:text-brand-dark transition-colors">Projeto</a>
+        <a href="#analise-competitiva" class="hover:text-brand-dark transition-colors">Análise Competitiva</a>
         <a href="#metodologia" class="hover:text-brand-dark transition-colors">IHC</a>
         <a href="#time" class="hover:text-brand-dark transition-colors">Time</a>
       </div>
