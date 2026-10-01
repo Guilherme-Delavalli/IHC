@@ -104,7 +104,7 @@
         <span class="font-bold text-xl tracking-tight text-slate-900">Poupay</span>
       </a>
       
-      <!-- Links Desktop (Visível em telas grandes >= 1024px) -->
+      <!-- Links Desktop (Visível em telas >= 1024px) -->
       <div class="hidden lg:flex items-center gap-7 text-xs uppercase tracking-wider font-semibold text-slate-700">
         <a href="#home" class="relative group py-1 hover:text-brand-leaf transition-colors duration-200">
           <span>Home</span>
@@ -138,7 +138,6 @@
 
       <!-- Lado Direito: Botão CTA + Botão Hambúrguer Mobile -->
       <div class="flex items-center gap-3">
-        <!-- Botão CTA Desktop -->
         <a href="#matriz-csd" class="hidden sm:inline-flex px-5 py-2 rounded-xl bg-brand-leaf text-white text-xs font-semibold hover:bg-brand-leafHover transition-all duration-200 shadow-xs">
           Explorar Pesquisa
         </a>
@@ -499,7 +498,6 @@
     <!-- Modal Lightbox para expandir a Imagem do Mapa de Empatia -->
     <div id="image-modal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4 sm:p-8" onclick="closeImageModal()">
       <div class="relative max-w-5xl w-full bg-white/10 p-2 sm:p-4 rounded-3xl border border-white/30 backdrop-blur-2xl shadow-2xl" onclick="event.stopPropagation()">
-        <!-- Botão Fechar Apple Style -->
         <button onclick="closeImageModal()" class="absolute top-4 right-4 sm:-top-4 sm:-right-4 w-10 h-10 rounded-full bg-white/90 text-slate-900 font-bold flex items-center justify-center hover:bg-white hover:scale-110 transition-all shadow-lg text-sm z-10">
           ✕
         </button>
@@ -809,7 +807,7 @@
     </section>
 
     <!-- ======================================================== -->
-    <!-- ETAPA 05: GRUPO FOCAL (Fundo: Menta Pálido Aprofundado) -->
+    <!-- ETAPA 05: GRUPO FOCAL (Fundo: Menta Pálido Analítico) -->
     <!-- ======================================================== -->
     <section id="grupo-focal" class="py-24 px-6 lg:px-16 bg-[#f4faf6] border-b border-emerald-200 scroll-mt-16">
       <div class="max-w-7xl mx-auto space-y-12">
@@ -817,15 +815,15 @@
         <!-- Cabeçalho da Seção -->
         <div class="flex flex-col md:flex-row md:items-end justify-between pb-8 border-b border-emerald-200/70 gap-4">
           <div>
-            <span class="text-xs font-mono uppercase tracking-widest text-brand-leaf font-bold block mb-1">Etapa 05 // Técnica Qualitativa Selecionada</span>
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Relatório de Grupo Focal</h2>
+            <span class="text-xs font-mono uppercase tracking-widest text-brand-leaf font-bold block mb-1">Etapa 05 // Técnica Qualitativa Real</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Relatório do Grupo Focal</h2>
           </div>
           <p class="text-xs sm:text-sm text-slate-600 max-w-lg">
-            Investigação aprofundada de atitudes, modelos mentais e barreiras subjetivas que explicam o comportamento financeiro dos jovens.
+            Análise qualitativa e transcrição consolidada da sessão conduzida com usuários reais, aprofundando comportamentos, modelos mentais e requisitos de IHC.
           </p>
         </div>
 
-        <!-- 1. Justificativa Metodológica & Enquadramento Teórico em IHC -->
+        <!-- 1. Justificativa Metodológica & Amostragem Real -->
         <div class="grid lg:grid-cols-12 gap-8">
           
           <div class="lg:col-span-6 liquid-glass p-7 border-emerald-200 space-y-3">
@@ -833,12 +831,12 @@
               <span class="w-2.5 h-2.5 rounded-full bg-brand-leaf"></span>
               <h3 class="font-mono text-xs font-bold text-slate-900 uppercase tracking-wider">// Por que o Grupo Focal?</h3>
             </div>
-            <h4 class="font-bold text-sm text-slate-900">Justificativa da Técnica frente a Outras Opções</h4>
+            <h4 class="font-bold text-sm text-slate-900">Justificativa Metodológica de IHC</h4>
             <p class="text-xs text-slate-600 leading-relaxed">
-              Segundo Barbosa e Silva (2010), o grupo focal é ideal quando se busca <em>compreender a multiplicidade de visões e a dinâmica de debate entre pares</em> sobre temas cercados por tabus sociais, como o dinheiro. Enquanto a entrevista individual poderia induzir o participante a dar respostas socialmente aceitáveis sobre controle financeiro, a interação no grupo expôs com naturalidade as falhas compartilhadas, compras por impulso e frustrações com planilhas.
+              Segundo Barbosa e Silva (2010), o grupo focal é especialmente indicado para identificar a <em>multiplicidade de opiniões, modelos mentais conflitantes e a dinâmica de debate espontâneo entre pares</em>. Em temas financeiros — historicamente cercados por desconforto —, a conversa coletiva permitiu que os entrevistados expusessem com naturalidade seus hábitos informais, gastos por impulso e frustrações reais com ferramentas anteriores.
             </p>
             <p class="text-xs text-slate-600 leading-relaxed">
-              A técnica permitiu triangular os indicadores estatísticos do questionário com as narrativas reais do cotidiano, gerando empatia e insights não-óbvios para a futura prototipação.
+              A técnica cumpriu o papel de **triangulação qualitativa**, permitindo entender o "porquê" dos números obtidos no questionário quantitativo.
             </p>
           </div>
 
@@ -847,94 +845,68 @@
               <span class="w-2.5 h-2.5 rounded-full bg-emerald-600"></span>
               <h3 class="font-mono text-xs font-bold text-slate-900 uppercase tracking-wider">// Critérios de Recrutamento</h3>
             </div>
-            <h4 class="font-bold text-sm text-slate-900">Por que Chamamos Estes Participantes e Não Outros?</h4>
+            <h4 class="font-bold text-sm text-slate-900">Por que Chamamos Estes Participantes?</h4>
             <p class="text-xs text-slate-600 leading-relaxed">
-              Adotamos a estratégia de <strong>amostragem intencional por variação máxima</strong> dentro do público-alvo da Geração Z (18 a 24 anos). Em vez de convidar perfis homogêneos de um mesmo curso ou contexto de renda, recrutamos propositalmente três perfis complementares que representam os três grandes cenários de transição para a vida adulta:
+              Adotamos a estratégia de <strong>amostragem intencional por variação máxima de maturidade financeira</strong> dentro da faixa universitária (18 a 24 anos). Em vez de perfis idênticos, selecionamos propositalmente dois extremos de modelo mental financeiro:
             </p>
             <ul class="text-xs text-slate-700 space-y-1.5 list-disc pl-4 leading-relaxed">
-              <li><strong>O Estagiário em Formação:</strong> Tem renda fixa moderada, mora com a família e busca conciliar faculdade com o início do consumo próprio.</li>
-              <li><strong>O Autônomo com Renda Volátil:</strong> Trabalha por demanda/freelance, sofre com fluxo de caixa irregular e sofre constante tentação de compras imediatas.</li>
-              <li><strong>O Trabalhador Formal com Contas Fixas:</strong> Já possui vínculo CLT e jornada integral, arcando com obrigações mensais consolidadas da casa.</li>
+              <li><strong>O Jovem Pragmático / Controle de Cabeça (P1):</strong> Perfil representativo da maioria absoluta do questionário (85,7% sem app dedicado), que opera com foco em liquidez imediata, controle mental e sofre forte atrito com leitura de textos técnicos.</li>
+              <li><strong>O Jovem Investidor / Analítico (P2):</strong> Usuário com inserção profissional na área financeira/mercado, que já poupa porcentagens fixas (30% a 50%), usa o app da XP e caderno, demandando comparadores visuais e alta segurança de custódia.</li>
             </ul>
           </div>
 
         </div>
 
-        <!-- 2. Fichas Detalhadas e Realistas de Cada Candidato -->
+        <!-- 2. Fichas Analíticas dos Participantes Entrevistados -->
         <div class="space-y-4">
           <div class="flex items-center gap-2">
             <span class="w-3 h-3 rounded-full bg-brand-leaf"></span>
-            <h3 class="font-mono text-sm font-bold text-slate-900 uppercase tracking-wider">// Perfil Detalhado dos Três Participantes</h3>
+            <h3 class="font-mono text-sm font-bold text-slate-900 uppercase tracking-wider">// Perfil Real dos Participantes Entrevistados</h3>
           </div>
 
-          <div class="grid md:grid-cols-3 gap-6">
+          <div class="grid md:grid-cols-2 gap-6">
             
-            <!-- Perfil P1 / Entrevistado 1 -->
+            <!-- Participante 1 -->
             <div class="liquid-glass p-6 border-emerald-200 flex flex-col justify-between">
               <div>
                 <div class="flex items-center justify-between pb-3 mb-3 border-b border-emerald-100">
                   <div>
-                    <h4 class="font-bold text-sm text-slate-900">Entrevistado 1 (P1)</h4>
-                    <span class="text-[11px] font-mono text-brand-leaf font-semibold">20 anos • Universitário + Estagiário</span>
+                    <h4 class="font-bold text-sm text-slate-900">Participante 1 (P1)</h4>
+                    <span class="text-[11px] font-mono text-brand-leaf font-semibold">Perfil Pragmático • Controle de Cabeça &amp; Extrato</span>
                   </div>
                   <span class="w-9 h-9 rounded-xl bg-emerald-100 text-brand-leaf font-mono font-bold flex items-center justify-center text-xs">P1</span>
                 </div>
                 
                 <div class="space-y-2 text-xs text-slate-600 leading-relaxed">
-                  <p><strong>Contexto de Vida:</strong> Cursa o 5º período e realiza estágio presencial de 6 horas em tecnologia. Mora com os pais e não paga contas de moradia.</p>
-                  <p><strong>Faixa de Renda:</strong> Bolsa de estágio fixa de R$ 1.400,00 mensais + vale-transporte.</p>
-                  <p><strong>Método Atual de Controle:</strong> Consulta puramente mental e histórico do app do banco. Tentou usar o Excel, mas abandonou após 2 semanas.</p>
-                  <p><strong>Dor Central:</strong> Descontrole com "microgastos" cotidianos (café, xerox, lanches rápidos entre a faculdade e o trabalho) que parecem irrelevantes na hora, mas geram rombos ao final do mês.</p>
+                  <p><strong>Comportamento Financeiro:</strong> Não verifica entradas e saídas no dia a dia; calcula o saldo de cabeça após gastar. Define como teto gastar no máximo a metade do que tem na conta para manter reserva de emergência.</p>
+                  <p><strong>Gargalos e Dores:</strong> Gastos acumulados com delivery, alimentação fora de casa (fast food) e transporte por aplicativo (Uber). Sente que o pagamento por aproximação não dá a dimensão do dinheiro saindo da conta.</p>
+                  <p><strong>Adoção Tecnológica:</strong> Tolerância zero para lançar comprovantes na mão; aprende melhor por vídeos curtos de 2 minutos (estilo Reels); rejeita textos longos e termos técnicos difíceis.</p>
                 </div>
               </div>
               <div class="mt-4 pt-3 border-t border-emerald-100 text-[11px] font-mono text-brand-leaf font-semibold">
-                Representa: 71,4% da amostra que estuda e trabalha simultaneamente.
+                Representa: O usuário focado em praticidade visual que abandona ferramentas burocráticas.
               </div>
             </div>
 
-            <!-- Perfil P2 / Entrevistado 2 -->
+            <!-- Participante 2 -->
             <div class="liquid-glass p-6 border-emerald-200 flex flex-col justify-between">
               <div>
                 <div class="flex items-center justify-between pb-3 mb-3 border-b border-emerald-100">
                   <div>
-                    <h4 class="font-bold text-sm text-slate-900">Entrevistado 2 (P2)</h4>
-                    <span class="text-[11px] font-mono text-teal-700 font-semibold">21 anos • Universitário + Renda Eventual</span>
+                    <h4 class="font-bold text-sm text-slate-900">Participante 2 (P2)</h4>
+                    <span class="text-[11px] font-mono text-teal-700 font-semibold">Perfil Analítico • Trabalhador da Área &amp; Investidor</span>
                   </div>
                   <span class="w-9 h-9 rounded-xl bg-teal-100 text-teal-800 font-mono font-bold flex items-center justify-center text-xs">P2</span>
                 </div>
                 
                 <div class="space-y-2 text-xs text-slate-600 leading-relaxed">
-                  <p><strong>Contexto de Vida:</strong> Graduando de período integral que complementa os estudos com serviços freelancers de design e vendas online eventuais.</p>
-                  <p><strong>Faixa de Renda:</strong> Altamente variável, oscilando entre R$ 600,00 e R$ 1.900,00 conforme os trabalhos do mês.</p>
-                  <p><strong>Método Atual de Controle:</strong> Anotações esparsas no bloco de notas do celular quando a renda entra, mas sem rotina regular de acompanhamento.</p>
-                  <p><strong>Dor Central:</strong> Insegurança orçamentária gerada pela sazonalidade da renda, combinada com gastos por impulso estimulados por anúncios de redes sociais quando a conta tem saldo alto.</p>
+                  <p><strong>Comportamento Financeiro:</strong> Separa de 30% a 50% da renda logo no início do mês para investimentos (trata como parcela fixa adiantada). Faz contas diárias pelo app do banco (XP) e anotações estruturadas em caderno.</p>
+                  <p><strong>Gargalos e Dores:</strong> Já utilizou planilhas para cobrança compartilhada no cartão, mas desistiu por falta de tempo para ajustar fórmulas. Sofre com microgastos acumulados em Uber e parcelamento excessivo.</p>
+                  <p><strong>Adoção Tecnológica:</strong> Domina renda fixa e títulos públicos; tem curiosidade em ações; aceitaria subir extrato semanalmente; prefere gráficos de barras comparativas (estilo League of Legends).</p>
                 </div>
               </div>
               <div class="mt-4 pt-3 border-t border-emerald-100 text-[11px] font-mono text-teal-800 font-semibold">
-                Representa: Jovens autônomos com dificuldade em estabelecer metas e reservas.
-              </div>
-            </div>
-
-            <!-- Perfil P3 / Entrevistado 3 -->
-            <div class="liquid-glass p-6 border-emerald-200 flex flex-col justify-between">
-              <div>
-                <div class="flex items-center justify-between pb-3 mb-3 border-b border-emerald-100">
-                  <div>
-                    <h4 class="font-bold text-sm text-slate-900">Entrevistado 3 (P3)</h4>
-                    <span class="text-[11px] font-mono text-emerald-800 font-semibold">23 anos • Universitário + Trabalhador CLT</span>
-                  </div>
-                  <span class="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-900 font-mono font-bold flex items-center justify-center text-xs">P3</span>
-                </div>
-                
-                <div class="space-y-2 text-xs text-slate-600 leading-relaxed">
-                  <p><strong>Contexto de Vida:</strong> Estudante do turno noturno que trabalha 8 horas diárias com carteira assinada. Divide despesas de internet, luz e alimentação com a família.</p>
-                  <p><strong>Faixa de Renda:</strong> Salário CLT fixo de R$ 2.400,00 mensais com benefícios corporativos.</p>
-                  <p><strong>Método Atual de Controle:</strong> Separação mental prévia de boletos fixos no início do mês, mas sem nenhum controle sobre o saldo que sobra.</p>
-                  <p><strong>Dor Central:</strong> Vontade ativa de começar a investir o dinheiro que sobra, mas trava por receio de taxas ocultas, tributos (IOF e IR) e desconfiança na custódia de dados bancários por apps.</p>
-                </div>
-              </div>
-              <div class="mt-4 pt-3 border-t border-emerald-100 text-[11px] font-mono text-emerald-800 font-semibold">
-                Representa: Jovens com potencial de investimento bloqueados por barreiras didáticas e fiscais.
+                Representa: O jovem com metas consolidadas que busca automação e visualização comparativa.
               </div>
             </div>
 
@@ -948,142 +920,143 @@
             <h4 class="font-mono text-xs font-bold text-brand-leaf uppercase tracking-wider">// Procedimentos Éticos e TCLE</h4>
             <div class="text-xs text-slate-600 space-y-2 leading-relaxed">
               <p>
-                A atividade foi conduzida em total conformidade com as diretrizes de pesquisa com seres humanos em IHC (Barbosa e Silva, 2010):
+                A atividade de campo obedeceu rigorosamente aos preceitos éticos em pesquisa de IHC (Barbosa e Silva, 2010):
               </p>
               <ul class="list-disc pl-4 space-y-1 text-slate-700">
-                <li><strong>Termo de Consentimento Livre e Esclarecido (TCLE):</strong> Todos os três participantes assinaram termo digital antes da sessão, sendo informados sobre a gravação exclusivamente em áudio para transcrição acadêmica.</li>
-                <li><strong>Garantia de Anonimato e Desistência:</strong> Foi garantido o sigilo das identidades (codificadas como P1, P2 e P3) e a liberdade incondicional de interromper a participação ou recusar perguntas delicadas a qualquer momento.</li>
-                <li><strong>Não Coleta de Dados Sensíveis:</strong> Em nenhum momento foram solicitados extratos reais, senhas de acesso, números de cartão de crédito ou dados bancários privados.</li>
+                <li><strong>Termo de Consentimento Livre e Esclarecido (TCLE):</strong> Ambos os entrevistados assinaram digitalmente o TCLE antes da gravação em áudio.</li>
+                <li><strong>Anonimato e Não-rastreabilidade:</strong> As identidades reais foram codificadas em Participante 1 e Participante 2, preservando o sigilo de dados nominais.</li>
+                <li><strong>Direito de Recusa e Desistência:</strong> Foi garantida liberdade plena para interromper a participação ou se abster de responder qualquer questão sem ônus.</li>
+                <li><strong>Proteção de Dados Sensíveis:</strong> Não foram coletados saldos reais de contas, senhas de acesso bancário ou números de cartões.</li>
               </ul>
             </div>
           </div>
 
           <div class="lg:col-span-6 liquid-glass p-6 border-emerald-200 space-y-3">
-            <h4 class="font-mono text-xs font-bold text-brand-leaf uppercase tracking-wider">// Método de Análise: Análise Temática de Conteúdo</h4>
+            <h4 class="font-mono text-xs font-bold text-brand-leaf uppercase tracking-wider">// Método: Análise Temática de Conteúdo</h4>
             <div class="text-xs text-slate-600 space-y-2 leading-relaxed">
               <p>
-                Os registros do grupo focal foram analisados através da <strong>Análise Temática de Conteúdo</strong> (Bardin; Braun &amp; Clarke), seguindo três etapas formais de processamento:
+                O processamento dos dados coletados seguiu as etapas clássicas da <strong>Análise Temática de Conteúdo</strong> (Bardin; Braun &amp; Clarke):
               </p>
               <ol class="list-decimal pl-4 space-y-1 text-slate-700">
-                <li><strong>Fase Pré-analítica e Transcrição:</strong> Transcrição integral das falas e leitura flutuante para identificação de impressões iniciais.</li>
-                <li><strong>Codificação Aberta:</strong> Extração e rotulação de unidades de sentido (ex.: <em>"fadiga de preenchimento"</em>, <em>"cegueira de microgastos"</em>, <em>"desconfiança na guarda de dados"</em>).</li>
-                <li><strong>Categorização em Temas Centrais:</strong> Agrupamento dos códigos nos cinco eixos que orientam os requisitos funcionais e não-funcionais do Poupay.</li>
+                <li><strong>Transcrição e Familiarização:</strong> Transcrição e limpeza dos turnos de fala da gravação de áudio de 52 minutos.</li>
+                <li><strong>Codificação Aberta:</strong> Geração de códigos primários como <em>"dor do microgasto em Uber/comida"</em>, <em>"ilusão de poder na aproximação"</em>, <em>"fadiga de fórmulas em planilhas"</em> e <em>"aversão a gamificação lúdica"</em>.</li>
+                <li><strong>Mapeamento dos Temas Centrais:</strong> Consolidação dos 5 temas que definem diretamente os fluxos de interface no Figma.</li>
               </ol>
             </div>
           </div>
 
         </div>
 
-        <!-- 4. Roteiro dos 5 Blocos e Desenvolvimento da Discussão -->
+        <!-- 4. Síntese Temática da Discussão por Blocos Reais -->
         <div class="space-y-6">
           <div class="flex items-center gap-2">
             <span class="w-3 h-3 rounded-full bg-brand-leaf"></span>
-            <h3 class="font-mono text-sm font-bold text-slate-900 uppercase tracking-wider">// Roteiro e Síntese da Discussão por Blocos</h3>
+            <h3 class="font-mono text-sm font-bold text-slate-900 uppercase tracking-wider">// Síntese dos Eixos Temáticos Investigados</h3>
           </div>
 
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-xs text-slate-700">
             
             <div class="liquid-glass p-6 border-emerald-200 space-y-2">
-              <span class="font-mono text-[10px] px-2 py-0.5 rounded bg-emerald-100 text-brand-leaf font-bold block w-max">Bloco 1</span>
-              <h4 class="font-bold text-sm text-slate-900">Relação com o Dinheiro</h4>
+              <span class="font-mono text-[10px] px-2 py-0.5 rounded bg-emerald-100 text-brand-leaf font-bold block w-max">Tema 1</span>
+              <h4 class="font-bold text-sm text-slate-900">A Ilusão da Aproximação</h4>
               <p class="leading-relaxed text-slate-600">
-                Os participantes consultam o aplicativo bancário com frequência quase diária, mas exclusivamente para conferir o saldo disponível, sem qualquer planejamento ativo das despesas que virão pela frente.
+                O pagamento por aproximação no cartão ou celular remove a fricção da compra e cria a sensação de "se sentir poderoso". Como não se visualiza o saldo caindo no ato, o dinheiro sai sem controle perceptivo.
               </p>
             </div>
 
             <div class="liquid-glass p-6 border-emerald-200 space-y-2">
-              <span class="font-mono text-[10px] px-2 py-0.5 rounded bg-emerald-100 text-brand-leaf font-bold block w-max">Bloco 2</span>
-              <h4 class="font-bold text-sm text-slate-900">Gastos Imprevistos & Micro-Pix</h4>
+              <span class="font-mono text-[10px] px-2 py-0.5 rounded bg-emerald-100 text-brand-leaf font-bold block w-max">Tema 2</span>
+              <h4 class="font-bold text-sm text-slate-900">A Armadilha dos Microgastos</h4>
               <p class="leading-relaxed text-slate-600">
-                Houve consenso de que os grandes vilões do orçamento não são compras caras, mas a soma descontrolada de pequenos lançamentos de R$ 5 a R$ 20 pagos no Pix ou por aproximação, que fogem da memória.
+                Compras de alto valor (R$ 100 a R$ 300) são facilmente lembradas. O verdadeiro descompasso do fim de mês decorre de corridas curtas de Uber, lanches rápidos, compras parceladas acumuladas e fast food.
               </p>
             </div>
 
             <div class="liquid-glass p-6 border-emerald-200 space-y-2">
-              <span class="font-mono text-[10px] px-2 py-0.5 rounded bg-emerald-100 text-brand-leaf font-bold block w-max">Bloco 3</span>
-              <h4 class="font-bold text-sm text-slate-900">Fadiga do Registro Manual</h4>
+              <span class="font-mono text-[10px] px-2 py-0.5 rounded bg-emerald-100 text-brand-leaf font-bold block w-max">Tema 3</span>
+              <h4 class="font-bold text-sm text-slate-900">Morte da Digitação Manual</h4>
               <p class="leading-relaxed text-slate-600">
-                P1 e P2 relataram tentativas prévias com planilhas Excel e blocos de notas, mas todas fracassaram devido ao cansaço de sentar ao fim do dia de estudo e trabalho para digitar centavo por centavo.
+                Planilhas manuais foram abandonadas pela sobrecarga de atualizar e ajustar fórmulas após um dia cansativo. O jovem tolera subir o extrato uma vez por semana ou prefere sincronização direta sem trabalho manual.
               </p>
             </div>
 
             <div class="liquid-glass p-6 border-emerald-200 space-y-2">
-              <span class="font-mono text-[10px] px-2 py-0.5 rounded bg-emerald-100 text-brand-leaf font-bold block w-max">Bloco 4</span>
-              <h4 class="font-bold text-sm text-slate-900">Metas & Educação Financeira</h4>
+              <span class="font-mono text-[10px] px-2 py-0.5 rounded bg-emerald-100 text-brand-leaf font-bold block w-max">Tema 4</span>
+              <h4 class="font-bold text-sm text-slate-900">Gráficos de Barras &gt; Pizza</h4>
               <p class="leading-relaxed text-slate-600">
-                O interesse em investir é real, mas o jovem universitário prioriza montar uma <em>reserva de emergência</em> antes de buscar ativos voláteis, exigindo explicações didáticas curtas sobre liquidez e prazos.
+                Rejeição aos gráficos de pizza convencionais. Os usuários preferem listas com faixas de cores (cinza para seguro, vermelho para alerta) e barras comparativas (estilo estatísticas do *League of Legends*).
               </p>
             </div>
 
             <div class="liquid-glass p-6 border-emerald-200 space-y-2">
-              <span class="font-mono text-[10px] px-2 py-0.5 rounded bg-emerald-100 text-brand-leaf font-bold block w-max">Bloco 5</span>
-              <h4 class="font-bold text-sm text-slate-900">Confiança, LGPD e Privacidade</h4>
+              <span class="font-mono text-[10px] px-2 py-0.5 rounded bg-emerald-100 text-brand-leaf font-bold block w-max">Tema 5</span>
+              <h4 class="font-bold text-sm text-slate-900">Didática em Vídeos de 2 Minutos</h4>
               <p class="leading-relaxed text-slate-600">
-                Os três candidatos manifestaram receio de conectar contas bancárias sem saber exatamente como os dados são guardados e se há comercialização para terceiros.
+                Textos longos geram preguiça e fazem o usuário desistir de investir. O aprendizado ideal ocorre em formato de *Reels/TikTok* (1 a 2 minutos) com criadores que traduzem jargões em linguagem simples.
               </p>
             </div>
 
             <div class="liquid-glass p-6 border-emerald-200 space-y-2 bg-gradient-to-br from-emerald-50 to-teal-50">
-              <span class="font-mono text-[10px] px-2 py-0.5 rounded bg-emerald-200 text-brand-leaf font-bold block w-max">Bloco Especial</span>
-              <h4 class="font-bold text-sm text-slate-900">Refutação da Gamificação</h4>
+              <span class="font-mono text-[10px] px-2 py-0.5 rounded bg-emerald-200 text-brand-leaf font-bold block w-max">Tema 6</span>
+              <h4 class="font-bold text-sm text-slate-900">Rejeição à Gamificação Lúdica</h4>
               <p class="leading-relaxed text-slate-600">
-                Rejeição contundente a rankings, mascotes e acúmulo de pontos fictícios. O grupo deixou claro que prefere barras de progresso visual de metas reais a "joguinhos".
+                Classificada como "infantil" ou "irrelevante". O jovem universitário não quer pontinhos ou mascote virtual em finanças; recompensas válidas são milhas, cashback real ou desbloqueio de cursos avançados.
               </p>
             </div>
 
           </div>
         </div>
 
-        <!-- 5. Falas Reais em Destaque dos Três Participantes -->
+        <!-- 5. Falas Reais em Destaque dos Dois Participantes -->
         <div class="space-y-4">
           <div class="flex items-center gap-2">
             <span class="w-3 h-3 rounded-full bg-brand-leaf"></span>
-            <h3 class="font-mono text-sm font-bold text-slate-900 uppercase tracking-wider">// Declarações Representativas Registradas na Sessão</h3>
+            <h3 class="font-mono text-sm font-bold text-slate-900 uppercase tracking-wider">// Falas Literais em Destaque na Transcrição</h3>
           </div>
 
           <div class="grid md:grid-cols-3 gap-6 text-xs">
             
             <div class="liquid-glass p-6 border-emerald-200">
-              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-100 text-brand-leaf font-bold block w-max mb-3">P1 • Sobre Pequenas Despesas</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-100 text-brand-leaf font-bold block w-max mb-3">P1 • Sobre Fast Food e Cartão</span>
               <p class="italic text-slate-800 mb-3 text-sm leading-relaxed">
-                "Às vezes eu acho que não gastei quase nada porque não comprei nada caro. Mas aí quando chega a semana de pagar e soma tudo, foi um valor absurdo que sumiu."
+                "Você só vai gastando e não vê o saldo diminuindo, esse é o problema. A gente vai comer fora com namorada, não vai vendo o valor, e quando vê no final do mês já não tem nada."
               </p>
               <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-slate-500 font-mono text-[11px]">
-                <span>Estudante + Estágio</span>
-                <span>20 anos</span>
+                <span>Controle de Cabeça</span>
+                <span>Participante 1</span>
               </div>
             </div>
 
             <div class="liquid-glass p-6 border-emerald-200">
-              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-100 text-brand-leaf font-bold block w-max mb-3">P2 • Sobre a Perda de Foco Manual</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-100 text-brand-leaf font-bold block w-max mb-3">P2 • Sobre o Abandono de Planilhas</span>
               <p class="italic text-slate-800 mb-3 text-sm leading-relaxed">
-                "Eu já tentei anotar tudo em planilha e bloco de notas. Só que depois de um dia de corre com freela e aula, você não quer abrir notebook pra digitar almoço de R$ 18."
+                "Desisti da planilha mais pelo tempo. Ficar montando e ajustando fórmula na mão cansa. Se aproximou o cartão e já caísse automático numa tabelinha, era só bater o olho."
               </p>
               <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-slate-500 font-mono text-[11px]">
-                <span>Renda Eventual</span>
-                <span>21 anos</span>
+                <span>Investidor / XP</span>
+                <span>Participante 2</span>
               </div>
             </div>
 
             <div class="liquid-glass p-6 border-emerald-200">
-              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-100 text-brand-leaf font-bold block w-max mb-3">P3 • Sobre Insegurança Fiscal e Dados</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-100 text-brand-leaf font-bold block w-max mb-3">P1 &amp; P2 • Sobre Joguinhos em Finanças</span>
               <p class="italic text-slate-800 mb-3 text-sm leading-relaxed">
-                "Eu quero investir o que sobra, mas tenho medo de prender o dinheiro e cobrar imposto esquisito. E app de finanças tem que provar que não vai vender meus dados bancários."
+                "Cuidar de dinheiro já é sério. Ninguém quer perder tempo brincando com bichinho virtual ou foguinho; se quiser jogar, a pessoa abre o Discord ou o videogame."
               </p>
               <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-slate-500 font-mono text-[11px]">
-                <span>Trabalhador CLT</span>
-                <span>23 anos</span>
+                <span>Consenso da Sessão</span>
+                <span>P1 e P2</span>
               </div>
             </div>
 
           </div>
         </div>
 
-        <!-- 6. Cruzamento Sistemático entre o Questionário e o Grupo Focal -->
+        <!-- 6. Cruzamento Sistemático: Questionário vs. Grupo Focal Real -->
         <div class="space-y-4">
           <div class="flex items-center gap-2">
             <span class="w-3 h-3 rounded-full bg-brand-leaf"></span>
-            <h3 class="font-mono text-sm font-bold text-slate-900 uppercase tracking-wider">// Cruzamento: Resultados Quantitativos vs. Evidências do Grupo Focal</h3>
+            <h3 class="font-mono text-sm font-bold text-slate-900 uppercase tracking-wider">// Cruzamento: Resultados Quantitativos vs. Evidências Empíricas do Grupo Focal</h3>
           </div>
 
           <div class="liquid-glass p-6 border-emerald-200 overflow-x-auto">
@@ -1091,82 +1064,77 @@
               <thead>
                 <tr class="border-b border-emerald-100 text-slate-700 font-mono uppercase bg-emerald-50/70">
                   <th class="py-3 px-3">Dimensão Investigada</th>
-                  <th class="py-3 px-3">Dado Quantitativo (Questionário)</th>
-                  <th class="py-3 px-3">Aprofundamento Qualitativo (Grupo Focal)</th>
+                  <th class="py-3 px-3">Dado do Questionário Quantitativo</th>
+                  <th class="py-3 px-3">Evidência Empírica do Grupo Focal Real</th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-emerald-50 text-slate-700 leading-relaxed">
                 <tr>
                   <td class="py-3 px-3 font-semibold text-slate-900">Consulta de Saldo</td>
                   <td class="py-3 px-3 text-brand-leaf font-semibold">74,3% verificam com frequência</td>
-                  <td class="py-3 px-3 text-slate-600">Os participantes abrem o app do banco com frequência, mas a ação é meramente passiva/curiosa, sem gerar decisões preventivas de controle.</td>
+                  <td class="py-3 px-3 text-slate-600">Ambos abrem o app do banco com frequência diária, mas confirmaram que a consulta é passiva (apenas para ver se têm margem para o almoço do dia), sem planejamento ativo.</td>
                 </tr>
                 <tr>
                   <td class="py-3 px-3 font-semibold text-slate-900">Estouros de Orçamento</td>
                   <td class="py-3 px-3 text-red-600 font-semibold">47,1% gastam além do planejado</td>
-                  <td class="py-3 px-3 text-slate-600">A causa unânime não foram gastos grandes, mas a multiplicação de débitos rotineiros (Pix de R$ 5 a R$ 15) que não pesam na memória imediata.</td>
+                  <td class="py-3 px-3 text-slate-600">Os entrevistados apontaram como culpados o acúmulo de Ubers de R$ 10-20, lanches de fast food e o perigo do cartão por aproximação, que oculta a percepção do saldo saindo.</td>
                 </tr>
                 <tr>
                   <td class="py-3 px-3 font-semibold text-slate-900">Registro Automático</td>
                   <td class="py-3 px-3 text-brand-leaf font-semibold">88,6% consideram importante</td>
-                  <td class="py-3 px-3 text-slate-600">Ficou evidente que a digitação manual é o principal gatilho de abandono das ferramentas prévias em dias de cansaço pós-estudo/trabalho.</td>
+                  <td class="py-3 px-3 text-slate-600">P1 tem tolerância zero para digitação manual após o dia de estudo/estágio, e P2 abandonou planilhas por falta de tempo para ajustar fórmulas. Exigem automação no extrato.</td>
                 </tr>
                 <tr>
                   <td class="py-3 px-3 font-semibold text-slate-900">Gráficos de Gastos</td>
                   <td class="py-3 px-3 text-brand-leaf font-semibold">97,1% consideram importante</td>
-                  <td class="py-3 px-3 text-slate-600">Preferência por visualização limpa por categorias de cores para bater o olho e entender os gastos sem navegar por extratos densos.</td>
-                </tr>
-                <tr>
-                  <td class="py-3 px-3 font-semibold text-slate-900">Alertas de Gastos</td>
-                  <td class="py-3 px-3 text-brand-leaf font-semibold">91,4% consideram importante</td>
-                  <td class="py-3 px-3 text-slate-600">Aprovação de avisos prévios quando o limite está próximo de estourar, mas com ressalva expressa de que não sejam invasivos ou em excesso.</td>
+                  <td class="py-3 px-3 text-slate-600">Rejeição ao gráfico de pizza tradicional. Preferem listas com alertas em faixas de cor (cinza para seguro, vermelho para estouro) e gráficos de barras comparativas (estilo *LoL*).</td>
                 </tr>
                 <tr>
                   <td class="py-3 px-3 font-semibold text-slate-900">Educação Financeira</td>
                   <td class="py-3 px-3 text-brand-leaf font-semibold">Média 4,46/5 na necessidade de aprender</td>
-                  <td class="py-3 px-3 text-slate-600">Interesse ativo em montar reserva e entender CDB/Tesouro, desde que apresentados sem jargões complexos e com explicação clara de tributos.</td>
+                  <td class="py-3 px-3 text-slate-600">P1 afirmou que a escola não ensina finanças e que textos longos dão preguiça. Pede vídeos curtos de 2 minutos inspirados em criadores descontraídos de redes sociais.</td>
                 </tr>
                 <tr>
-                  <td class="py-3 px-3 font-semibold text-slate-900">Gamificação / Prêmios</td>
-                  <td class="py-3 px-3 text-slate-500 font-semibold">62,9% foram indiferentes ou rejeitaram</td>
-                  <td class="py-3 px-3 text-slate-600">Os participantes rejeitaram pontuações fictícias e mascotes; preferem acompanhar o progresso real de suas metas financeiras em barras visuais.</td>
+                  <td class="py-3 px-3 font-semibold text-slate-900">Gamificação / Recompensas</td>
+                  <td class="py-3 px-3 text-slate-500 font-semibold">62,9% rejeitaram ou foram indiferentes</td>
+                  <td class="py-3 px-3 text-slate-600">Ambos afirmaram que "moedinhas", mascotes ou "foguinho do Duolingo" não funcionam para dinheiro. Se houver benefício, deve ser real (cashback, milhas ou cursos avançados).</td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
 
-        <!-- 7. Diretrizes Concretas de Design de IHC para a Prototipação -->
+        <!-- 7. Diretrizes Concretas para a Prototipação no Figma -->
         <div class="liquid-glass p-8 border-emerald-200 space-y-4">
           <div class="flex items-center gap-2">
             <span class="w-3 h-3 rounded-full bg-brand-leaf"></span>
-            <h3 class="font-mono text-xs font-bold text-brand-leaf uppercase tracking-wider">// Conclusão da Etapa: 7 Decisões para a Prototipação no Figma</h3>
+            <h3 class="font-mono text-xs font-bold text-brand-leaf uppercase tracking-wider">// Requisitos de IHC e Decisões para a Prototipação no Figma</h3>
           </div>
 
           <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 text-xs text-slate-700">
             <div class="p-4 rounded-xl bg-white/70 border border-emerald-100">
-              <strong class="text-slate-900 block mb-1">1. Automação Integral de Extrato:</strong>
-              <p>Eliminar a necessidade de lançamentos manuais para evitar a sobrecarga de quem estuda e trabalha.</p>
+              <strong class="text-slate-900 block mb-1">1. Automação e Sincronização Direta:</strong>
+              <p>Eliminar qualquer necessidade de preenchimento manual de despesas ou notas fiscais.</p>
             </div>
             <div class="p-4 rounded-xl bg-white/70 border border-emerald-100">
-              <strong class="text-slate-900 block mb-1">2. Alertas Preventivos Configuráveis:</strong>
-              <p>Avisar com moderação quando uma categoria atingir 80% do teto estipulado para a semana.</p>
+              <strong class="text-slate-900 block mb-1">2. Barras de Categorias com Cores Semafóricas:</strong>
+              <p>Adotar barras de gastos comparativas (cinza no limite seguro, vermelho em alerta de estouro).</p>
             </div>
             <div class="p-4 rounded-xl bg-white/70 border border-emerald-100">
-              <strong class="text-slate-900 block mb-1">3. Agrupamento de Microgastos:</strong>
-              <p>Destacar a soma acumulada de pequenas compras rotineiras no Pix para combater a sangria invisível.</p>
+              <strong class="text-slate-900 block mb-1">3. Combate à Ilusão da Aproximação:</strong>
+              <p>Exibir notificações preventivas de saldo e alertas antes de atingir o limite orçamentário da semana.</p>
             </div>
             <div class="p-4 rounded-xl bg-white/70 border border-emerald-100">
-              <strong class="text-slate-900 block mb-1">4. Potes Visuais de Metas:</strong>
-              <p>Permitir separar reservas de emergência e metas pessoais em blocos gráficos sem misturar com o saldo corrente.</p>
+              <strong class="text-slate-900 block mb-1">4. Potes de Meta Fora do Saldo Corrente:</strong>
+              <p>Ocultar o dinheiro guardado da tela inicial para evitar a tentação de gastar a reserva no dia a dia.</p>
             </div>
             <div class="p-4 rounded-xl bg-white/70 border border-emerald-100">
-              <strong class="text-slate-900 block mb-1">5. Pílulas Didáticas com Alíquotas:</strong>
-              <p>Cards curtos explicando prazos de liquidez e incidência de IOF/IR sem juridiquês financeiro.</p>
+              <strong class="text-slate-900 block mb-1">5. Vídeos Didáticos de 2 Minutos:</strong>
+              <p>Substituir manuais densos por microconteúdos dinâmicos explicando tributos e investimentos básicos.</p>
             </div>
             <div class="p-4 rounded-xl bg-white/70 border border-emerald-100">
-              <strong class="text-slate-900 block mb-1">6. Transparência Ativa de Privacidade:</strong>
-              <p>Exibir mensagem clara logo no cadastro de que a aplicação não comercializa dados para terceiros.</p>
+              <strong class="text-slate-900 block mb-1">6. Selo de Regulação e Open Finance:</strong>
+              <p>Exibir de forma evidente no onboarding as garantias de segurança auditadas pelo Banco Central.</p>
             </div>
           </div>
         </div>
@@ -1238,7 +1206,7 @@
   <!-- Rodapé com Glassmorphism -->
   <footer class="py-10 border-t border-slate-800 bg-[#090d16] text-xs font-mono text-slate-400">
     <div class="max-w-7xl mx-auto px-6 lg:px-16 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p>Poupay &bull; Projeto de Interface Humano-Computador</p>
+      <p>Poupay &bull; Projeto de Interface Homem-Computador</p>
       <div class="flex flex-wrap gap-6 font-semibold">
         <a href="#home" class="hover:text-emerald-400 transition-colors">Home</a>
         <a href="#matriz-csd" class="hover:text-emerald-400 transition-colors">Matriz CSD</a>
