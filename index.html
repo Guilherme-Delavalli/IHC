@@ -43,107 +43,164 @@
       font-family: 'JetBrains Mono', monospace;
     }
 
-    /* Apple Liquid Glass Effect */
+    /* Efeito Apple Liquid Glass sem contornos/bordas */
     .liquid-glass {
-      background: rgba(255, 255, 255, 0.72);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      border: 1px solid rgba(255, 255, 255, 0.85);
-      box-shadow: 0 10px 30px -5px rgba(21, 128, 61, 0.08),
-                  0 4px 6px -2px rgba(15, 23, 42, 0.03),
-                  inset 0 1px 1px 0 rgba(255, 255, 255, 0.95);
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: none;
+      box-shadow: 0 12px 30px -6px rgba(15, 23, 42, 0.06),
+                  0 4px 10px -2px rgba(21, 128, 61, 0.04);
       border-radius: 1.5rem;
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .liquid-glass:hover {
-      background: rgba(255, 255, 255, 0.85);
-      border-color: rgba(21, 128, 61, 0.35);
-      box-shadow: 0 20px 40px -10px rgba(21, 128, 61, 0.15),
-                  inset 0 1px 2px 0 rgba(255, 255, 255, 1);
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: 0 20px 38px -10px rgba(15, 23, 42, 0.1),
+                  0 6px 14px -3px rgba(21, 128, 61, 0.08);
       transform: translateY(-2px);
     }
 
-    /* Chips em tons de Verde e toques sutis de Azul */
+    .liquid-glass-dropdown {
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: none;
+      box-shadow: 0 18px 40px -8px rgba(15, 23, 42, 0.12),
+                  0 6px 16px -2px rgba(21, 128, 61, 0.05);
+    }
+
+    /* Chips sem bordas, destacando pelo contraste de cor e blur */
     .chip-mint {
-      background: rgba(209, 250, 229, 0.88);
+      background: rgba(209, 250, 229, 0.95);
       color: #065f46;
-      border: 1px solid rgba(110, 231, 183, 0.85);
+      border: none;
       backdrop-filter: blur(8px);
     }
     .chip-emerald {
-      background: rgba(167, 243, 208, 0.85);
+      background: rgba(167, 243, 208, 0.92);
       color: #064e3b;
-      border: 1px solid rgba(52, 211, 153, 0.8);
+      border: none;
       backdrop-filter: blur(8px);
     }
     .chip-sky-soft {
-      background: rgba(224, 242, 254, 0.85);
+      background: rgba(224, 242, 254, 0.95);
       color: #0369a1;
-      border: 1px solid rgba(186, 230, 253, 0.8);
+      border: none;
       backdrop-filter: blur(8px);
     }
     .chip-ice {
-      background: rgba(240, 253, 244, 0.9);
+      background: rgba(240, 253, 244, 0.98);
       color: #14532d;
-      border: 1px solid rgba(187, 247, 208, 0.8);
+      border: none;
       backdrop-filter: blur(8px);
     }
   </style>
 </head>
 <body class="antialiased selection:bg-brand-leaf selection:text-white flex flex-col min-h-screen">
 
-  <!-- Header / Barra de Navegação Fixa Estilo Apple Glass com Menu Hambúrguer -->
-  <nav class="fixed top-0 inset-x-0 z-50 bg-white/80 backdrop-blur-xl border-b border-emerald-100/80 shadow-xs">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12 h-16 flex items-center justify-between">
+  <!-- Header / Barra de Navegação Expandida sem Bordas -->
+  <nav class="fixed top-0 inset-x-0 z-50 bg-white/85 backdrop-blur-xl shadow-xs">
+    <div class="w-full px-4 sm:px-8 xl:px-12 h-16 flex items-center justify-between">
       
       <!-- Marca -->
-      <a href="#home" class="flex items-center gap-2.5 text-brand-dark group">
+      <a href="#home" class="flex items-center gap-2.5 text-brand-dark group shrink-0">
         <div class="w-8 h-8 rounded-xl bg-brand-leaf flex items-center justify-center text-white text-sm shadow-xs group-hover:bg-brand-leafHover group-hover:rotate-12 transition-transform duration-300">
           🌱
         </div>
         <span class="font-bold text-xl tracking-tight text-slate-900">Poupay</span>
       </a>
       
-      <!-- Links Desktop (Visível em telas >= 1024px) -->
-      <div class="hidden lg:flex items-center gap-7 text-xs uppercase tracking-wider font-semibold text-slate-700">
-        <a href="#home" class="relative group py-1 hover:text-brand-leaf transition-colors duration-200">
-          <span>Home</span>
-          <span class="absolute bottom-0 left-0 w-0 h-[2.5px] bg-brand-leaf rounded-full transition-all duration-300 ease-out group-hover:w-full"></span>
+      <!-- Links Desktop (Visível em ecrãs >= 1024px) -->
+      <div class="hidden lg:flex items-center gap-8 text-xs uppercase tracking-wider font-semibold text-slate-700">
+        
+        <a href="#home" class="relative group py-2 hover:text-brand-leaf transition-colors duration-200">
+          <span>Início</span>
+          <span class="absolute bottom-1 left-0 w-0 h-[2.5px] bg-brand-leaf rounded-full transition-all duration-300 ease-out group-hover:w-full"></span>
         </a>
-        <a href="#matriz-csd" class="relative group py-1 hover:text-brand-leaf transition-colors duration-200">
-          <span>Matriz CSD</span>
-          <span class="absolute bottom-0 left-0 w-0 h-[2.5px] bg-brand-leaf rounded-full transition-all duration-300 ease-out group-hover:w-full"></span>
+
+        <!-- Dropdown 1: Pesquisa & Campo -->
+        <div class="relative group">
+          <button class="flex items-center gap-1.5 py-2 hover:text-brand-leaf transition-colors duration-200 uppercase tracking-wider focus:outline-none">
+            <span>Fase 1</span>
+            <svg class="w-3.5 h-3.5 text-slate-400 group-hover:text-brand-leaf group-hover:rotate-180 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          
+          <div class="absolute left-0 top-full pt-2 w-60 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200">
+            <div class="liquid-glass-dropdown rounded-2xl p-2.5 space-y-1">
+              <a href="#matriz-csd" class="block px-3 py-2 rounded-xl text-xs normal-case font-medium text-slate-700 hover:bg-emerald-50 hover:text-brand-leaf transition-colors">
+                <span class="font-bold text-[11px] font-mono text-emerald-700 block uppercase">Etapa 01</span>
+                Matriz CSD Consolidada
+              </a>
+              <a href="#mapa-empatia" class="block px-3 py-2 rounded-xl text-xs normal-case font-medium text-slate-700 hover:bg-emerald-50 hover:text-brand-leaf transition-colors">
+                <span class="font-bold text-[11px] font-mono text-emerald-700 block uppercase">Etapa 02</span>
+                Mapa de Empatia
+              </a>
+              <a href="#analise-competitiva" class="block px-3 py-2 rounded-xl text-xs normal-case font-medium text-slate-700 hover:bg-emerald-50 hover:text-brand-leaf transition-colors">
+                <span class="font-bold text-[11px] font-mono text-emerald-700 block uppercase">Etapa 03</span>
+                Análise Competitiva
+              </a>
+              <a href="#questionario" class="block px-3 py-2 rounded-xl text-xs normal-case font-medium text-slate-700 hover:bg-emerald-50 hover:text-brand-leaf transition-colors">
+                <span class="font-bold text-[11px] font-mono text-emerald-700 block uppercase">Etapa 04</span>
+                Questionário Quantitativo
+              </a>
+              <a href="#grupo-focal" class="block px-3 py-2 rounded-xl text-xs normal-case font-medium text-slate-700 hover:bg-emerald-50 hover:text-brand-leaf transition-colors">
+                <span class="font-bold text-[11px] font-mono text-emerald-700 block uppercase">Etapa 05</span>
+                Grupo Focal (Qualitativo)
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dropdown 2: Espaço do Problema -->
+        <div class="relative group">
+          <button class="flex items-center gap-1.5 py-2 hover:text-brand-leaf transition-colors duration-200 uppercase tracking-wider focus:outline-none">
+            <span>Fase 2</span>
+            <svg class="w-3.5 h-3.5 text-slate-400 group-hover:text-brand-leaf group-hover:rotate-180 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          
+          <div class="absolute left-0 top-full pt-2 w-64 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200">
+            <div class="liquid-glass-dropdown rounded-2xl p-2.5 space-y-1">
+              <a href="#personas" class="block px-3 py-2 rounded-xl text-xs normal-case font-medium text-slate-700 hover:bg-emerald-50 hover:text-brand-leaf transition-colors">
+                <span class="font-bold text-[11px] font-mono text-teal-700 block uppercase">Etapa 06</span>
+                Personas (Lucas, Beatriz e Matheus)
+              </a>
+              <a href="#cenarios" class="block px-3 py-2 rounded-xl text-xs normal-case font-medium text-slate-700 hover:bg-emerald-50 hover:text-brand-leaf transition-colors">
+                <span class="font-bold text-[11px] font-mono text-teal-700 block uppercase">Etapa 07</span>
+                Cenários de Problema
+              </a>
+              <a href="#tarefas" class="block px-3 py-2 rounded-xl text-xs normal-case font-medium text-slate-700 hover:bg-emerald-50 hover:text-brand-leaf transition-colors">
+                <span class="font-bold text-[11px] font-mono text-teal-700 block uppercase">Etapa 08</span>
+                Análise de Tarefas (HTA)
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <a href="#ia-aplicada" class="relative group py-2 hover:text-brand-leaf transition-colors duration-200">
+          <span>Uso de IA</span>
+          <span class="absolute bottom-1 left-0 w-0 h-[2.5px] bg-brand-leaf rounded-full transition-all duration-300 ease-out group-hover:w-full"></span>
         </a>
-        <a href="#mapa-empatia" class="relative group py-1 hover:text-brand-leaf transition-colors duration-200">
-          <span>Mapa de Empatia</span>
-          <span class="absolute bottom-0 left-0 w-0 h-[2.5px] bg-brand-leaf rounded-full transition-all duration-300 ease-out group-hover:w-full"></span>
+
+        <a href="#time" class="relative group py-2 hover:text-brand-leaf transition-colors duration-200">
+          <span>Equipe</span>
+          <span class="absolute bottom-1 left-0 w-0 h-[2.5px] bg-brand-leaf rounded-full transition-all duration-300 ease-out group-hover:w-full"></span>
         </a>
-        <a href="#analise-competitiva" class="relative group py-1 hover:text-brand-leaf transition-colors duration-200">
-          <span>Análise Competitiva</span>
-          <span class="absolute bottom-0 left-0 w-0 h-[2.5px] bg-brand-leaf rounded-full transition-all duration-300 ease-out group-hover:w-full"></span>
-        </a>
-        <a href="#questionario" class="relative group py-1 hover:text-brand-leaf transition-colors duration-200">
-          <span>Questionário</span>
-          <span class="absolute bottom-0 left-0 w-0 h-[2.5px] bg-brand-leaf rounded-full transition-all duration-300 ease-out group-hover:w-full"></span>
-        </a>
-        <a href="#grupo-focal" class="relative group py-1 hover:text-brand-leaf transition-colors duration-200">
-          <span>Grupo Focal</span>
-          <span class="absolute bottom-0 left-0 w-0 h-[2.5px] bg-brand-leaf rounded-full transition-all duration-300 ease-out group-hover:w-full"></span>
-        </a>
-        <a href="#time" class="relative group py-1 hover:text-brand-leaf transition-colors duration-200">
-          <span>Time</span>
-          <span class="absolute bottom-0 left-0 w-0 h-[2.5px] bg-brand-leaf rounded-full transition-all duration-300 ease-out group-hover:w-full"></span>
-        </a>
+
       </div>
 
       <!-- Lado Direito: Botão CTA + Botão Hambúrguer Mobile -->
-      <div class="flex items-center gap-3">
-        <a href="#matriz-csd" class="hidden sm:inline-flex px-5 py-2 rounded-xl bg-brand-leaf text-white text-xs font-semibold hover:bg-brand-leafHover transition-all duration-200 shadow-xs">
+      <div class="flex items-center gap-3 shrink-0">
+        <a href="#matriz-csd" class="hidden sm:inline-flex px-5 py-2.5 rounded-xl bg-brand-leaf text-white text-xs font-semibold hover:bg-brand-leafHover transition-all duration-200 shadow-xs">
           Explorar Pesquisa
         </a>
 
-        <!-- Botão Menu Hambúrguer (Mobile / Tablet) -->
-        <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="lg:hidden w-10 h-10 rounded-xl bg-white/80 border border-emerald-100 flex items-center justify-center text-slate-800 hover:text-brand-leaf focus:outline-none transition-colors shadow-2xs" aria-label="Abrir Menu de Navegação">
+        <!-- Botão Menu Hambúrguer -->
+        <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="lg:hidden w-10 h-10 rounded-xl bg-slate-100/80 flex items-center justify-center text-slate-800 hover:text-brand-leaf focus:outline-none transition-colors shadow-2xs" aria-label="Abrir Menu de Navegação">
           <svg id="hamburger-icon" class="w-5 h-5 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
@@ -155,13 +212,16 @@
 
     </div>
 
-    <!-- Menu Expansível Mobile Estilo Liquid Glass -->
-    <div id="mobile-menu" class="hidden lg:hidden border-t border-emerald-100/70 bg-white/95 backdrop-blur-2xl px-6 py-6 shadow-xl transition-all duration-300">
+    <!-- Menu Expansível Mobile Estilo Liquid Glass sem Bordas -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-white/95 backdrop-blur-2xl px-6 py-6 shadow-xl transition-all duration-300 max-h-[85vh] overflow-y-auto">
       <div class="flex flex-col space-y-3 font-semibold text-sm text-slate-800">
+        <span class="text-[10px] font-mono uppercase tracking-widest text-slate-400 pt-1">Geral</span>
         <a href="#home" onclick="toggleMobileMenu()" class="px-3 py-2 rounded-xl hover:bg-emerald-50 hover:text-brand-leaf transition-colors flex items-center justify-between">
-          <span>Home</span>
+          <span>Início</span>
           <span class="text-xs text-slate-400 font-mono">&rarr;</span>
         </a>
+
+        <span class="text-[10px] font-mono uppercase tracking-widest text-slate-400 pt-2">Pesquisa de Campo</span>
         <a href="#matriz-csd" onclick="toggleMobileMenu()" class="px-3 py-2 rounded-xl hover:bg-emerald-50 hover:text-brand-leaf transition-colors flex items-center justify-between">
           <span>Matriz CSD</span>
           <span class="text-xs text-slate-400 font-mono">&rarr;</span>
@@ -182,19 +242,30 @@
           <span>Grupo Focal</span>
           <span class="text-xs text-slate-400 font-mono">&rarr;</span>
         </a>
+
+        <span class="text-[10px] font-mono uppercase tracking-widest text-slate-400 pt-2">Espaço do Problema</span>
+        <a href="#personas" onclick="toggleMobileMenu()" class="px-3 py-2 rounded-xl hover:bg-emerald-50 hover:text-brand-leaf transition-colors flex items-center justify-between">
+          <span>Personas</span>
+          <span class="text-xs text-slate-400 font-mono">&rarr;</span>
+        </a>
+        <a href="#cenarios" onclick="toggleMobileMenu()" class="px-3 py-2 rounded-xl hover:bg-emerald-50 hover:text-brand-leaf transition-colors flex items-center justify-between">
+          <span>Cenários de Problema</span>
+          <span class="text-xs text-slate-400 font-mono">&rarr;</span>
+        </a>
+        <a href="#tarefas" onclick="toggleMobileMenu()" class="px-3 py-2 rounded-xl hover:bg-emerald-50 hover:text-brand-leaf transition-colors flex items-center justify-between">
+          <span>Análise de Tarefas (HTA)</span>
+          <span class="text-xs text-slate-400 font-mono">&rarr;</span>
+        </a>
+
+        <span class="text-[10px] font-mono uppercase tracking-widest text-slate-400 pt-2">Outros</span>
         <a href="#ia-aplicada" onclick="toggleMobileMenu()" class="px-3 py-2 rounded-xl hover:bg-emerald-50 hover:text-brand-leaf transition-colors flex items-center justify-between">
           <span>Uso de IA no Projeto</span>
           <span class="text-xs text-slate-400 font-mono">&rarr;</span>
         </a>
         <a href="#time" onclick="toggleMobileMenu()" class="px-3 py-2 rounded-xl hover:bg-emerald-50 hover:text-brand-leaf transition-colors flex items-center justify-between">
-          <span>Time</span>
+          <span>Equipe</span>
           <span class="text-xs text-slate-400 font-mono">&rarr;</span>
         </a>
-        <div class="pt-3 border-t border-slate-100">
-          <a href="#matriz-csd" onclick="toggleMobileMenu()" class="block text-center w-full py-2.5 rounded-xl bg-brand-leaf text-white text-xs font-semibold hover:bg-brand-leafHover transition-colors shadow-xs">
-            Explorar Pesquisa Completa
-          </a>
-        </div>
       </div>
     </div>
   </nav>
@@ -205,11 +276,9 @@
     <!-- ======================================================== -->
     <!-- SEÇÃO 1: HOME (Verde Suave Apple Glass) -->
     <!-- ======================================================== -->
-    <section id="home" class="py-24 px-6 lg:px-16 bg-gradient-to-b from-emerald-50/80 via-emerald-50/30 to-stone-50 border-b border-emerald-100">
-      
+    <section id="home" class="py-24 px-6 lg:px-16 bg-gradient-to-b from-emerald-50/80 via-emerald-50/30 to-slate-50">
       <div class="max-w-7xl mx-auto">
         <div class="grid lg:grid-cols-12 gap-12 items-center">
-          
           <div class="lg:col-span-7 text-left">
             <h1 class="text-6xl sm:text-7xl md:text-8xl font-black tracking-tight text-slate-900 leading-none mb-6">
               Poupay<span class="text-brand-leaf">.</span>
@@ -227,51 +296,48 @@
               <a href="#matriz-csd" class="px-6 py-3 bg-brand-leaf text-white rounded-xl hover:bg-brand-leafHover transition-all shadow-sm">
                 Ver Pesquisa Completa &darr;
               </a>
-              <a href="#time" class="px-6 py-3 border border-emerald-200 bg-white/70 backdrop-blur-md text-slate-800 rounded-xl hover:bg-white transition-colors">
+              <a href="#time" class="px-6 py-3 bg-white/80 backdrop-blur-md text-slate-800 rounded-xl hover:bg-white shadow-xs transition-colors">
                 Conhecer a Equipe
               </a>
             </div>
           </div>
 
-          <!-- Cards Rápidos Laterais na Home (Liquid Glass Verde) -->
+          <!-- Cards Rápidos Laterais na Home -->
           <div class="lg:col-span-5 grid sm:grid-cols-2 lg:grid-cols-1 gap-4">
             <div class="liquid-glass p-6 flex items-start gap-4">
-              <div class="w-12 h-12 rounded-xl bg-emerald-100 text-brand-leaf flex items-center justify-center text-xl shrink-0 border border-emerald-200">📊</div>
+              <div class="w-12 h-12 rounded-xl bg-emerald-100/80 text-brand-leaf flex items-center justify-center text-xl shrink-0 shadow-2xs">📊</div>
               <div>
                 <h3 class="font-bold text-sm text-slate-900 mb-1">Controle sem Fricção</h3>
-                <p class="text-xs text-slate-600 leading-relaxed">Automação de extrato para combater o abandono precoce das planilhas manuais.</p>
+                <p class="text-xs text-slate-600 leading-relaxed">Automação de extrato para combater o abandono precoce das folhas de cálculo manuais.</p>
               </div>
             </div>
 
             <div class="liquid-glass p-6 flex items-start gap-4">
-              <div class="w-12 h-12 rounded-xl bg-emerald-100 text-brand-leaf flex items-center justify-center text-xl shrink-0 border border-emerald-200">🛡️</div>
+              <div class="w-12 h-12 rounded-xl bg-emerald-100/80 text-brand-leaf flex items-center justify-center text-xl shrink-0 shadow-2xs">🛡️</div>
               <div>
                 <h3 class="font-bold text-sm text-slate-900 mb-1">Privacidade Transparente</h3>
-                <p class="text-xs text-slate-600 leading-relaxed">Soberania integral dos dados do usuário, eliminando a desconfiança com apps bancários.</p>
+                <p class="text-xs text-slate-600 leading-relaxed">Soberania integral dos dados do utilizador, eliminando a desconfiança com apps bancárias.</p>
               </div>
             </div>
 
             <div class="liquid-glass p-6 flex items-start gap-4">
-              <div class="w-12 h-12 rounded-xl bg-emerald-100 text-brand-leaf flex items-center justify-center text-xl shrink-0 border border-emerald-200">🎯</div>
+              <div class="w-12 h-12 rounded-xl bg-emerald-100/80 text-brand-leaf flex items-center justify-center text-xl shrink-0 shadow-2xs">🎯</div>
               <div>
                 <h3 class="font-bold text-sm text-slate-900 mb-1">Metas Tangíveis</h3>
-                <p class="text-xs text-slate-600 leading-relaxed">Separação em potes para reserva de emergência sem infantilização ou mecânicas punitivas.</p>
+                <p class="text-xs text-slate-600 leading-relaxed">Separação em mealheiros para reserva de emergência sem infantilização ou mecânicas punitivas.</p>
               </div>
             </div>
           </div>
-
         </div>
       </div>
-
     </section>
 
     <!-- ======================================================== -->
     <!-- ETAPA 01: MATRIZ CSD (Fundo: Menta Suave & Neutro) -->
     <!-- ======================================================== -->
-    <section id="matriz-csd" class="py-24 px-6 lg:px-16 bg-[#f4faf6] border-b border-emerald-100 scroll-mt-16">
+    <section id="matriz-csd" class="py-24 px-6 lg:px-16 bg-[#f4faf6] scroll-mt-16">
       <div class="max-w-7xl mx-auto">
-        
-        <div class="flex flex-col md:flex-row md:items-end justify-between pb-8 border-b border-emerald-200/60 gap-4">
+        <div class="flex flex-col md:flex-row md:items-end justify-between pb-8 gap-4">
           <div>
             <span class="text-xs font-mono uppercase tracking-widest text-brand-leaf font-bold block mb-1">Etapa 01 // Desk Research</span>
             <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Matriz CSD Consolidada</h2>
@@ -282,28 +348,27 @@
         </div>
 
         <div class="grid lg:grid-cols-3 gap-8 mt-10">
-          
-          <!-- Certezas (Liquid Glass Verde Intenso) -->
-          <div class="liquid-glass p-7 flex flex-col justify-between border-emerald-200">
+          <!-- Certezas -->
+          <div class="liquid-glass p-7 flex flex-col justify-between">
             <div>
-              <div class="font-mono text-xs font-bold text-brand-leaf uppercase mb-5 flex items-center justify-between pb-3 border-b border-emerald-100">
+              <div class="font-mono text-xs font-bold text-brand-leaf uppercase mb-5 flex items-center justify-between pb-3">
                 <span class="flex items-center gap-2">
                   <span class="w-3 h-3 rounded-full bg-brand-leaf"></span>
                   <span>Certezas com Referências</span>
                 </span>
-                <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-100 text-brand-leaf font-semibold">Mercado</span>
+                <span class="text-[10px] px-2.5 py-1 rounded-md bg-emerald-100/70 text-brand-leaf font-semibold">Mercado</span>
               </div>
               
               <div class="space-y-4 text-xs text-slate-700 leading-relaxed">
-                <div class="pb-3 border-b border-emerald-100">
-                  <p class="font-semibold text-slate-900">55% dos jovens da Geração Z (18 a 29 anos) já são os principais responsáveis pela gestão de suas finanças.</p>
+                <div class="p-3 bg-slate-50/70 rounded-xl">
+                  <p class="font-semibold text-slate-900">55% dos jovens da Geração Z (18 a 29 anos) já são os principais responsáveis pela gestão das suas finanças.</p>
                   <span class="text-[11px] text-slate-500 font-mono block mt-1">Fonte: Pesquisa Serasa / Opinion Box (2.923 jovens).</span>
                   <a href="https://www.serasa.com.br/imprensa/jovens-da-geracao-z-sao-os-principais-responsaveis-pelas-financas-da-casa-revela-pesquisa-da-serasa-com-o-opinion-box" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-[11px] font-mono text-brand-leaf font-semibold hover:underline mt-1">
                     serasa.com.br/imprensa &nearr;
                   </a>
                 </div>
 
-                <div class="pb-3 border-b border-emerald-100">
+                <div class="p-3 bg-slate-50/70 rounded-xl">
                   <p class="font-semibold text-slate-900">Apenas 10% dos jovens desta geração relatam ter tido acesso significativo à educação financeira no ambiente familiar.</p>
                   <span class="text-[11px] text-slate-500 font-mono block mt-1">Fonte: Levantamento Serasa / Opinion Box.</span>
                   <a href="https://www.serasa.com.br/imprensa/jovens-da-geracao-z-sao-os-principais-responsaveis-pelas-financas-da-casa-revela-pesquisa-da-serasa-com-o-opinion-box" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-[11px] font-mono text-brand-leaf font-semibold hover:underline mt-1">
@@ -311,24 +376,24 @@
                   </a>
                 </div>
 
-                <div class="pb-3 border-b border-emerald-100">
-                  <p class="font-semibold text-slate-900">Cerca de 47% dos jovens da Geração Z declaram não realizar qualquer tipo de controle regular sobre entradas e saídas.</p>
+                <div class="p-3 bg-slate-50/70 rounded-xl">
+                  <p class="font-semibold text-slate-900">Cerca de 47% dos jovens da Geração Z declaram não realizar qualquer tipo de controlo regular sobre entradas e saídas.</p>
                   <span class="text-[11px] text-slate-500 font-mono block mt-1">Fonte: Pesquisa CNDL / SPC Brasil (todas as capitais).</span>
                   <a href="https://site.cndl.org.br/47-dos-jovens-nao-fazem-controle-do-orcamento-revela-pesquisa-cndlspc-brasil/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-[11px] font-mono text-brand-leaf font-semibold hover:underline mt-1">
                     site.cndl.org.br/pesquisa &nearr;
                   </a>
                 </div>
 
-                <div class="pb-3 border-b border-emerald-100">
-                  <p class="font-semibold text-slate-900">84% dos jovens pensam constantemente em suas finanças e 67% sentem aflição ou ansiedade quanto ao futuro financeiro.</p>
+                <div class="p-3 bg-slate-50/70 rounded-xl">
+                  <p class="font-semibold text-slate-900">84% dos jovens pensam constantemente nas suas finanças e 67% sentem aflição ou ansiedade quanto ao futuro financeiro.</p>
                   <span class="text-[11px] text-slate-500 font-mono block mt-1">Fonte: Consumidor Moderno / Opinion Box.</span>
                   <a href="https://consumidormoderno.com.br/como-a-geracao-z-lida-com-as-financas/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-[11px] font-mono text-brand-leaf font-semibold hover:underline mt-1">
                     consumidormoderno.com.br &nearr;
                   </a>
                 </div>
 
-                <div>
-                  <p class="font-semibold text-slate-900">Redes sociais e criadores de conteúdo financeiro (finfluencers) tornaram-se a principal fonte de aprendizado.</p>
+                <div class="p-3 bg-slate-50/70 rounded-xl">
+                  <p class="font-semibold text-slate-900">Redes sociais e criadores de conteúdo financeiro (finfluencers) tornaram-se a principal fonte de aprendizagem.</p>
                   <span class="text-[11px] text-slate-500 font-mono block mt-1">Fonte: CVM / ANBIMA (Estudo Regulatório Finfluencers).</span>
                   <a href="https://conteudos.cvm.gov.br/noticias/arquivos/2023/20230418-1.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-[11px] font-mono text-brand-leaf font-semibold hover:underline mt-1">
                     conteudos.cvm.gov.br &nearr;
@@ -338,101 +403,91 @@
             </div>
           </div>
 
-          <!-- Suposições (Liquid Glass Menta Suave) -->
-          <div class="liquid-glass p-7 flex flex-col justify-between border-emerald-200">
+          <!-- Suposições -->
+          <div class="liquid-glass p-7 flex flex-col justify-between">
             <div>
-              <div class="font-mono text-xs font-bold text-emerald-800 uppercase mb-5 flex items-center justify-between pb-3 border-b border-emerald-100">
+              <div class="font-mono text-xs font-bold text-emerald-800 uppercase mb-5 flex items-center justify-between pb-3">
                 <span class="flex items-center gap-2">
                   <span class="w-3 h-3 rounded-full bg-emerald-600"></span>
                   <span>Suposições da Equipe</span>
                 </span>
-                <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-semibold">Hipóteses</span>
+                <span class="text-[10px] px-2.5 py-1 rounded-md bg-emerald-100/70 text-emerald-800 font-semibold">Hipóteses</span>
               </div>
               <ul class="space-y-4 text-xs text-slate-800 leading-relaxed list-disc pl-4">
                 <li>Jovens gostam de soluções "gamificadas" com pontuações e recompensas lúdicas.</li>
                 <li>Acredita-se que o jovem não investe por achar que precisa de muito dinheiro para começar.</li>
-                <li>Supõe-se que a Geração Z prioriza o orçamento em experiências imediatas (viagens, eventos, lazer) em vez de acúmulo de patrimônio físico.</li>
-                <li>Supõe-se que os jovens têm maior inclinação a adotar assistentes virtuais/IA do que utilizar planilhas tradicionais ou anotações manuais.</li>
-                <li>Supõe-se que a ascensão de carreiras com renda variável (freelancers, autonomia) é um dos maiores obstáculos à poupança contínua.</li>
+                <li>Supõe-se que a Geração Z prioriza o orçamento em experiências imediatas (viagens, eventos, lazer) em vez de acumulação de património físico.</li>
+                <li>Supõe-se que os jovens têm maior inclinação a adotar assistentes virtuais/IA do que utilizar folhas de cálculo tradicionais ou anotações manuais.</li>
+                <li>Supõe-se que a ascensão de carreiras com rendimento variável (freelancers, autonomia) é um dos maiores obstáculos à poupança contínua.</li>
                 <li>Supõe-se que os jovens evitam interações físicas/formais com instituições financeiras e migram para experiências 100% digitais e fluidas.</li>
               </ul>
             </div>
           </div>
 
-          <!-- Dúvidas (Toque Sutil de Azul Minimalista) -->
-          <div class="liquid-glass p-7 flex flex-col justify-between border-sky-100">
+          <!-- Dúvidas -->
+          <div class="liquid-glass p-7 flex flex-col justify-between">
             <div>
-              <div class="font-mono text-xs font-bold text-sky-800 uppercase mb-5 flex items-center justify-between pb-3 border-b border-sky-100">
+              <div class="font-mono text-xs font-bold text-sky-800 uppercase mb-5 flex items-center justify-between pb-3">
                 <span class="flex items-center gap-2">
                   <span class="w-3 h-3 rounded-full bg-sky-500"></span>
                   <span>Dúvidas a Investigar</span>
                 </span>
-                <span class="text-[10px] px-2 py-0.5 rounded bg-sky-100 text-sky-800 font-semibold">Perguntas</span>
+                <span class="text-[10px] px-2.5 py-1 rounded-md bg-sky-100/70 text-sky-800 font-semibold">Perguntas</span>
               </div>
               <ul class="space-y-3 text-xs text-slate-800 leading-relaxed list-disc pl-4">
-                <li>Quem são nossos concorrentes diretos, indiretos e inspiradores?</li>
+                <li>Quem são os nossos concorrentes diretos, indiretos e inspiradores?</li>
                 <li>Há interesse genuíno desse público-alvo para começar a investir?</li>
-                <li>Qual o perfil socioeconômico predominante do nosso público universitário?</li>
-                <li>Como manter a constância do jovem no controle financeiro sem gerar estresse?</li>
+                <li>Qual o perfil socioeconómico predominante do nosso público universitário?</li>
+                <li>Como manter a constância do jovem no controlo financeiro sem gerar stress?</li>
                 <li>De que forma pagamentos instantâneos (Pix) influenciam a tomada de decisão impulsiva?</li>
                 <li class="font-semibold text-emerald-950">Quais métodos e ferramentas o jovem utiliza hoje para controlar despesas?</li>
-                <li class="font-semibold text-emerald-950">Qual o principal obstáculo percebido com relação a apps financeiros?</li>
-                <li class="font-semibold text-emerald-950">Onde está a maior lacuna didática no aprendizado de investimentos?</li>
-                <li class="font-semibold text-emerald-950">Qual o objetivo financeiro primário antes de buscar grandes rentabilidades?</li>
+                <li class="font-semibold text-emerald-950">Qual o principal obstáculo percebido com relação a apps financeiras?</li>
+                <li class="font-semibold text-emerald-950">Onde está a maior lacuna didática na aprendizagem de investimentos?</li>
+                <li class="font-semibold text-emerald-950">Qual o objetivo financeiro primário antes de procurar grandes rentabilidades?</li>
               </ul>
             </div>
           </div>
-
         </div>
-
       </div>
     </section>
 
     <!-- ======================================================== -->
-    <!-- ETAPA 02: MAPA DE EMPATIA (Fundo: Esmeralda Claro Apple Glass) -->
+    <!-- ETAPA 02: MAPA DE EMPATIA (Fundo: Esmeralda Claro) -->
     <!-- ======================================================== -->
-    <section id="mapa-empatia" class="py-24 px-6 lg:px-16 bg-gradient-to-b from-[#f0fdf4] via-[#ecfdf5] to-[#f8fafc] border-b border-emerald-100 scroll-mt-16">
+    <section id="mapa-empatia" class="py-24 px-6 lg:px-16 bg-gradient-to-b from-[#f0fdf4] via-[#ecfdf5] to-[#f8fafc] scroll-mt-16">
       <div class="max-w-7xl mx-auto">
-        
-        <div class="flex flex-col md:flex-row md:items-end justify-between pb-8 border-b border-emerald-200/60 gap-4">
+        <div class="flex flex-col md:flex-row md:items-end justify-between pb-8 gap-4">
           <div>
             <span class="text-xs font-mono uppercase tracking-widest text-brand-leaf font-bold block mb-1">Etapa 02 // Dinâmica Presencial em Sala</span>
             <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Mapa de Empatia</h2>
           </div>
           <div class="text-left md:text-right">
-            <span class="inline-block px-3.5 py-1.5 bg-white/80 border border-emerald-300 rounded-full font-mono text-xs text-emerald-900 font-bold shadow-2xs backdrop-blur-md">
+            <span class="inline-block px-4 py-2 bg-white/90 rounded-full font-mono text-xs text-emerald-900 font-bold shadow-xs backdrop-blur-md">
               HMW: "Como equilibrar praticidade com segurança financeira?"
             </span>
           </div>
         </div>
 
         <div class="grid lg:grid-cols-12 gap-8 mt-10 items-start">
-          
-          <!-- Foto do Quadro com Post-its Físicos (Interativa com Zoom) -->
-          <div class="lg:col-span-5 liquid-glass p-5 border-emerald-200">
-            <div class="relative group cursor-pointer rounded-xl overflow-hidden border border-emerald-100 shadow-sm" onclick="openImageModal()">
+          <div class="lg:col-span-5 liquid-glass p-5">
+            <div class="relative group cursor-pointer rounded-xl overflow-hidden shadow-sm" onclick="openImageModal()">
               <img id="mapa-img" src="assets/mapa-empatia-quadro.jpg" alt="Painel do Mapa de Empatia com Post-its físicos" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300">
-              
-              <!-- Overlay Hover Apple Style -->
               <div class="absolute inset-0 bg-slate-900/30 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2 text-white text-xs font-semibold">
                 <span class="p-2 rounded-full bg-white/30 backdrop-blur-md">🔍</span>
                 <span>Clique para expandir</span>
               </div>
             </div>
             
-            <div class="mt-3 text-[11px] font-mono text-slate-600 bg-white/70 p-2.5 rounded-lg border border-emerald-100 flex items-center justify-between">
+            <div class="mt-3 text-[11px] font-mono text-slate-600 bg-slate-50/80 p-2.5 rounded-lg flex items-center justify-between">
               <span>Painel original de post-its</span>
-              <span class="text-brand-leaf font-bold cursor-pointer hover:underline" onclick="openImageModal()">Ver em tela cheia &nearr;</span>
+              <span class="text-brand-leaf font-bold cursor-pointer hover:underline" onclick="openImageModal()">Ver em ecrã inteiro &nearr;</span>
             </div>
           </div>
 
-          <!-- Quadrantes Transcritos (Chips em Verde Esmeralda e Menta) -->
           <div class="lg:col-span-7 grid sm:grid-cols-2 gap-4">
-            
-            <!-- Quadrante: FALA -->
-            <div class="liquid-glass p-6 border-emerald-200">
-              <div class="flex items-center justify-between pb-3 mb-4 border-b border-slate-100">
-                <h3 class="font-extrabold text-base text-slate-900">🗣️️ O que FALA</h3>
+            <div class="liquid-glass p-6">
+              <div class="flex items-center justify-between pb-3 mb-4 bg-slate-50/60 p-2.5 rounded-xl">
+                <h3 class="font-extrabold text-base text-slate-900">🗣 O que FALA</h3>
                 <span class="text-[10px] font-mono text-brand-leaf uppercase font-bold">Declarações</span>
               </div>
               <div class="flex flex-wrap gap-2">
@@ -443,13 +498,12 @@
                 <span class="px-2.5 py-1 rounded-lg text-xs font-medium chip-mint">Futuro / Poupar</span>
                 <span class="px-2.5 py-1 rounded-lg text-xs font-medium chip-ice">Em família: conversamos</span>
                 <span class="px-2.5 py-1 rounded-lg text-xs font-medium chip-ice">Com amigos: preocupações</span>
-                <span class="px-2.5 py-1 rounded-lg text-xs font-medium chip-sky-soft">Em casa: controle mensal</span>
+                <span class="px-2.5 py-1 rounded-lg text-xs font-medium chip-sky-soft">Em casa: controlo mensal</span>
               </div>
             </div>
 
-            <!-- Quadrante: PENSA -->
-            <div class="liquid-glass p-6 border-emerald-200">
-              <div class="flex items-center justify-between pb-3 mb-4 border-b border-slate-100">
+            <div class="liquid-glass p-6">
+              <div class="flex items-center justify-between pb-3 mb-4 bg-slate-50/60 p-2.5 rounded-xl">
                 <h3 class="font-extrabold text-base text-slate-900">💭 O que PENSA</h3>
                 <span class="text-[10px] font-mono text-emerald-800 uppercase font-bold">Modelos mentais</span>
               </div>
@@ -463,9 +517,8 @@
               </div>
             </div>
 
-            <!-- Quadrante: FAZ -->
-            <div class="liquid-glass p-6 border-emerald-200">
-              <div class="flex items-center justify-between pb-3 mb-4 border-b border-slate-100">
+            <div class="liquid-glass p-6">
+              <div class="flex items-center justify-between pb-3 mb-4 bg-slate-50/60 p-2.5 rounded-xl">
                 <h3 class="font-extrabold text-base text-slate-900">🏃 O que FAZ</h3>
                 <span class="text-[10px] font-mono text-brand-leaf uppercase font-bold">Ações reais</span>
               </div>
@@ -473,50 +526,45 @@
                 <span class="px-2.5 py-1 rounded-lg text-xs font-medium chip-ice">Anotar meus gastos manualmente</span>
                 <span class="px-2.5 py-1 rounded-lg text-xs font-medium chip-mint">Reserva de emergência</span>
                 <span class="px-2.5 py-1 rounded-lg text-xs font-medium chip-emerald">Aprender por vídeos na internet</span>
-                <span class="px-2.5 py-1 rounded-lg text-xs font-medium chip-mint">Planilhas no Excel</span>
+                <span class="px-2.5 py-1 rounded-lg text-xs font-medium chip-mint">Folhas de cálculo no Excel</span>
               </div>
             </div>
 
-            <!-- Quadrante: SENTE -->
-            <div class="liquid-glass p-6 border-emerald-200">
-              <div class="flex items-center justify-between pb-3 mb-4 border-b border-slate-100">
+            <div class="liquid-glass p-6">
+              <div class="flex items-center justify-between pb-3 mb-4 bg-slate-50/60 p-2.5 rounded-xl">
                 <h3 class="font-extrabold text-base text-slate-900">❤️ O que SENTE</h3>
                 <span class="text-[10px] font-mono text-emerald-800 uppercase font-bold">Emoções</span>
               </div>
               <div class="flex flex-wrap gap-2">
                 <span class="px-2.5 py-1 rounded-lg text-xs font-medium chip-mint">Falta de segurança</span>
                 <span class="px-2.5 py-1 rounded-lg text-xs font-medium chip-emerald">Muita info para aprender</span>
-                <span class="px-2.5 py-1 rounded-lg text-xs font-medium chip-ice">Checar histórico de meses</span>
+                <span class="px-2.5 py-1 rounded-lg text-xs font-medium chip-ice">Verificar histórico de meses</span>
                 <span class="px-2.5 py-1 rounded-lg text-xs font-medium chip-mint">Não quero gerar dívidas</span>
                 <span class="px-2.5 py-1 rounded-lg text-xs font-medium chip-emerald">Burocracia digital</span>
               </div>
             </div>
-
           </div>
-
         </div>
-
       </div>
     </section>
 
-    <!-- Modal Lightbox para expandir a Imagem do Mapa de Empatia -->
+    <!-- Modal Lightbox da Imagem sem Bordas -->
     <div id="image-modal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4 sm:p-8" onclick="closeImageModal()">
-      <div class="relative max-w-5xl w-full bg-white/10 p-2 sm:p-4 rounded-3xl border border-white/30 backdrop-blur-2xl shadow-2xl" onclick="event.stopPropagation()">
-        <button onclick="closeImageModal()" class="absolute top-4 right-4 sm:-top-4 sm:-right-4 w-10 h-10 rounded-full bg-white/90 text-slate-900 font-bold flex items-center justify-center hover:bg-white hover:scale-110 transition-all shadow-lg text-sm z-10">
+      <div class="relative max-w-5xl w-full bg-white/10 p-2 sm:p-4 rounded-3xl backdrop-blur-2xl shadow-2xl" onclick="event.stopPropagation()">
+        <button onclick="closeImageModal()" class="absolute top-4 right-4 sm:-top-4 sm:-right-4 w-10 h-10 rounded-full bg-white text-slate-900 font-bold flex items-center justify-center hover:bg-slate-100 hover:scale-110 transition-all shadow-lg text-sm z-10">
           ✕
         </button>
-        <img src="assets/mapa-empatia-quadro.jpg" alt="Mapa de Empatia em alta resolução" class="w-full h-auto max-h-[85vh] object-contain rounded-2xl border border-white/20">
-        <p class="text-center text-xs font-mono text-emerald-100 mt-3">Registro fotográfico da dinâmica presencial de empatia e agrupamento de post-its.</p>
+        <img src="assets/mapa-empatia-quadro.jpg" alt="Mapa de Empatia em alta resolução" class="w-full h-auto max-h-[85vh] object-contain rounded-2xl shadow-lg">
+        <p class="text-center text-xs font-mono text-emerald-100 mt-3">Registo fotográfico da dinâmica presencial de empatia e agrupamento de post-its.</p>
       </div>
     </div>
 
     <!-- ======================================================== -->
     <!-- ETAPA 03: ANÁLISE COMPETITIVA (Fundo: Verde Cristalino) -->
     <!-- ======================================================== -->
-    <section id="analise-competitiva" class="py-24 px-6 lg:px-16 bg-[#f7fbf8] border-b border-emerald-100 scroll-mt-16">
+    <section id="analise-competitiva" class="py-24 px-6 lg:px-16 bg-[#f7fbf8] scroll-mt-16">
       <div class="max-w-7xl mx-auto">
-        
-        <div class="flex flex-col md:flex-row md:items-end justify-between pb-8 border-b border-emerald-200/60 gap-4">
+        <div class="flex flex-col md:flex-row md:items-end justify-between pb-8 gap-4">
           <div>
             <span class="text-xs font-mono uppercase tracking-widest text-brand-leaf font-bold block mb-1">Etapa 03 // Benchmarking de Mercado</span>
             <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Análise Competitiva (9 Soluções)</h2>
@@ -526,7 +574,6 @@
           </p>
         </div>
 
-        <!-- 3.1 Concorrentes Diretos (Grid Ampla de 3 colunas) -->
         <div class="mt-12">
           <div class="flex items-center gap-2 mb-6">
             <span class="w-3 h-3 rounded-full bg-brand-leaf"></span>
@@ -534,49 +581,48 @@
           </div>
 
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            
             <!-- Mozper -->
-            <div class="liquid-glass p-6 flex flex-col justify-between border-emerald-200">
+            <div class="liquid-glass p-6 flex flex-col justify-between">
               <div>
-                <div class="flex justify-between items-start gap-2 border-b border-slate-100 pb-3 mb-3">
+                <div class="flex justify-between items-start gap-2 pb-3 mb-3">
                   <h4 class="font-bold text-sm text-slate-900">Mozper (Brasil)</h4>
-                  <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-100 text-brand-leaf font-semibold">App + Cartão</span>
+                  <span class="text-[10px] font-mono px-2.5 py-1 rounded-md bg-emerald-100/70 text-brand-leaf font-semibold">App + Cartão</span>
                 </div>
                 <p class="text-xs text-slate-600 mb-3">App + cartão de débito Visa controlado pelos pais, com mesada e tarefas remuneradas.</p>
                 <div class="space-y-1.5 text-[11px] text-slate-700">
                   <p><strong class="text-brand-leaf">+ Prós:</strong> Modos pai/filho bem delineados; linguagem não infantilizada.</p>
-                  <p><strong class="text-slate-500">- Contras:</strong> Mensalidade de R$ 25/mês e sem autonomia de cadastro para o jovem.</p>
+                  <p><strong class="text-slate-500">- Contras:</strong> Mensalidade de R$ 25/mês e sem autonomia de registo para o jovem.</p>
                 </div>
               </div>
-              <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] text-brand-leaf font-semibold">
+              <div class="mt-4 pt-3 text-[11px] text-brand-leaf font-semibold">
                 💡 Oportunidade: Experiência modular com autonomia progressiva.
               </div>
             </div>
 
             <!-- Mooney -->
-            <div class="liquid-glass p-6 flex flex-col justify-between border-emerald-200">
+            <div class="liquid-glass p-6 flex flex-col justify-between">
               <div>
-                <div class="flex justify-between items-start gap-2 border-b border-slate-100 pb-3 mb-3">
+                <div class="flex justify-between items-start gap-2 pb-3 mb-3">
                   <h4 class="font-bold text-sm text-slate-900">Mooney</h4>
-                  <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-100 text-brand-leaf font-semibold">Edfintech</span>
+                  <span class="text-[10px] font-mono px-2.5 py-1 rounded-md bg-emerald-100/70 text-brand-leaf font-semibold">Edfintech</span>
                 </div>
-                <p class="text-xs text-slate-600 mb-3">Edfintech gamificada com mascotes ("Mooners"), cofrinhos para metas e missões.</p>
+                <p class="text-xs text-slate-600 mb-3">Edfintech gamificada com mascotes ("Mooners"), mealheiros para metas e missões.</p>
                 <div class="space-y-1.5 text-[11px] text-slate-700">
                   <p><strong class="text-brand-leaf">+ Prós:</strong> Forte conexão emocional com mascotes e feedback lúdico.</p>
                   <p><strong class="text-slate-500">- Contras:</strong> Estética excessivamente infantilizada para universitários.</p>
                 </div>
               </div>
-              <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] text-brand-leaf font-semibold">
-                💡 Oportunidade: Metas visuais claras sem pets infantis.
+              <div class="mt-4 pt-3 text-[11px] text-brand-leaf font-semibold">
+                💡 Oportunidade: Metas visuais claras sem mascotes infantis.
               </div>
             </div>
 
             <!-- NextJoy -->
-            <div class="liquid-glass p-6 flex flex-col justify-between border-emerald-200">
+            <div class="liquid-glass p-6 flex flex-col justify-between">
               <div>
-                <div class="flex justify-between items-start gap-2 border-b border-slate-100 pb-3 mb-3">
+                <div class="flex justify-between items-start gap-2 pb-3 mb-3">
                   <h4 class="font-bold text-sm text-slate-900">NextJoy (Bradesco)</h4>
-                  <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-100 text-brand-leaf font-semibold">Conta Menores</span>
+                  <span class="text-[10px] font-mono px-2.5 py-1 rounded-md bg-emerald-100/70 text-brand-leaf font-semibold">Conta Menores</span>
                 </div>
                 <p class="text-xs text-slate-600 mb-3">Conta gratuita de 0 a 17 anos com personagens Disney e mesada programada.</p>
                 <div class="space-y-1.5 text-[11px] text-slate-700">
@@ -584,17 +630,17 @@
                   <p><strong class="text-slate-500">- Contras:</strong> Responsável deve ser correntista; transferências restritas.</p>
                 </div>
               </div>
-              <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] text-brand-leaf font-semibold">
-                💡 Oportunidade: Mesada e aportes automáticos configuráveis.
+              <div class="mt-4 pt-3 text-[11px] text-brand-leaf font-semibold">
+                💡 Oportunidade: Mesada e reforços automáticos configuráveis.
               </div>
             </div>
 
             <!-- C6 Yellow -->
-            <div class="liquid-glass p-6 flex flex-col justify-between border-emerald-200">
+            <div class="liquid-glass p-6 flex flex-col justify-between">
               <div>
-                <div class="flex justify-between items-start gap-2 border-b border-slate-100 pb-3 mb-3">
+                <div class="flex justify-between items-start gap-2 pb-3 mb-3">
                   <h4 class="font-bold text-sm text-slate-900">C6 Yellow (C6 Bank)</h4>
-                  <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-100 text-brand-leaf font-semibold">Investimento Jovem</span>
+                  <span class="text-[10px] font-mono px-2.5 py-1 rounded-md bg-emerald-100/70 text-brand-leaf font-semibold">Investimento Jovem</span>
                 </div>
                 <p class="text-xs text-slate-600 mb-3">Conta digital com Pix, metas de economia e aplicação direta em CDB diário.</p>
                 <div class="space-y-1.5 text-[11px] text-slate-700">
@@ -602,17 +648,17 @@
                   <p><strong class="text-slate-500">- Contras:</strong> Conteúdo educativo superficial com viés estritamente comercial.</p>
                 </div>
               </div>
-              <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] text-brand-leaf font-semibold">
+              <div class="mt-4 pt-3 text-[11px] text-brand-leaf font-semibold">
                 💡 Oportunidade: Simuladores de rentabilidade transparente com liquidez.
               </div>
             </div>
 
             <!-- Greenlight -->
-            <div class="liquid-glass p-6 flex flex-col justify-between border-emerald-200">
+            <div class="liquid-glass p-6 flex flex-col justify-between">
               <div>
-                <div class="flex justify-between items-start gap-2 border-b border-slate-100 pb-3 mb-3">
+                <div class="flex justify-between items-start gap-2 pb-3 mb-3">
                   <h4 class="font-bold text-sm text-slate-900">Greenlight (EUA)</h4>
-                  <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-100 text-brand-leaf font-semibold">Líder Global</span>
+                  <span class="text-[10px] font-mono px-2.5 py-1 rounded-md bg-emerald-100/70 text-brand-leaf font-semibold">Líder Global</span>
                 </div>
                 <p class="text-xs text-slate-600 mb-3">Pioneiro global na divisão de potes: Spend, Save, Give e Invest com limites rígidos.</p>
                 <div class="space-y-1.5 text-[11px] text-slate-700">
@@ -620,248 +666,227 @@
                   <p><strong class="text-slate-500">- Contras:</strong> Modelo 100% pago sem plano gratuito; excesso de funções.</p>
                 </div>
               </div>
-              <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] text-brand-leaf font-semibold">
+              <div class="mt-4 pt-3 text-[11px] text-brand-leaf font-semibold">
                 💡 Oportunidade: Arquitetura em potes com propósito de gastos.
               </div>
             </div>
 
             <!-- Destaque Síntese -->
-            <div class="liquid-glass p-6 bg-gradient-to-br from-emerald-100/90 to-teal-100/80 border-emerald-300 flex flex-col justify-between">
+            <div class="liquid-glass p-6 bg-gradient-to-br from-emerald-100/95 to-teal-100/90 flex flex-col justify-between">
               <div>
                 <span class="text-xs font-mono font-bold text-brand-leaf uppercase block mb-2">// Diferencial Poupay</span>
                 <h4 class="font-bold text-sm text-slate-900 mb-2">União dos Três Pilares</h4>
                 <p class="text-xs text-slate-700 leading-relaxed">
-                  Nenhum concorrente direto une com equilíbrio: <strong>automação de extrato sem custo</strong> + <strong>educação didática contextual</strong> + <strong>metas de reserva sem infantilização</strong>.
+                  Nenhum concorrente direto une com equilíbrio: <strong>automação de extrato sem custos</strong> + <strong>educação didática contextual</strong> + <strong>metas de reserva sem infantilização</strong>.
                 </p>
               </div>
               <div class="mt-4 text-[11px] font-mono font-bold text-brand-leaf">
                 Oportunidade central identificada em IHC.
               </div>
             </div>
-
           </div>
         </div>
 
-        <!-- 3.2 Indiretos e Inspiradores em Duas Colunas Amplas -->
         <div class="grid lg:grid-cols-2 gap-8 mt-10">
-          
-          <!-- Indiretos -->
-          <div class="liquid-glass p-6 border-emerald-200">
+          <div class="liquid-glass p-6">
             <h3 class="font-mono text-xs font-bold text-slate-900 uppercase tracking-wider mb-4">// Concorrentes Indiretos</h3>
             <div class="space-y-4 text-xs">
-              <div class="p-4 rounded-xl bg-white/70 border border-emerald-100">
+              <div class="p-4 rounded-xl bg-slate-50/80">
                 <h4 class="font-bold text-slate-900 mb-1">Mobills / Organizze (Apps Tradicionais)</h4>
-                <p class="text-slate-600 mb-2">Interfaces completas com gráficos, porém com tom frio, barreiras de assinatura e ausência de educação para iniciantes.</p>
-                <span class="text-brand-leaf font-semibold">💡 Diretriz: Gráficos de leitura imediata sem travar recursos essenciais.</span>
+                <p class="text-slate-600 mb-2">Interfaces completas com gráficos, porém com tom frio, barreiras de subscrição e ausência de educação para iniciantes.</p>
+                <span class="text-brand-leaf font-semibold">💡 Diretriz: Gráficos de leitura imediata sem bloquear recursos essenciais.</span>
               </div>
-              <div class="p-4 rounded-xl bg-white/70 border border-emerald-100">
-                <h4 class="font-bold text-slate-900 mb-1">Redes Sociais & Planilhas Manuais (Instagram / TikTok)</h4>
-                <p class="text-slate-600 mb-2">Conteúdo visual dinâmico em vídeos rápidos, porém planilhas geram abandono imediato por fadiga de digitação manual.</p>
+              <div class="p-4 rounded-xl bg-slate-50/80">
+                <h4 class="font-bold text-slate-900 mb-1">Redes Sociais & Folhas de Cálculo Manuais (Instagram / TikTok)</h4>
+                <p class="text-slate-600 mb-2">Conteúdo visual dinâmico em vídeos rápidos, porém as folhas de cálculo manuais geram abandono imediato por fadiga de digitação.</p>
                 <span class="text-brand-leaf font-semibold">💡 Diretriz: Pílulas de conteúdo curtas integradas ao fluxo da aplicação.</span>
               </div>
             </div>
           </div>
 
-          <!-- Inspiradores -->
-          <div class="liquid-glass p-6 border-emerald-200">
+          <div class="liquid-glass p-6">
             <h3 class="font-mono text-xs font-bold text-slate-900 uppercase tracking-wider mb-4">// Inspiradores de Engajamento</h3>
             <div class="space-y-4 text-xs">
-              <div class="p-4 rounded-xl bg-white/70 border border-emerald-100">
+              <div class="p-4 rounded-xl bg-slate-50/80">
                 <h4 class="font-bold text-slate-900 mb-1">Duolingo (Hábitos e Retenção)</h4>
-                <p class="text-slate-600 mb-2">Referência em rotina diária voluntária, mas mecânicas punitivas (perder vidas/ofensivas) causam ansiedade quando aplicadas a dinheiro.</p>
-                <span class="text-brand-leaf font-semibold">💡 Diretriz: Reforço positivo diário sem punições emocionais sobre saldo.</span>
+                <p class="text-slate-600 mb-2">Referência em rotina diária voluntária, mas mecânicas punitivas (perder vidas/ofensivas) causam ansiedade quando aplicadas ao dinheiro.</p>
+                <span class="text-brand-leaf font-semibold">💡 Diretriz: Reforço positivo diário sem punições emocionais sobre o saldo.</span>
               </div>
-              <div class="p-4 rounded-xl bg-white/70 border border-emerald-100">
+              <div class="p-4 rounded-xl bg-slate-50/80">
                 <h4 class="font-bold text-slate-900 mb-1">Strava (Reconhecimento de Conquistas)</h4>
                 <p class="text-slate-600 mb-2">Excelente sensação de evolução em metas pessoais, mas expor números absolutos de dinheiro geraria constrangimento.</p>
                 <span class="text-brand-leaf font-semibold">💡 Diretriz: Conquistas visuais e celebração de metas preservando quantias reais.</span>
               </div>
             </div>
           </div>
-
         </div>
-
       </div>
     </section>
 
     <!-- ======================================================== -->
     <!-- ETAPA 04: QUESTIONÁRIO (Fundo: Esmeralda Suave e Arejado) -->
     <!-- ======================================================== -->
-    <section id="questionario" class="py-24 px-6 lg:px-16 bg-gradient-to-b from-[#f0fdf4] via-[#ecfdf5] to-[#f4faf6] border-b border-emerald-200/80 scroll-mt-16">
+    <section id="questionario" class="py-24 px-6 lg:px-16 bg-gradient-to-b from-[#f0fdf4] via-[#ecfdf5] to-[#f4faf6] scroll-mt-16">
       <div class="max-w-7xl mx-auto">
-        
-        <div class="flex flex-col md:flex-row md:items-end justify-between pb-8 border-b border-emerald-200/80 gap-4">
+        <div class="flex flex-col md:flex-row md:items-end justify-between pb-8 gap-4">
           <div>
             <span class="text-xs font-mono uppercase tracking-widest text-brand-leaf font-bold block mb-1">Etapa 04 // Pesquisa Quantitativa</span>
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Questionário com Usuários</h2>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Questionário com Utilizadores</h2>
           </div>
           <a href="https://docs.google.com/forms/d/1XEVcjwoQ0cjNL3pMeVbBCGvdor9LGjHrd78pRkinNBI/viewform" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-leaf text-white text-xs font-semibold hover:bg-brand-leafHover transition-colors shadow-xs shrink-0">
-            <span>Acessar Google Forms Oficial</span> &nearr;
+            <span>Aceder ao Google Forms Oficial</span> &nearr;
           </a>
         </div>
 
-        <!-- 4 Estatísticas Grandes Espalhadas na Tela (Liquid Glass Widgets) -->
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
-          <div class="liquid-glass p-6 text-center border-emerald-200">
+          <div class="liquid-glass p-6 text-center">
             <span class="text-4xl font-extrabold text-brand-leaf block">85,7%</span>
             <h4 class="text-xs font-bold text-slate-900 mt-2 uppercase tracking-wide">Adoção Zero Prévia</h4>
-            <p class="text-[11px] text-slate-600 mt-1">Nunca usaram apps dedicados de finanças por desconfiança na segurança.</p>
+            <p class="text-[11px] text-slate-600 mt-1">Nunca usaram apps dedicadas de finanças por desconfiança na segurança.</p>
           </div>
 
-          <div class="liquid-glass p-6 text-center border-emerald-200">
+          <div class="liquid-glass p-6 text-center">
             <span class="text-4xl font-extrabold text-emerald-700 block">74,3%</span>
-            <h4 class="text-xs font-bold text-slate-900 mt-2 uppercase tracking-wide">Checagem Frequente</h4>
-            <p class="text-[11px] text-slate-600 mt-1">Verificam saldo frequentemente no banco, mas atuam de modo meramente reativo.</p>
+            <h4 class="text-xs font-bold text-slate-900 mt-2 uppercase tracking-wide">Verificação Frequente</h4>
+            <p class="text-[11px] text-slate-600 mt-1">Verificam o saldo frequentemente no banco, mas atuam de modo meramente reativo.</p>
           </div>
 
-          <div class="liquid-glass p-6 text-center border-emerald-200">
+          <div class="liquid-glass p-6 text-center">
             <span class="text-4xl font-extrabold text-slate-700 block">47,1%</span>
             <h4 class="text-xs font-bold text-slate-900 mt-2 uppercase tracking-wide">Gasto Fora da Meta</h4>
-            <p class="text-[11px] text-slate-600 mt-1">Admitiram gastar além do planejado com pequenas compras diárias no Pix.</p>
+            <p class="text-[11px] text-slate-600 mt-1">Admitiram gastar além do planeado com pequenas compras diárias no Pix.</p>
           </div>
 
-          <div class="liquid-glass p-6 text-center border-emerald-200">
+          <div class="liquid-glass p-6 text-center">
             <span class="text-4xl font-extrabold text-brand-leaf block">85,7%</span>
             <h4 class="text-xs font-bold text-slate-900 mt-2 uppercase tracking-wide">Necessidade de Aprender</h4>
             <p class="text-[11px] text-slate-600 mt-1">Avaliaram como alta a urgência de receber educação prática sobre finanças.</p>
           </div>
         </div>
 
-        <!-- Tabela e Cruzamentos em Grid de 2 Colunas -->
         <div class="grid lg:grid-cols-12 gap-8 mt-10 items-start">
-          
-          <!-- Tabela de Prioridades (7/12) -->
-          <div class="lg:col-span-7 liquid-glass p-6 border-emerald-200">
+          <div class="lg:col-span-7 liquid-glass p-6">
             <h3 class="font-mono text-xs font-bold text-slate-900 uppercase tracking-wider mb-3">// Hierarquia de Recursos Solicitados</h3>
             <div class="overflow-x-auto">
-              <table class="w-full text-left text-xs border-collapse">
+              <table class="w-full text-left text-xs">
                 <thead>
-                  <tr class="border-b border-emerald-100 text-slate-700 font-mono uppercase bg-emerald-50/60">
-                    <th class="py-2.5 px-3">Funcionalidade</th>
+                  <tr class="text-slate-700 font-mono uppercase bg-emerald-100/50">
+                    <th class="py-2.5 px-3 rounded-l-lg">Funcionalidade</th>
                     <th class="py-2.5 px-3">Aprovação</th>
                     <th class="py-2.5 px-3">Média (0-4)</th>
-                    <th class="py-2.5 px-3">Relevância de Requisito</th>
+                    <th class="py-2.5 px-3 rounded-r-lg">Relevância de Requisito</th>
                   </tr>
                 </thead>
-                <tbody class="divide-y divide-emerald-50 text-slate-700">
-                  <tr>
+                <tbody class="text-slate-700">
+                  <tr class="hover:bg-slate-50/60">
                     <td class="py-2.5 px-3 font-semibold text-slate-900">Gráficos de Gastos</td>
                     <td class="py-2.5 px-3 text-brand-leaf font-bold">97,1%</td>
                     <td class="py-2.5 px-3 font-mono">3,60</td>
                     <td class="py-2.5 px-3 text-slate-600">Prioridade Máxima (Visão imediata)</td>
                   </tr>
-                  <tr>
+                  <tr class="hover:bg-slate-50/60">
                     <td class="py-2.5 px-3 font-semibold text-slate-900">Alertas de Limite</td>
                     <td class="py-2.5 px-3 text-brand-leaf font-bold">91,4%</td>
                     <td class="py-2.5 px-3 font-mono">3,37</td>
                     <td class="py-2.5 px-3 text-slate-600">Avisos proativos antes do estouro</td>
                   </tr>
-                  <tr>
-                    <td class="py-2.5 px-3 font-semibold text-slate-900">Registro Automático</td>
+                  <tr class="hover:bg-slate-50/60">
+                    <td class="py-2.5 px-3 font-semibold text-slate-900">Registo Automático</td>
                     <td class="py-2.5 px-3 text-brand-leaf font-bold">88,6%</td>
                     <td class="py-2.5 px-3 font-mono">3,40</td>
                     <td class="py-2.5 px-3 text-slate-600">Elimina a digitação manual</td>
                   </tr>
-                  <tr>
+                  <tr class="hover:bg-slate-50/60">
                     <td class="py-2.5 px-3 font-semibold text-slate-900">Metas de Economia</td>
                     <td class="py-2.5 px-3 text-brand-leaf font-bold">88,6%</td>
                     <td class="py-2.5 px-3 font-mono">3,20</td>
-                    <td class="py-2.5 px-3 text-slate-600">Potes visuais de reserva</td>
+                    <td class="py-2.5 px-3 text-slate-600">Mealheiros visuais de reserva</td>
                   </tr>
-                  <tr>
+                  <tr class="hover:bg-slate-50/60">
                     <td class="py-2.5 px-3 font-semibold text-slate-900">Dicas Educativas</td>
                     <td class="py-2.5 px-3 text-emerald-800 font-semibold">80,0%</td>
                     <td class="py-2.5 px-3 font-mono">3,03</td>
                     <td class="py-2.5 px-3 text-slate-600">Pílulas contextuais sobre taxas</td>
                   </tr>
-                  <tr class="bg-slate-100/60">
-                    <td class="py-2.5 px-3 font-semibold text-slate-500">Gamificação Lúdica</td>
+                  <tr class="bg-slate-100/70 rounded-lg">
+                    <td class="py-2.5 px-3 font-semibold text-slate-500 rounded-l-lg">Gamificação Lúdica</td>
                     <td class="py-2.5 px-3 text-slate-600 font-bold">37,1%</td>
                     <td class="py-2.5 px-3 font-mono text-slate-500">2,06</td>
-                    <td class="py-2.5 px-3 text-slate-600">Rejeitada (62,9% indiferentes)</td>
+                    <td class="py-2.5 px-3 text-slate-600 rounded-r-lg">Rejeitada (62,9% indiferentes)</td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </div>
 
-          <!-- Cards de Diagnóstico Cruzado (5/12) -->
           <div class="lg:col-span-5 space-y-4">
-            <div class="liquid-glass p-6 border-emerald-200">
+            <div class="liquid-glass p-6">
               <h4 class="font-bold text-sm text-slate-900 mb-2">Desmistificando a Gamificação</h4>
               <p class="text-xs text-slate-600 leading-relaxed">
-                A suposição inicial de que jovens demandavam jogos e mascotes virtuais foi <strong>refutada numericamente</strong>. O público universitário busca dashboards claros, visualização imediata e praticidade; o valor percebido está em barras de progresso reais e clareza sobre o saldo.
+                A suposição inicial de que os jovens procuravam jogos e mascotes virtuais foi <strong>refutada numericamente</strong>. O público universitário procura dashboards claros, visualização imediata e praticidade; o valor percebido reside em barras de progresso reais e clareza sobre o saldo.
               </p>
             </div>
 
-            <div class="liquid-glass p-6 border-emerald-200">
-              <h4 class="font-bold text-sm text-slate-900 mb-2">Objetivos dos Jovens Mapeados</h4>
+            <div class="liquid-glass p-6">
+              <h4 class="font-bold text-sm text-slate-900 mb-2">Objetivos Mapeados</h4>
               <div class="grid grid-cols-2 gap-2 text-xs text-slate-700 pt-1 font-medium">
-                <span class="p-2 rounded-lg bg-white/70 border border-emerald-100">1. Liberdade financeira: <strong>62,9%</strong></span>
-                <span class="p-2 rounded-lg bg-white/70 border border-emerald-100">2. Aprender a investir: <strong>60,0%</strong></span>
-                <span class="p-2 rounded-lg bg-white/70 border border-emerald-100">3. Poupar p/ meta: <strong>57,1%</strong></span>
-                <span class="p-2 rounded-lg bg-white/70 border border-emerald-100">4. Gastar menos que ganha: <strong>51,4%</strong></span>
+                <span class="p-2.5 rounded-xl bg-slate-50/80">1. Liberdade financeira: <strong>62,9%</strong></span>
+                <span class="p-2.5 rounded-xl bg-slate-50/80">2. Aprender a investir: <strong>60,0%</strong></span>
+                <span class="p-2.5 rounded-xl bg-slate-50/80">3. Poupar p/ meta: <strong>57,1%</strong></span>
+                <span class="p-2.5 rounded-xl bg-slate-50/80">4. Gastar menos do que ganha: <strong>51,4%</strong></span>
               </div>
             </div>
           </div>
-
         </div>
-
       </div>
     </section>
 
     <!-- ======================================================== -->
     <!-- ETAPA 05: GRUPO FOCAL (Fundo: Menta Pálido Analítico) -->
     <!-- ======================================================== -->
-    <section id="grupo-focal" class="py-24 px-6 lg:px-16 bg-[#f4faf6] border-b border-emerald-200 scroll-mt-16">
+    <section id="grupo-focal" class="py-24 px-6 lg:px-16 bg-[#f4faf6] scroll-mt-16">
       <div class="max-w-7xl mx-auto space-y-12">
-        
-        <!-- Cabeçalho da Seção -->
-        <div class="flex flex-col md:flex-row md:items-end justify-between pb-8 border-b border-emerald-200/70 gap-4">
+        <div class="flex flex-col md:flex-row md:items-end justify-between pb-8 gap-4">
           <div>
             <span class="text-xs font-mono uppercase tracking-widest text-brand-leaf font-bold block mb-1">Etapa 05 // Técnica Qualitativa Real</span>
             <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Relatório do Grupo Focal</h2>
           </div>
           <p class="text-xs sm:text-sm text-slate-600 max-w-lg">
-            Análise qualitativa e transcrição consolidada da sessão conduzida com usuários reais, aprofundando comportamentos, modelos mentais e requisitos de IHC.
+            Análise qualitativa e transcrição consolidada da sessão conduzida com utilizadores reais, aprofundando comportamentos, modelos mentais e requisitos de IHC.
           </p>
         </div>
 
-        <!-- 1. Justificativa Metodológica & Amostragem Real -->
         <div class="grid lg:grid-cols-12 gap-8">
-          
-          <div class="lg:col-span-6 liquid-glass p-7 border-emerald-200 space-y-3">
+          <div class="lg:col-span-6 liquid-glass p-7 space-y-3">
             <div class="flex items-center gap-2 mb-2">
               <span class="w-2.5 h-2.5 rounded-full bg-brand-leaf"></span>
-              <h3 class="font-mono text-xs font-bold text-slate-900 uppercase tracking-wider">// Por que o Grupo Focal?</h3>
+              <h3 class="font-mono text-xs font-bold text-slate-900 uppercase tracking-wider">// Porquê o Grupo Focal?</h3>
             </div>
             <h4 class="font-bold text-sm text-slate-900">Justificativa Metodológica de IHC</h4>
             <p class="text-xs text-slate-600 leading-relaxed">
-              Segundo Barbosa e Silva (2010), o grupo focal é especialmente indicado para identificar a <em>multiplicidade de opiniões, modelos mentais conflitantes e a dinâmica de debate espontâneo entre pares</em>. Em temas financeiros — historicamente cercados por desconforto —, a conversa coletiva permitiu que os entrevistados expusessem com naturalidade seus hábitos informais, gastos por impulso e frustrações reais com ferramentas anteriores.
+              O grupo focal é especialmente indicado para identificar a <em>multiplicidade de opiniões, modelos mentais conflitantes e a dinâmica de debate espontâneo entre pares</em>[cite: 28]. Em temas financeiros, cercados por tabus, a conversa coletiva permitiu que os entrevistados expusessem com naturalidade os seus hábitos informais, gastos por impulso e frustrações reais com ferramentas anteriores.
             </p>
             <p class="text-xs text-slate-600 leading-relaxed">
-              A técnica cumpriu o papel de **triangulação qualitativa**, permitindo entender o "porquê" dos números obtidos no questionário quantitativo.
+              A técnica cumpriu o papel de triangulação qualitativa, permitindo compreender o "porquê" dos números obtidos no questionário quantitativo.
             </p>
           </div>
 
-          <div class="lg:col-span-6 liquid-glass p-7 border-emerald-200 space-y-3">
+          <div class="lg:col-span-6 liquid-glass p-7 space-y-3">
             <div class="flex items-center gap-2 mb-2">
               <span class="w-2.5 h-2.5 rounded-full bg-emerald-600"></span>
               <h3 class="font-mono text-xs font-bold text-slate-900 uppercase tracking-wider">// Critérios de Recrutamento</h3>
             </div>
-            <h4 class="font-bold text-sm text-slate-900">Por que Chamamos Estes Participantes?</h4>
+            <h4 class="font-bold text-sm text-slate-900">Porquê a Escolha Destes Participantes?</h4>
             <p class="text-xs text-slate-600 leading-relaxed">
-              Adotamos a estratégia de <strong>amostragem intencional por variação máxima de maturidade financeira</strong> dentro da faixa universitária (18 a 24 anos). Em vez de perfis idênticos, selecionamos propositalmente dois extremos de modelo mental financeiro:
+              Adotámos a estratégia de <strong>amostragem intencional por variação máxima de maturidade financeira</strong> dentro da faixa universitária (18 a 24 anos)[cite: 6]. Em vez de perfis idênticos, selecionámos propositadamente dois extremos de modelo mental financeiro:
             </p>
             <ul class="text-xs text-slate-700 space-y-1.5 list-disc pl-4 leading-relaxed">
-              <li><strong>O Jovem Pragmático / Controle de Cabeça (P1):</strong> Perfil representativo da maioria absoluta do questionário (85,7% sem app dedicado), que opera com foco em liquidez imediata, controle mental e sofre forte atrito com leitura de textos técnicos.</li>
-              <li><strong>O Jovem Investidor / Analítico (P2):</strong> Usuário com inserção profissional na área financeira/mercado, que já poupa porcentagens fixas (30% a 50%), usa o app da XP e caderno, demandando comparadores visuais e alta segurança de custódia.</li>
+              <li><strong>O Jovem Pragmático / Controlo Mental (P1):</strong> Perfil representativo da maioria do questionário (85,7% sem app dedicada), que opera com foco em liquidez imediata, controlo mental e sofre forte atrito com leitura de textos técnicos.</li>
+              <li><strong>O Jovem Investidor / Analítico (P2):</strong> Utilizador com inserção profissional na área financeira/mercado, que já poupa percentagens fixas (30% a 50%), usa a app da XP e caderno, exigindo comparadores visuais e alta segurança de custódia.</li>
             </ul>
           </div>
-
         </div>
 
-        <!-- 2. Fichas Analíticas dos Participantes Entrevistados -->
         <div class="space-y-4">
           <div class="flex items-center gap-2">
             <span class="w-3 h-3 rounded-full bg-brand-leaf"></span>
@@ -869,89 +894,82 @@
           </div>
 
           <div class="grid md:grid-cols-2 gap-6">
-            
-            <!-- Participante 1 -->
-            <div class="liquid-glass p-6 border-emerald-200 flex flex-col justify-between">
+            <div class="liquid-glass p-6 flex flex-col justify-between">
               <div>
-                <div class="flex items-center justify-between pb-3 mb-3 border-b border-emerald-100">
+                <div class="flex items-center justify-between pb-3 mb-3 bg-slate-50/60 p-2.5 rounded-xl">
                   <div>
                     <h4 class="font-bold text-sm text-slate-900">Participante 1 (P1)</h4>
-                    <span class="text-[11px] font-mono text-brand-leaf font-semibold">Perfil Pragmático • Controle de Cabeça &amp; Extrato</span>
+                    <span class="text-[11px] font-mono text-brand-leaf font-semibold">Perfil Pragmático • Controlo Mental &amp; Extrato</span>
                   </div>
-                  <span class="w-9 h-9 rounded-xl bg-emerald-100 text-brand-leaf font-mono font-bold flex items-center justify-center text-xs">P1</span>
+                  <span class="w-9 h-9 rounded-xl bg-emerald-100/80 text-brand-leaf font-mono font-bold flex items-center justify-center text-xs">P1</span>
                 </div>
                 
                 <div class="space-y-2 text-xs text-slate-600 leading-relaxed">
-                  <p><strong>Comportamento Financeiro:</strong> Não verifica entradas e saídas no dia a dia; calcula o saldo de cabeça após gastar. Define como teto gastar no máximo a metade do que tem na conta para manter reserva de emergência.</p>
-                  <p><strong>Gargalos e Dores:</strong> Gastos acumulados com delivery, alimentação fora de casa (fast food) e transporte por aplicativo (Uber). Sente que o pagamento por aproximação não dá a dimensão do dinheiro saindo da conta.</p>
-                  <p><strong>Adoção Tecnológica:</strong> Tolerância zero para lançar comprovantes na mão; aprende melhor por vídeos curtos de 2 minutos (estilo Reels); rejeita textos longos e termos técnicos difíceis.</p>
+                  <p><strong>Comportamento Financeiro:</strong> Não verifica entradas e saídas no dia a dia; calcula o saldo mentalmente após gastar. Define como teto gastar no máximo metade do que tem na conta para manter reserva de emergência.</p>
+                  <p><strong>Gargalos e Dores:</strong> Gastos acumulados com entregas de comida, alimentação fora de casa (fast food) e transporte por aplicação (Uber). Sente que o pagamento por aproximação não dá a dimensão do dinheiro a sair da conta.</p>
+                  <p><strong>Adoção Tecnológica:</strong> Tolerância nula para lançar comprovativos manualmente; aprende melhor através de vídeos curtos de 2 minutos (estilo Reels); rejeita textos longos e termos técnicos difíceis.</p>
                 </div>
               </div>
-              <div class="mt-4 pt-3 border-t border-emerald-100 text-[11px] font-mono text-brand-leaf font-semibold">
-                Representa: O usuário focado em praticidade visual que abandona ferramentas burocráticas.
+              <div class="mt-4 pt-3 text-[11px] font-mono text-brand-leaf font-semibold">
+                Representa: O utilizador focado em agilidade visual que abandona ferramentas burocráticas[cite: 9, 56].
               </div>
             </div>
 
-            <!-- Participante 2 -->
-            <div class="liquid-glass p-6 border-emerald-200 flex flex-col justify-between">
+            <div class="liquid-glass p-6 flex flex-col justify-between">
               <div>
-                <div class="flex items-center justify-between pb-3 mb-3 border-b border-emerald-100">
+                <div class="flex items-center justify-between pb-3 mb-3 bg-slate-50/60 p-2.5 rounded-xl">
                   <div>
                     <h4 class="font-bold text-sm text-slate-900">Participante 2 (P2)</h4>
                     <span class="text-[11px] font-mono text-teal-700 font-semibold">Perfil Analítico • Trabalhador da Área &amp; Investidor</span>
                   </div>
-                  <span class="w-9 h-9 rounded-xl bg-teal-100 text-teal-800 font-mono font-bold flex items-center justify-center text-xs">P2</span>
+                  <span class="w-9 h-9 rounded-xl bg-teal-100/80 text-teal-800 font-mono font-bold flex items-center justify-center text-xs">P2</span>
                 </div>
                 
                 <div class="space-y-2 text-xs text-slate-600 leading-relaxed">
-                  <p><strong>Comportamento Financeiro:</strong> Separa de 30% a 50% da renda logo no início do mês para investimentos (trata como parcela fixa adiantada). Faz contas diárias pelo app do banco (XP) e anotações estruturadas em caderno.</p>
-                  <p><strong>Gargalos e Dores:</strong> Já utilizou planilhas para cobrança compartilhada no cartão, mas desistiu por falta de tempo para ajustar fórmulas. Sofre com microgastos acumulados em Uber e parcelamento excessivo.</p>
-                  <p><strong>Adoção Tecnológica:</strong> Domina renda fixa e títulos públicos; tem curiosidade em ações; aceitaria subir extrato semanalmente; prefere gráficos de barras comparativas (estilo League of Legends).</p>
+                  <p><strong>Comportamento Financeiro:</strong> Separa de 30% a 50% do rendimento logo no início do mês para investimentos (trata como despesa fixa adiantada). Faz contas diárias pela app do banco (XP) e anotações estruturadas em caderno.</p>
+                  <p><strong>Gargalos e Dores:</strong> Já utilizou folhas de cálculo para cobrança partilhada no cartão, mas desistiu por falta de tempo para ajustar fórmulas. Sofre com microgastos acumulados em Uber e compras a prestações excessivas.</p>
+                  <p><strong>Adoção Tecnológica:</strong> Domina renda fixa e títulos públicos; tem curiosidade em ações; aceitaria carregar o extrato semanalmente; prefere gráficos de barras comparativas (estilo League of Legends).</p>
                 </div>
               </div>
-              <div class="mt-4 pt-3 border-t border-emerald-100 text-[11px] font-mono text-teal-800 font-semibold">
-                Representa: O jovem com metas consolidadas que busca automação e visualização comparativa.
+              <div class="mt-4 pt-3 text-[11px] font-mono text-teal-800 font-semibold">
+                Representa: O jovem com metas consolidadas que procura automação e visualização comparativa[cite: 9, 56].
               </div>
             </div>
-
           </div>
         </div>
 
-        <!-- 3. Procedimentos Éticos, TCLE e Método de Análise Qualitativa -->
         <div class="grid lg:grid-cols-12 gap-8 items-start">
-          
-          <div class="lg:col-span-6 liquid-glass p-6 border-emerald-200 space-y-3">
+          <div class="lg:col-span-6 liquid-glass p-6 space-y-3">
             <h4 class="font-mono text-xs font-bold text-brand-leaf uppercase tracking-wider">// Procedimentos Éticos e TCLE</h4>
             <div class="text-xs text-slate-600 space-y-2 leading-relaxed">
               <p>
-                A atividade de campo obedeceu rigorosamente aos preceitos éticos em pesquisa de IHC (Barbosa e Silva, 2010):
+                A atividade de campo obedeceu rigorosamente aos preceitos éticos em investigação de IHC (Barbosa e Silva, 2010)[cite: 51]:
               </p>
               <ul class="list-disc pl-4 space-y-1 text-slate-700">
-                <li><strong>Termo de Consentimento Livre e Esclarecido (TCLE):</strong> Ambos os entrevistados assinaram digitalmente o TCLE antes da gravação em áudio.</li>
-                <li><strong>Anonimato e Não-rastreabilidade:</strong> As identidades reais foram codificadas em Participante 1 e Participante 2, preservando o sigilo de dados nominais.</li>
-                <li><strong>Direito de Recusa e Desistência:</strong> Foi garantida liberdade plena para interromper a participação ou se abster de responder qualquer questão sem ônus.</li>
-                <li><strong>Proteção de Dados Sensíveis:</strong> Não foram coletados saldos reais de contas, senhas de acesso bancário ou números de cartões.</li>
+                <li><strong>Termo de Consentimento Livre e Esclarecido (TCLE):</strong> Ambos os entrevistados assinaram digitalmente o TCLE antes da gravação de áudio.</li>
+                <li><strong>Anonimato e Não-rastreabilidade:</strong> As identidades reais foram codificadas em Participante 1 e Participante 2, preservando o sigilo dos dados nominais.</li>
+                <li><strong>Direito de Recusa e Desistência:</strong> Foi garantida liberdade plena para interromper a participação ou abster-se de responder a qualquer questão sem prejuízo.</li>
+                <li><strong>Proteção de Dados Sensíveis:</strong> Não foram recolhidos saldos reais de contas, palavras-passe de acesso bancário ou números de cartões.</li>
               </ul>
             </div>
           </div>
 
-          <div class="lg:col-span-6 liquid-glass p-6 border-emerald-200 space-y-3">
+          <div class="lg:col-span-6 liquid-glass p-6 space-y-3">
             <h4 class="font-mono text-xs font-bold text-brand-leaf uppercase tracking-wider">// Método: Análise Temática de Conteúdo</h4>
             <div class="text-xs text-slate-600 space-y-2 leading-relaxed">
               <p>
-                O processamento dos dados coletados seguiu as etapas clássicas da <strong>Análise Temática de Conteúdo</strong> (Bardin; Braun &amp; Clarke):
+                O processamento dos dados recolhidos seguiu as etapas clássicas da <strong>Análise Temática de Conteúdo</strong> (Bardin; Braun &amp; Clarke):
               </p>
               <ol class="list-decimal pl-4 space-y-1 text-slate-700">
                 <li><strong>Transcrição e Familiarização:</strong> Transcrição e limpeza dos turnos de fala da gravação de áudio de 52 minutos.</li>
-                <li><strong>Codificação Aberta:</strong> Geração de códigos primários como <em>"dor do microgasto em Uber/comida"</em>, <em>"ilusão de poder na aproximação"</em>, <em>"fadiga de fórmulas em planilhas"</em> e <em>"aversão a gamificação lúdica"</em>.</li>
-                <li><strong>Mapeamento dos Temas Centrais:</strong> Consolidação dos 5 temas que definem diretamente os requisitos de IHC da solução.</li>
+                <li><strong>Codificação Aberta:</strong> Geração de códigos primários como <em>"dor do microgasto em Uber/comida"</em>, <em>"ilusão de poder na aproximação"</em>, <em>"fadiga de fórmulas em folhas de cálculo"</em> e <em>"aversão a gamificação lúdica"</em>.</li>
+                <li><strong>Mapeamento dos Temas Centrais:</strong> Consolidação dos 6 temas que definem diretamente os requisitos de IHC da solução.</li>
               </ol>
             </div>
           </div>
-
         </div>
 
-        <!-- 4. Síntese Temática da Discussão por Blocos Reais -->
+        <!-- Síntese dos Eixos Temáticos -->
         <div class="space-y-6">
           <div class="flex items-center gap-2">
             <span class="w-3 h-3 rounded-full bg-brand-leaf"></span>
@@ -959,59 +977,57 @@
           </div>
 
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-xs text-slate-700">
-            
-            <div class="liquid-glass p-6 border-emerald-200 space-y-2">
-              <span class="font-mono text-[10px] px-2 py-0.5 rounded bg-emerald-100 text-brand-leaf font-bold block w-max">Tema 1</span>
+            <div class="liquid-glass p-6 space-y-2">
+              <span class="font-mono text-[10px] px-2.5 py-1 rounded-md bg-emerald-100/70 text-brand-leaf font-bold block w-max">Tema 1</span>
               <h4 class="font-bold text-sm text-slate-900">A Ilusão da Aproximação</h4>
               <p class="leading-relaxed text-slate-600">
-                O pagamento por aproximação no cartão ou celular remove a fricção da compra e cria a sensação de "se sentir poderoso". Como não se visualiza o saldo caindo no ato, o dinheiro sai sem controle perceptivo.
+                O pagamento por aproximação no cartão ou telemóvel remove a fricção da compra e cria a sensação de "sentir-se poderoso". Como não se visualiza o saldo a descer no ato, o dinheiro sai sem controlo percetivo.
               </p>
             </div>
 
-            <div class="liquid-glass p-6 border-emerald-200 space-y-2">
-              <span class="font-mono text-[10px] px-2 py-0.5 rounded bg-emerald-100 text-brand-leaf font-bold block w-max">Tema 2</span>
+            <div class="liquid-glass p-6 space-y-2">
+              <span class="font-mono text-[10px] px-2.5 py-1 rounded-md bg-emerald-100/70 text-brand-leaf font-bold block w-max">Tema 2</span>
               <h4 class="font-bold text-sm text-slate-900">A Armadilha dos Microgastos</h4>
               <p class="leading-relaxed text-slate-600">
-                Compras de alto valor (R$ 100 a R$ 300) são facilmente lembradas. O verdadeiro descompasso do fim de mês decorre de corridas curtas de Uber, lanches rápidos, compras parceladas acumuladas e fast food.
+                Compras de valor elevado (R$ 100 a R$ 300) são facilmente lembradas. O verdadeiro descalabro de final de mês provém de viagens curtas de Uber, refeições rápidas, compras a prestações acumuladas e fast food.
               </p>
             </div>
 
-            <div class="liquid-glass p-6 border-emerald-200 space-y-2">
-              <span class="font-mono text-[10px] px-2 py-0.5 rounded bg-emerald-100 text-brand-leaf font-bold block w-max">Tema 3</span>
+            <div class="liquid-glass p-6 space-y-2">
+              <span class="font-mono text-[10px] px-2.5 py-1 rounded-md bg-emerald-100/70 text-brand-leaf font-bold block w-max">Tema 3</span>
               <h4 class="font-bold text-sm text-slate-900">Morte da Digitação Manual</h4>
               <p class="leading-relaxed text-slate-600">
-                Planilhas manuais foram abandonadas pela sobrecarga de atualizar e ajustar fórmulas após um dia cansativo. O jovem tolera subir o extrato uma vez por semana ou prefere sincronização direta sem trabalho manual.
+                Folhas de cálculo manuais foram abandonadas pela sobrecarga de atualizar e ajustar fórmulas após um dia cansativo. O jovem tolera carregar o extrato uma vez por semana ou prefere sincronização direta.
               </p>
             </div>
 
-            <div class="liquid-glass p-6 border-emerald-200 space-y-2">
-              <span class="font-mono text-[10px] px-2 py-0.5 rounded bg-emerald-100 text-brand-leaf font-bold block w-max">Tema 4</span>
-              <h4 class="font-bold text-sm text-slate-900">Gráficos de Barras &gt; Pizza</h4>
+            <div class="liquid-glass p-6 space-y-2">
+              <span class="font-mono text-[10px] px-2.5 py-1 rounded-md bg-emerald-100/70 text-brand-leaf font-bold block w-max">Tema 4</span>
+              <h4 class="font-bold text-sm text-slate-900">Gráficos de Barras &gt; Circular</h4>
               <p class="leading-relaxed text-slate-600">
-                Rejeição aos gráficos de pizza convencionais. Os usuários preferem listas com faixas de cores (cinza para seguro, vermelho para alerta) e barras comparativas (estilo estatísticas do *League of Legends*).
+                Rejeição aos gráficos circulares (pizza) convencionais. Os utilizadores preferem listas com faixas de cores (cinzento para seguro, vermelho para alerta) e barras comparativas (estilo estatísticas do *League of Legends*).
               </p>
             </div>
 
-            <div class="liquid-glass p-6 border-emerald-200 space-y-2">
-              <span class="font-mono text-[10px] px-2 py-0.5 rounded bg-emerald-100 text-brand-leaf font-bold block w-max">Tema 5</span>
+            <div class="liquid-glass p-6 space-y-2">
+              <span class="font-mono text-[10px] px-2.5 py-1 rounded-md bg-emerald-100/70 text-brand-leaf font-bold block w-max">Tema 5</span>
               <h4 class="font-bold text-sm text-slate-900">Didática em Vídeos de 2 Minutos</h4>
               <p class="leading-relaxed text-slate-600">
-                Textos longos geram preguiça e fazem o usuário desistir de investir. O aprendizado ideal ocorre em formato de *Reels/TikTok* (1 a 2 minutos) com criadores que traduzem jargões em linguagem simples.
+                Textos longos provocam preguiça e fazem o utilizador desistir de investir. A aprendizagem ideal ocorre no formato de vídeos rápidos (*Reels/TikTok*) com criadores que traduzem jargões de forma simples.
               </p>
             </div>
 
-            <div class="liquid-glass p-6 border-emerald-200 space-y-2 bg-gradient-to-br from-emerald-50 to-teal-50">
-              <span class="font-mono text-[10px] px-2 py-0.5 rounded bg-emerald-200 text-brand-leaf font-bold block w-max">Tema 6</span>
+            <div class="liquid-glass p-6 space-y-2 bg-gradient-to-br from-emerald-50/90 to-teal-50/80">
+              <span class="font-mono text-[10px] px-2.5 py-1 rounded-md bg-emerald-200/70 text-brand-leaf font-bold block w-max">Tema 6</span>
               <h4 class="font-bold text-sm text-slate-900">Rejeição à Gamificação Lúdica</h4>
               <p class="leading-relaxed text-slate-600">
-                Classificada como "infantil" ou "irrelevante". O jovem universitário não quer pontinhos ou mascote virtual em finanças; recompensas válidas são milhas, cashback real ou desbloqueio de cursos avançados.
+                Classificada como "infantil" ou "irrelevante". O jovem universitário não quer pontuações fictícias ou mascotes virtuais em finanças; recompensas válidas são milhas, cashback real ou desbloqueio de cursos avançados.
               </p>
             </div>
-
           </div>
         </div>
 
-        <!-- 5. Falas Reais em Destaque dos Dois Participantes -->
+        <!-- Falas Literais em Destaque -->
         <div class="space-y-4">
           <div class="flex items-center gap-2">
             <span class="w-3 h-3 rounded-full bg-brand-leaf"></span>
@@ -1019,127 +1035,458 @@
           </div>
 
           <div class="grid md:grid-cols-3 gap-6 text-xs">
-            
-            <div class="liquid-glass p-6 border-emerald-200">
-              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-100 text-brand-leaf font-bold block w-max mb-3">P1 • Sobre Fast Food e Cartão</span>
+            <div class="liquid-glass p-6">
+              <span class="text-[10px] font-mono px-2.5 py-1 rounded-md bg-emerald-100/70 text-brand-leaf font-bold block w-max mb-3">P1 • Sobre Fast Food e Cartão</span>
               <p class="italic text-slate-800 mb-3 text-sm leading-relaxed">
-                "Você só vai gastando e não vê o saldo diminuindo, esse é o problema. A gente vai comer fora com namorada, não vai vendo o valor, e quando vê no final do mês já não tem nada."
+                "Você só vai gastando e não vê o saldo a diminuir, esse é o problema. A gente vai comer fora com namorada, não vai vendo o valor, e quando vê no final do mês já não tem nada."
               </p>
-              <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-slate-500 font-mono text-[11px]">
-                <span>Controle de Cabeça</span>
+              <div class="pt-3 flex items-center justify-between text-slate-500 font-mono text-[11px]">
+                <span>Controlo Mental</span>
                 <span>Participante 1</span>
               </div>
             </div>
 
-            <div class="liquid-glass p-6 border-emerald-200">
-              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-100 text-brand-leaf font-bold block w-max mb-3">P2 • Sobre o Abandono de Planilhas</span>
+            <div class="liquid-glass p-6">
+              <span class="text-[10px] font-mono px-2.5 py-1 rounded-md bg-emerald-100/70 text-brand-leaf font-bold block w-max mb-3">P2 • Sobre o Abandono de Folhas de Cálculo</span>
               <p class="italic text-slate-800 mb-3 text-sm leading-relaxed">
-                "Desisti da planilha mais pelo tempo. Ficar montando e ajustando fórmula na mão cansa. Se aproximou o cartão e já caísse automático numa tabelinha, era só bater o olho."
+                "Desisti da folha de cálculo mais pelo tempo. Ficar a montar e a ajustar fórmulas manualmente cansa. Se aproximou o cartão e já caísse automático numa tabelinha, era só bater o olho."
               </p>
-              <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-slate-500 font-mono text-[11px]">
+              <div class="pt-3 flex items-center justify-between text-slate-500 font-mono text-[11px]">
                 <span>Investidor / XP</span>
                 <span>Participante 2</span>
               </div>
             </div>
 
-            <div class="liquid-glass p-6 border-emerald-200">
-              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-100 text-brand-leaf font-bold block w-max mb-3">P1 &amp; P2 • Sobre Joguinhos em Finanças</span>
+            <div class="liquid-glass p-6">
+              <span class="text-[10px] font-mono px-2.5 py-1 rounded-md bg-emerald-100/70 text-brand-leaf font-bold block w-max mb-3">P1 &amp; P2 • Sobre Jogos em Finanças</span>
               <p class="italic text-slate-800 mb-3 text-sm leading-relaxed">
-                "Cuidar de dinheiro já é sério. Ninguém quer perder tempo brincando com bichinho virtual ou foguinho; se quiser jogar, a pessoa abre o Discord ou o videogame."
+                "Cuidar do dinheiro já é sério. Ninguém quer perder tempo a brincar com um bichinho virtual ou foguinho; se quiser jogar, a pessoa abre o Discord ou o videojogo."
               </p>
-              <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-slate-500 font-mono text-[11px]">
+              <div class="pt-3 flex items-center justify-between text-slate-500 font-mono text-[11px]">
                 <span>Consenso da Sessão</span>
                 <span>P1 e P2</span>
               </div>
             </div>
-
           </div>
         </div>
 
-        <!-- 6. Cruzamento Sistemático: Questionário vs. Grupo Focal Real -->
+        <!-- Cruzamento Sistemático -->
         <div class="space-y-4">
           <div class="flex items-center gap-2">
             <span class="w-3 h-3 rounded-full bg-brand-leaf"></span>
             <h3 class="font-mono text-sm font-bold text-slate-900 uppercase tracking-wider">// Cruzamento: Resultados Quantitativos vs. Evidências Empíricas do Grupo Focal</h3>
           </div>
 
-          <div class="liquid-glass p-6 border-emerald-200 overflow-x-auto">
-            <table class="w-full text-left text-xs border-collapse">
+          <div class="liquid-glass p-6 overflow-x-auto">
+            <table class="w-full text-left text-xs">
               <thead>
-                <tr class="border-b border-emerald-100 text-slate-700 font-mono uppercase bg-emerald-50/70">
-                  <th class="py-3 px-3">Dimensão Investigada</th>
+                <tr class="text-slate-700 font-mono uppercase bg-emerald-100/50">
+                  <th class="py-3 px-3 rounded-l-lg">Dimensão Investigada</th>
                   <th class="py-3 px-3">Dado do Questionário Quantitativo</th>
-                  <th class="py-3 px-3">Evidência Empírica do Grupo Focal Real</th>
+                  <th class="py-3 px-3 rounded-r-lg">Evidência Empírica do Grupo Focal Real</th>
                 </tr>
               </thead>
-              <tbody class="divide-y divide-emerald-50 text-slate-700 leading-relaxed">
-                <tr>
+              <tbody class="text-slate-700 leading-relaxed">
+                <tr class="hover:bg-slate-50/60">
                   <td class="py-3 px-3 font-semibold text-slate-900">Consulta de Saldo</td>
                   <td class="py-3 px-3 text-brand-leaf font-semibold">74,3% verificam com frequência</td>
-                  <td class="py-3 px-3 text-slate-600">Ambos abrem o app do banco com frequência diária, mas confirmaram que a consulta é passiva (apenas para ver se têm margem para o almoço do dia), sem planejamento ativo.</td>
+                  <td class="py-3 px-3 text-slate-600">Ambos abrem a app do banco diariamente, mas confirmaram que a consulta é passiva (apenas para ver se têm margem para o almoço do dia), sem planeamento ativo.</td>
                 </tr>
-                <tr>
-                  <td class="py-3 px-3 font-semibold text-slate-900">Estouros de Orçamento</td>
-                  <td class="py-3 px-3 text-red-600 font-semibold">47,1% gastam além do planejado</td>
-                  <td class="py-3 px-3 text-slate-600">Os entrevistados apontaram como culpados o acúmulo de Ubers de R$ 10-20, lanches de fast food e o perigo do cartão por aproximação, que oculta a percepção do saldo saindo.</td>
+                <tr class="hover:bg-slate-50/60">
+                  <td class="py-3 px-3 font-semibold text-slate-900">Desvios no Orçamento</td>
+                  <td class="py-3 px-3 text-red-600 font-semibold">47,1% gastam além do planeado</td>
+                  <td class="py-3 px-3 text-slate-600">Os entrevistados apontaram como culpados a acumulação de viagens curtas de Uber (R$ 10-20), refeições rápidas e a facilidade do cartão por aproximação, que disfarça a perda financeira.</td>
                 </tr>
-                <tr>
-                  <td class="py-3 px-3 font-semibold text-slate-900">Registro Automático</td>
+                <tr class="hover:bg-slate-50/60">
+                  <td class="py-3 px-3 font-semibold text-slate-900">Registo Automático</td>
                   <td class="py-3 px-3 text-brand-leaf font-semibold">88,6% consideram importante</td>
-                  <td class="py-3 px-3 text-slate-600">P1 tem tolerância zero para digitação manual após o dia de estudo/estágio, e P2 abandonou planilhas por falta de tempo para ajustar fórmulas. Exigem automação no extrato.</td>
+                  <td class="py-3 px-3 text-slate-600">P1 tem tolerância nula para digitação manual após o dia de estudo/estágio, e P2 abandonou folhas de cálculo por falta de tempo para ajustar fórmulas. Exigem automação no extrato.</td>
                 </tr>
-                <tr>
+                <tr class="hover:bg-slate-50/60">
                   <td class="py-3 px-3 font-semibold text-slate-900">Gráficos de Gastos</td>
                   <td class="py-3 px-3 text-brand-leaf font-semibold">97,1% consideram importante</td>
-                  <td class="py-3 px-3 text-slate-600">Rejeição ao gráfico de pizza tradicional. Preferem listas com alertas em faixas de cor (cinza para seguro, vermelho para estouro) e gráficos de barras comparativas (estilo *LoL*).</td>
+                  <td class="py-3 px-3 text-slate-600">Rejeição ao gráfico circular tradicional. Preferem listas com alertas em faixas de cor (cinzento para seguro, vermelho para alerta) e barras comparativas (estilo *LoL*).</td>
                 </tr>
-                <tr>
+                <tr class="hover:bg-slate-50/60">
                   <td class="py-3 px-3 font-semibold text-slate-900">Educação Financeira</td>
                   <td class="py-3 px-3 text-brand-leaf font-semibold">Média 4,46/5 na necessidade de aprender</td>
-                  <td class="py-3 px-3 text-slate-600">P1 afirmou que a escola não ensina finanças e que textos longos dão preguiça. Pede vídeos curtos de 2 minutos inspirados em criadores descontraídos de redes sociais.</td>
+                  <td class="py-3 px-3 text-slate-600">P1 afirmou que a escola não ensina finanças e que textos longos provocam desinteresse. Pede vídeos curtos de 2 minutos inspirados em criadores descontraídos de redes sociais.</td>
                 </tr>
-                <tr>
+                <tr class="hover:bg-slate-50/60">
                   <td class="py-3 px-3 font-semibold text-slate-900">Gamificação / Recompensas</td>
                   <td class="py-3 px-3 text-slate-500 font-semibold">62,9% rejeitaram ou foram indiferentes</td>
-                  <td class="py-3 px-3 text-slate-600">Ambos afirmaram que "moedinhas", mascotes ou "foguinho do Duolingo" não funcionam para dinheiro. Se houver benefício, deve ser real (cashback, milhas ou cursos avançados).</td>
+                  <td class="py-3 px-3 text-slate-600">Ambos afirmaram que "moedinhas", mascotes ou "foguinhos" não funcionam para finanças. Havendo benefício, este deve ser real (cashback, milhas ou cursos avançados).</td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
 
-        <!-- 7. Diretrizes Concretas de Requisitos de IHC -->
-        <div class="liquid-glass p-8 border-emerald-200 space-y-4">
+        <!-- Diretrizes Concretas de Requisitos -->
+        <div class="liquid-glass p-8 space-y-4">
           <div class="flex items-center gap-2">
             <span class="w-3 h-3 rounded-full bg-brand-leaf"></span>
             <h3 class="font-mono text-xs font-bold text-brand-leaf uppercase tracking-wider">// Requisitos de IHC e Diretrizes de Design da Solução</h3>
           </div>
 
           <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 text-xs text-slate-700">
-            <div class="p-4 rounded-xl bg-white/70 border border-emerald-100">
+            <div class="p-4 rounded-xl bg-slate-50/80">
               <strong class="text-slate-900 block mb-1">1. Automação e Sincronização Direta:</strong>
-              <p>Eliminar qualquer necessidade de preenchimento manual de despesas ou notas fiscais.</p>
+              <p>Eliminar qualquer necessidade de preenchimento manual de despesas ou faturas.</p>
             </div>
-            <div class="p-4 rounded-xl bg-white/70 border border-emerald-100">
-              <strong class="text-slate-900 block mb-1">2. Barras de Categorias com Cores Semafóricas:</strong>
-              <p>Adotar barras de gastos comparativas (cinza no limite seguro, vermelho em alerta de estouro).</p>
+            <div class="p-4 rounded-xl bg-slate-50/80">
+              <strong class="text-slate-900 block mb-1">2. Barras de Categorias Semafóricas:</strong>
+              <p>Adotar barras de gastos comparativas (cinzento no limite seguro, vermelho em alerta de estouro).</p>
             </div>
-            <div class="p-4 rounded-xl bg-white/70 border border-emerald-100">
+            <div class="p-4 rounded-xl bg-slate-50/80">
               <strong class="text-slate-900 block mb-1">3. Combate à Ilusão da Aproximação:</strong>
-              <p>Exibir notificações preventivas de saldo e alertas antes de atingir o limite orçamentário da semana.</p>
+              <p>Exibir notificações preventivas de saldo e alertas antes de atingir o limite orçamental da semana.</p>
             </div>
-            <div class="p-4 rounded-xl bg-white/70 border border-emerald-100">
-              <strong class="text-slate-900 block mb-1">4. Potes de Meta Fora do Saldo Corrente:</strong>
-              <p>Ocultar o dinheiro guardado da tela inicial para evitar a tentação de gastar a reserva no dia a dia.</p>
+            <div class="p-4 rounded-xl bg-slate-50/80">
+              <strong class="text-slate-900 block mb-1">4. Mealheiros de Metas Fora do Saldo Corrente:</strong>
+              <p>Ocultar o dinheiro poupado do ecrã inicial para evitar a tentação de gastar a reserva no dia a dia.</p>
             </div>
-            <div class="p-4 rounded-xl bg-white/70 border border-emerald-100">
+            <div class="p-4 rounded-xl bg-slate-50/80">
               <strong class="text-slate-900 block mb-1">5. Vídeos Didáticos de 2 Minutos:</strong>
-              <p>Substituir manuais densos por microconteúdos dinâmicos explicando tributos e investimentos básicos.</p>
+              <p>Substituir manuais densos por microconteúdos dinâmicos a explicar impostos e investimentos básicos.</p>
             </div>
-            <div class="p-4 rounded-xl bg-white/70 border border-emerald-100">
+            <div class="p-4 rounded-xl bg-slate-50/80">
               <strong class="text-slate-900 block mb-1">6. Selo de Regulação e Open Finance:</strong>
-              <p>Exibir de forma evidente no onboarding as garantias de segurança auditadas pelo Banco Central.</p>
+              <p>Apresentar de forma evidente as garantias de segurança auditadas pelo Banco Central.</p>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================== -->
+    <!-- ETAPA 06: PERSONAS (Fundo: Menta Suave & Neutro) -->
+    <!-- ======================================================== -->
+    <section id="personas" class="py-24 px-6 lg:px-16 bg-[#f8fafc] scroll-mt-16">
+      <div class="max-w-7xl mx-auto space-y-12">
+        <div class="flex flex-col md:flex-row md:items-end justify-between pb-8 gap-4">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-widest text-brand-leaf font-bold block mb-1">Etapa 06 // Modelação de Utilizadores</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Personas</h2>
+          </div>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-8">
+          
+          <!-- Persona 1 -->
+          <div class="liquid-glass p-7 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between pb-4 mb-4 bg-slate-50/60 p-2.5 rounded-xl">
+                <div>
+                  <h3 class="font-extrabold text-base text-slate-900">Lucas</h3>
+                  <span class="text-[11px] font-mono text-brand-leaf font-semibold">Persona Primária • 20 anos</span>
+                </div>
+                <span class="w-10 h-10 rounded-xl bg-emerald-100/80 text-brand-leaf font-mono font-bold flex items-center justify-center text-sm shadow-xs">P1</span>
+              </div>
+
+              <div class="space-y-3 text-xs text-slate-700 leading-relaxed">
+                <p><strong>Perfil Demográfico e Ocupação:</strong> Solteiro, residente em Niterói – RJ. Estagiário presencial de TI e estudante de licenciatura no 5º semestre. Rendimento mensal de R$ 1.400,00 (bolsa de estágio). Mora com os pais e não assume despesas fixas de habitação.</p>
+                <p><strong>Habilidades Técnicas:</strong> Fluente no uso diário de smartphones, redes sociais e apps de entrega/transporte, mas possui conhecimento leigo sobre economia, investimentos e tributação.</p>
+                <p><strong>Objetivos:</strong> Terminar o mês sem entrar no limite da conta; criar uma reserva financeira para imprevistos e lazer; aprender a investir sem necessidade de ler textos extensos.</p>
+                <p><strong>Tarefas Típicas:</strong> Consulta o saldo bancário rapidamente antes de gastar; paga por aproximação ou Pix; calcula mentalmente a margem restante até à próxima bolsa.</p>
+                <p><strong>Dores e Frustrações:</strong> Perda de controlo por microgastos invisíveis (fast food, cafés e Uber); sensação de que o pagamento por aproximação mascara a saída de dinheiro; aversão a folhas de cálculo manuais.</p>
+                <p><strong>Requisitos de Interação:</strong> Automação integral de lançamentos; alertas visuais com barras de limite por cor; pílulas educativas em vídeos curtos de 2 minutos.</p>
+              </div>
+            </div>
+            <div class="mt-5 pt-3 text-[11px] font-mono text-brand-leaf font-semibold">
+              Representa: O jovem pragmático focado em agilidade visual e sem disponibilidade para burocracia.
+            </div>
+          </div>
+
+          <!-- Persona 2 -->
+          <div class="liquid-glass p-7 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between pb-4 mb-4 bg-slate-50/60 p-2.5 rounded-xl">
+                <div>
+                  <h3 class="font-extrabold text-base text-slate-900">Beatriz </h3>
+                  <span class="text-[11px] font-mono text-teal-700 font-semibold">Persona Secundária • 23 anos</span>
+                </div>
+                <span class="w-10 h-10 rounded-xl bg-teal-100/80 text-teal-800 font-mono font-bold flex items-center justify-center text-sm shadow-xs">P2</span>
+              </div>
+
+              <div class="space-y-3 text-xs text-slate-700 leading-relaxed">
+                <p><strong>Perfil Demográfico e Ocupação:</strong> Solteira, residente em São Gonçalo – RJ. Analista Júnior com contrato formal (jornada de 8h) e estudante universitária no período pós-laboral. Rendimento mensal de R$ 2.500,00 líquidos. Contribui para as despesas domésticas.</p>
+                <p><strong>Habilidades Técnicas:</strong> Boa capacidade analítica; faz anotações em caderno; consome conteúdo financeiro no Instagram, embora mantenha dúvidas sobre alíquotas fiscais (IR, IOF) e renda variável.</p>
+                <p><strong>Objetivos:</strong> Separar rigorosamente 30% a 40% do salário no início do mês para investimento; visualizar despesas por categorias consolidadas; evitar a perda de tempo em folhas de cálculo ao fim de semana.</p>
+                <p><strong>Tarefas Típicas:</strong> Paga despesas fixas e transfere poupanças no dia do ordenado; divide contas de lazer com amigos no cartão; analisa gastos mensais de cabeça ou no caderno.</p>
+                <p><strong>Dores e Frustrações:</strong> Perda de tempo ao ajustar fórmulas em folhas de cálculo; dificuldade em gerir compras a prestações partilhadas; receio de imobilizar capital em aplicações com carência prolongada.</p>
+                <p><strong>Requisitos de Interação:</strong> Gráficos de barras comparativas; transparência clara sobre segurança de dados e Open Finance; isolamento dos fundos investidos face à conta corrente.</p>
+              </div>
+            </div>
+            <div class="mt-5 pt-3 text-[11px] font-mono text-teal-800 font-semibold">
+              Representa: A jovem com metas estruturadas que procura consistência e segurança de dados.
+            </div>
+          </div>
+
+          <!-- Persona 3 -->
+          <div class="liquid-glass p-7 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between pb-4 mb-4 bg-slate-50/60 p-2.5 rounded-xl">
+                <div>
+                  <h3 class="font-extrabold text-base text-slate-900">Matheus</h3>
+                  <span class="text-[11px] font-mono text-sky-800 font-semibold">Persona Secundária • 21 anos</span>
+                </div>
+                <span class="w-10 h-10 rounded-xl bg-sky-100/80 text-sky-800 font-mono font-bold flex items-center justify-center text-sm shadow-xs">P3</span>
+              </div>
+
+              <div class="space-y-3 text-xs text-slate-700 leading-relaxed">
+                <p><strong>Perfil Demográfico e Ocupação:</strong> Solteiro, residente em Niterói – RJ. Estudante universitário em regime integral e designer freelancer. Rendimento variável entre R$ 600,00 e R$ 1.900,00 mensais, conforme o volume de trabalho.</p>
+                <p><strong>Habilidades Técnicas:</strong> Utilizador experiente de softwares gráficos e redes sociais; uso contínuo de dispositivos móveis, contudo sem formação em gestão de fluxo de caixa.</p>
+                <p><strong>Objetivos:</strong> Construir um fundo de maneio para períodos de menor procura; evitar gastos por impulso quando o saldo está temporariamente elevado; organizar despesas sem burocracia.</p>
+                <p><strong>Tarefas Típicas:</strong> Recebe pagamentos via Pix de forma dispersa; aponta valores soltos em blocos de notas; consome sem planeamento prévio nos dias de maior liquidez.</p>
+                <p><strong>Dores e Frustrações:</strong> Insegurança orçamental gerada pela volatilidade dos ganhos; impulsividade motivada por estímulos de compras online; descontinuidade de controlos por ausência de rotina fixa.</p>
+                <p><strong>Requisitos de Interação:</strong> Mealheiros com propósitos definidos para salvaguarda de reserva; notificações inteligentes antes de fins de semana; linguagem acessível e madura.</p>
+              </div>
+            </div>
+            <div class="mt-5 pt-3 text-[11px] font-mono text-sky-800 font-semibold">
+              Representa: O estudante trabalhador independente com rendimentos sazonais que necessita de contenção preventiva.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================== -->
+    <!-- ETAPA 07: CENÁRIOS DE PROBLEMA (Fundo: Esmeralda Suave) -->
+    <!-- ======================================================== -->
+    <section id="cenarios" class="py-24 px-6 lg:px-16 bg-[#f4faf6] scroll-mt-16">
+      <div class="max-w-7xl mx-auto space-y-12">
+        <div class="flex flex-col md:flex-row md:items-end justify-between pb-8 gap-4">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-widest text-brand-leaf font-bold block mb-1">Etapa 07 // Contextualização de Uso</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Cenários de Problema</h2>
+          </div>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-8">
+          
+          <!-- Cenário 1 -->
+          <div class="liquid-glass p-7 flex flex-col justify-between">
+            <div>
+              <span class="text-[10px] font-mono px-2.5 py-1 rounded-md bg-emerald-100/70 text-brand-leaf font-bold block w-max mb-3">Cenário 1 • Microgastos</span>
+              <h3 class="font-bold text-sm text-slate-900 mb-2">A Ilusão da Aproximação e o Descontrolo Invisível</h3>
+              <p class="text-[11px] text-slate-500 font-mono mb-3">Ator Principal: Lucas Rocha (Estagiário)</p>
+              <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                Numa quinta-feira, Lucas sai do estágio cansado antes de seguir para a faculdade. Entra num café com o intuito de fazer um lanche rápido e económico. Ao verificar a conta de R$ 18,50, aproxima o telemóvel do terminal de pagamento. A transação é concluída em 3 segundos, sem solicitação de código e sem indicação do saldo remanescente. No intervalo das aulas, repete o procedimento na cantina (R$ 9,00) e mais tarde recorre a um Uber de R$ 14,00 devido ao atraso do autocarro. No domingo, ao aceder à app bancária para verificar a disponibilidade de fundos para sair, descobre que o saldo se esgotou. Ao consultar o extrato, depara-se com inúmeros pequenos débitos acumulados que passaram despercebidos.
+              </p>
+            </div>
+            <div class="p-4 bg-slate-50/80 rounded-xl text-xs text-slate-700">
+              <strong class="text-brand-leaf block mb-1.5 font-bold">Pontos Problemáticos:</strong>
+              <ul class="list-disc pl-4 space-y-1 text-[11px]">
+                <li>A aproximação reduz a perceção psicológica do gasto e oculta o saldo final.</li>
+                <li>Inexistência de avisos preventivos antes de atingir valores acumulados elevados.</li>
+                <li>O extrato bancário linear contínuo prejudica a análise consolidada por categorias.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Cenário 2 -->
+          <div class="liquid-glass p-7 flex flex-col justify-between">
+            <div>
+              <span class="text-[10px] font-mono px-2.5 py-1 rounded-md bg-teal-100/70 text-teal-800 font-bold block w-max mb-3">Cenário 2 • Registo Manual</span>
+              <h3 class="font-bold text-sm text-slate-900 mb-2">A Sobrecarga de Preenchimento e o Abandono</h3>
+              <p class="text-[11px] text-slate-500 font-mono mb-3">Atora Principal: Beatriz  (Analista)</p>
+              <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                Após uma semana intensa de trabalho e aulas, Beatriz tenta organizar as suas contas numa sexta-feira à noite. O seu objetivo consiste em validar se poupou a quantia definida de R$ 800,00 e preparar a liquidação do cartão. Abre o computador e a folha de cálculo iniciada semanas antes. Para a atualizar, precisa de consultar no telemóvel os movimentos dos últimos 7 dias, rever recibos e introduzir linha a linha os valores no Excel. Durante o processo, uma fórmula na categoria de lazer gera um erro de cálculo. Exausta, passa 15 minutos a tentar solucionar o problema técnico, desiste face à complexidade de compras partilhadas e fecha o programa sem guardar as alterações.
+              </p>
+            </div>
+            <div class="p-4 bg-slate-50/80 rounded-xl text-xs text-slate-700">
+              <strong class="text-teal-800 block mb-1.5 font-bold">Pontos Problemáticos:</strong>
+              <ul class="list-disc pl-4 space-y-1 text-[11px]">
+                <li>A transcrição manual sistemática acarreta fadiga mental e forte atrito cognitivo.</li>
+                <li>Incidentes técnicos em fórmulas desviam a atenção da atividade primordial de planeamento.</li>
+                <li>Ausência de suporte para conciliação expedita de débitos partilhados e compras faseadas.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Cenário 3 -->
+          <div class="liquid-glass p-7 flex flex-col justify-between">
+            <div>
+              <span class="text-[10px] font-mono px-2.5 py-1 rounded-md bg-sky-100/70 text-sky-800 font-bold block w-max mb-3">Cenário 3 • Investimentos</span>
+              <h3 class="font-bold text-sm text-slate-900 mb-2">Insegurança Conceitual e Capital Desprotegido</h3>
+              <p class="text-[11px] text-slate-500 font-mono mb-3">Ator Principal: Lucas (Estagiário)</p>
+              <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                Com o recebimento da bolsa de estágio (R$ 1.400,00), Lucas decide alocar R$ 300,00 para constituir a sua reserva de emergência. No menu de investimentos da aplicação bancária, identifica instrumentos como CDB e Tesouro Selic. Contudo, ao selecionar um produto, depara-se com terminologias tais como "Carência de 90 dias", "Tabela Regressiva de IR", "Come-cotas" e "IOF nos primeiros 30 dias". Temendo perder liquidez imediata ou ver o montante diminuído por impostos em caso de emergência, procura esclarecimento. A aplicação sugere um documento denso de três páginas com terminologia hermética, o que desmotiva a leitura. Inseguro, abandona a operação e mantém o dinheiro na conta à ordem, sendo este absorvido nas semanas seguintes por despesas correntes.
+              </p>
+            </div>
+            <div class="p-4 bg-slate-50/80 rounded-xl text-xs text-slate-700">
+              <strong class="text-sky-800 block mb-1.5 font-bold">Pontos Problemáticos:</strong>
+              <ul class="list-disc pl-4 space-y-1 text-[11px]">
+                <li>Vocabulário financeiro hermético sem apoio explicativo contextual no fluxo da tarefa.</li>
+                <li>Textos técnicos extensos incompatíveis com a preferência por microformatos didáticos.</li>
+                <li>Inexistência de segregação visual dos valores poupados, permitindo o seu gasto acidental.</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================== -->
+    <!-- ETAPA 08: ANÁLISE DE TAREFAS - HTA (Fundo: Branco/Neutro) -->
+    <!-- ======================================================== -->
+    <section id="tarefas" class="py-24 px-6 lg:px-16 bg-[#f8fafc] scroll-mt-16">
+      <div class="max-w-7xl mx-auto space-y-12">
+        <div class="flex flex-col md:flex-row md:items-end justify-between pb-8 gap-4">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-widest text-brand-leaf font-bold block mb-1">Etapa 08 // Engenharia de Requisitos</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Análise de Tarefas (HTA)</h2>
+          </div>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-8">
+          
+          <!-- Tarefa 1 -->
+          <div class="liquid-glass p-7 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-2 mb-3">
+                <span class="w-8 h-8 rounded-xl bg-emerald-100/80 text-brand-leaf font-mono font-bold flex items-center justify-center text-xs">T1</span>
+                <h3 class="font-bold text-sm text-slate-900">Controlar Gastos Quotidianos</h3>
+              </div>
+              <p class="text-[11px] text-slate-500 font-mono mb-3">Objetivo 0: Conter despesas semanais para evitar défice</p>
+              
+              <div class="space-y-2 text-xs text-slate-700 leading-relaxed font-mono bg-slate-50/80 p-4 rounded-xl">
+                <p><strong>1. Definir teto para o período</strong></p>
+                <p class="pl-3">1.1 Consultar saldo total e entradas previstas</p>
+                <p class="pl-3">1.2 Deduzir compromissos fixos obrigatórios</p>
+                <p class="pl-3">1.3 Estipular cota máxima variável</p>
+                <p><strong>2. Efetuar pagamentos diários</strong></p>
+                <p class="pl-3">2.1 Pagar por aproximação ou Pix</p>
+                <p class="pl-3">2.2 Memorizar ou arquivar comprovativo</p>
+                <p><strong>3. Monitorizar evolução orçamental</strong></p>
+                <p class="pl-3">3.1 Consultar extrato bancário</p>
+                <p class="pl-3">3.2 Identificar despesas de Uber e restauração</p>
+                <p class="pl-3">3.3 Calcular margem disponível mentalmente</p>
+                <p><strong>4. Restringir despesas se a margem for diminuta</strong></p>
+              </div>
+
+              <div class="mt-4 p-3.5 bg-emerald-100/40 rounded-xl text-[11px] text-slate-700 leading-relaxed">
+                <strong>Planos de Execução:</strong><br>
+                <strong>Plano 0:</strong> Executar 1 no início do ciclo. Realizar 2 reiteradamente. Realizar 3 a cada 2 ou 3 dias. Caso 3.3 acuse margem crítica, executar 4.<br>
+                <strong>Plano 3:</strong> Executar 3.1 e 3.2. Em caso de divergência de saldo, executar 3.3.
+              </div>
+            </div>
+          </div>
+
+          <!-- Tarefa 2 -->
+          <div class="liquid-glass p-7 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-2 mb-3">
+                <span class="w-8 h-8 rounded-xl bg-teal-100/80 text-teal-800 font-mono font-bold flex items-center justify-center text-xs">T2</span>
+                <h3 class="font-bold text-sm text-slate-900">Registar Despesas Periódicas</h3>
+              </div>
+              <p class="text-[11px] text-slate-500 font-mono mb-3">Objetivo 0: Consolidar balanço em caderno ou folha de cálculo</p>
+              
+              <div class="space-y-2 text-xs text-slate-700 leading-relaxed font-mono bg-slate-50/80 p-4 rounded-xl">
+                <p><strong>1. Reunir dados financeiros dispersos</strong></p>
+                <p class="pl-3">1.1 Aceder a extratos em diferentes aplicações</p>
+                <p class="pl-3">1.2 Agrupar recibos e extratos de cartões</p>
+                <p><strong>2. Transcrever dados para o suporte de registo</strong></p>
+                <p class="pl-3">2.1 Abrir caderno ou folha de cálculo eletrónica</p>
+                <p class="pl-3">2.2 Inserir data, descrição e montante</p>
+                <p class="pl-3">2.3 Atribuir categoria ao lançamento</p>
+                <p><strong>3. Processar e analisar totais</strong></p>
+                <p class="pl-3">3.1 Calcular o somatório por categoria</p>
+                <p class="pl-3">3.2 Comparar com o período antecedente</p>
+                <p class="pl-3">3.3 Apurar divergências e guardar ficheiro</p>
+              </div>
+
+              <div class="mt-4 p-3.5 bg-teal-100/40 rounded-xl text-[11px] text-slate-700 leading-relaxed">
+                <strong>Planos de Execução:</strong><br>
+                <strong>Plano 0:</strong> Executar 1 e 2 no termo da semana ou mês. Posteriormente executar 3. Se ocorrer falha técnica em 2, interromper a tarefa.<br>
+                <strong>Plano 2:</strong> Se em suporte de papel, executar 2.1 e 2.2 em caderno. Se em computador, executar 2.1, 2.2 e 2.3 em folha de cálculo.
+              </div>
+            </div>
+          </div>
+
+          <!-- Tarefa 3 -->
+          <div class="liquid-glass p-7 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-2 mb-3">
+                <span class="w-8 h-8 rounded-xl bg-sky-100/80 text-sky-800 font-mono font-bold flex items-center justify-center text-xs">T3</span>
+                <h3 class="font-bold text-sm text-slate-900">Poupar e Efetuar Aplicação</h3>
+              </div>
+              <p class="text-[11px] text-slate-500 font-mono mb-3">Objetivo 0: Alocar capital em produto financeiro conservador</p>
+              
+              <div class="space-y-2 text-xs text-slate-700 leading-relaxed font-mono bg-slate-50/80 p-4 rounded-xl">
+                <p><strong>1. Segregar o montante a poupar</strong></p>
+                <p class="pl-3">1.1 Definir quantia fixa ou percentagem</p>
+                <p class="pl-3">1.2 Transferir para fora da conta à ordem</p>
+                <p><strong>2. Escolher o instrumento financeiro</strong></p>
+                <p class="pl-3">2.1 Aceder ao módulo de investimentos</p>
+                <p class="pl-3">2.2 Filtrar títulos de Renda Fixa/CDB</p>
+                <p class="pl-3">2.3 Analisar prazos, carência e impostos</p>
+                <p><strong>3. Validar a subscrição financeira</strong></p>
+                <p class="pl-3">3.1 Especificar o montante a investir</p>
+                <p class="pl-3">3.2 Confirmar termos e maturidade</p>
+                <p class="pl-3">3.3 Autenticar através de biometria/código</p>
+              </div>
+
+              <div class="mt-4 p-3.5 bg-sky-100/40 rounded-xl text-[11px] text-slate-700 leading-relaxed">
+                <strong>Planos de Execução:</strong><br>
+                <strong>Plano 0:</strong> Executar 1 no dia de recebimento. Executar 2. Estando as regras em 2.3 assimiladas e seguras, executar 3; caso contrário, cancelar 3.<br>
+                <strong>Plano 2:</strong> Executar 2.1 e 2.2. Existindo dúvidas fiscais (IOF/IR) em 2.3, realizar pesquisa externa antes de prosseguir.
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Análise Comparativa -->
+        <div class="liquid-glass p-8 space-y-4">
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-brand-leaf"></span>
+            <h3 class="font-mono text-xs font-bold text-slate-900 uppercase tracking-wider">// Análise Comparativa de Cenário: Utilizador Inexperiente vs. Experiente</h3>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Avaliação comparativa da realização da tarefa de subscrição de investimento (Cenário 3 / Tarefa 3) tendo em conta as diferenças de modelo mental entre um perfil novato (Lucas) e um experiente (Beatriz):
+          </p>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs">
+              <thead>
+                <tr class="text-slate-700 font-mono uppercase bg-slate-100/80">
+                  <th class="py-2.5 px-3 rounded-l-lg">Dimensão de Análise</th>
+                  <th class="py-2.5 px-3">Utilizador Inexperiente (Lucas - Novato)</th>
+                  <th class="py-2.5 px-3 rounded-r-lg">Utilizadora Experiente (Beatriz - Fluente)</th>
+                </tr>
+              </thead>
+              <tbody class="text-slate-700 leading-relaxed">
+                <tr class="hover:bg-slate-50/60">
+                  <td class="py-2.5 px-3 font-semibold text-slate-900">Planeamento Mental</td>
+                  <td class="py-2.5 px-3 text-slate-600">Hesitante e inseguro; receia imobilizar o dinheiro e sofrer penalizações por taxas desconhecidas.</td>
+                  <td class="py-2.5 px-3 text-slate-600">Automatizado; concebe a alocação como um compromisso mensal prévio de rotina.</td>
+                </tr>
+                <tr class="hover:bg-slate-50/60">
+                  <td class="py-2.5 px-3 font-semibold text-slate-900">Navegação e Pesquisa</td>
+                  <td class="py-2.5 px-3 text-slate-600">Exploração por tentativa e erro; despende tempo a inspecionar alternativas inadequadas ao seu perfil.</td>
+                  <td class="py-2.5 px-3 text-slate-600">Filtra imediatamente instrumentos de dívida pública e CDB com liquidez diária.</td>
+                </tr>
+                <tr class="hover:bg-slate-50/60">
+                  <td class="py-2.5 px-3 font-semibold text-slate-900">Interpretação de Regras</td>
+                  <td class="py-2.5 px-3 text-slate-600">Bloqueio perante siglas como "IOF regressivo", "D+1" e "Come-cotas"; necessita de esclarecimento conciso.</td>
+                  <td class="py-2.5 px-3 text-slate-600">Compreende as taxas e indexadores de imediato; projeta o ganho líquido de forma autónoma.</td>
+                </tr>
+                <tr class="hover:bg-slate-50/60">
+                  <td class="py-2.5 px-3 font-semibold text-slate-900">Conclusão da Tarefa</td>
+                  <td class="py-2.5 px-3 text-red-600 font-semibold">Elevada taxa de abandono: o excesso de termos técnicos desprovidos de apoio instrucional provoca desistência.</td>
+                  <td class="py-2.5 px-3 text-brand-leaf font-semibold">Conclusão bem-sucedida: valida a transação e regista o comprovativo rapidamente.</td>
+                </tr>
+                <tr class="hover:bg-slate-50/60">
+                  <td class="py-2.5 px-3 font-semibold text-slate-900">Esforço de Interação (KLM)</td>
+                  <td class="py-2.5 px-3 text-slate-600">Tempo dilatado de preparação mental (M) e paragens sistemáticas para leitura e avaliação (W).</td>
+                  <td class="py-2.5 px-3 text-slate-600">Tempo residual de preparação mental (M); interação fluida de toques e autenticação célere.</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
 
@@ -1149,80 +1496,76 @@
     <!-- ======================================================== -->
     <!-- SEÇÃO: USO DE INTELIGÊNCIA ARTIFICIAL NO PROJETO -->
     <!-- ======================================================== -->
-    <section id="ia-aplicada" class="py-24 px-6 lg:px-16 bg-[#f8fafc] border-b border-slate-200">
+    <section id="ia-aplicada" class="py-24 px-6 lg:px-16 bg-[#f8fafc]">
       <div class="max-w-7xl mx-auto space-y-12">
-        
-        <div class="flex flex-col md:flex-row md:items-end justify-between pb-8 border-b border-slate-200 gap-4">
+        <div class="flex flex-col md:flex-row md:items-end justify-between pb-8 gap-4">
           <div>
             <span class="text-xs font-mono uppercase tracking-widest text-brand-leaf font-bold block mb-1">Documentação Metodológica // Apoio Computacional</span>
             <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Uso de Inteligência Artificial no Projeto</h2>
           </div>
           <p class="text-xs sm:text-sm text-slate-600 max-w-lg">
-            Transparência sobre como ferramentas de Modelos de Linguagem (LLMs) foram empregadas como copilotos na análise de dados e na redação técnica de IHC.
+            Transparência metodológica sobre a utilização de Modelos de Linguagem (LLMs) como ferramentas de apoio na análise de dados e na redação técnica de IHC.
           </p>
         </div>
 
         <div class="grid lg:grid-cols-3 gap-8">
-          
-          <!-- Eixo 1: Análise de Dados Quantitativos -->
-          <div class="liquid-glass p-7 flex flex-col justify-between border-slate-200">
+          <!-- Eixo 1 -->
+          <div class="liquid-glass p-7 flex flex-col justify-between">
             <div>
               <div class="flex items-center gap-2 mb-3">
-                <span class="w-8 h-8 rounded-xl bg-emerald-100 text-brand-leaf font-mono font-bold flex items-center justify-center text-xs">01</span>
+                <span class="w-8 h-8 rounded-xl bg-emerald-100/80 text-brand-leaf font-mono font-bold flex items-center justify-center text-xs">01</span>
                 <h3 class="font-bold text-sm text-slate-900">Análise de Dados Quantitativos</h3>
               </div>
               <p class="text-xs text-slate-600 leading-relaxed mb-4">
-                A IA foi utilizada para processar as planilhas brutas de respostas do Google Forms, calculando frequências absolutas e relativas, médias ponderadas nas escalas Likert de recursos e cruzamentos entre variáveis de comportamento.
+                A IA foi empregue no processamento das respostas em bruto do Google Forms, cálculo de distribuições estatísticas, médias em escalas Likert e correlações entre variáveis comportamentais.
               </p>
               
-              <div class="p-3.5 rounded-xl bg-slate-900 text-slate-200 font-mono text-[11px] leading-relaxed border border-slate-800">
-                <span class="text-emerald-400 block mb-1">// Prompt utilizado:</span>
-                "Estes sao os dados do relatório de um formulário que visa levantar dados quantitativos para avaliar nosso tema/problema. Analise esses resultados para mim, analise a relevância de cada funcionalidade e veja se algumas informações podem se relacionar. Mostre isso em tabelas simples com porcentagens."
+              <div class="p-3.5 rounded-xl bg-slate-900 text-slate-200 font-mono text-[11px] leading-relaxed shadow-sm">
+                <span class="text-emerald-400 block mb-1 font-semibold">// Prompt utilizado:</span>
+                "Estes são os dados do relatório de um formulário que visa levantar dados quantitativos para avaliar nosso tema/problema. Analise esses resultados para mim, analise a relevância de cada funcionalidade e veja se algumas informações podem se relacionar. Mostre isso em tabelas simples com porcentagens."
               </div>
             </div>
-            <span class="text-[11px] font-mono text-brand-leaf mt-4 block font-semibold">Resultado: Mapeamento de prioridades e correlação de confiança.</span>
+            <span class="text-[11px] font-mono text-brand-leaf mt-4 block font-semibold">Resultado: Estruturação de prioridades e correlação de confiança.</span>
           </div>
 
-          <!-- Eixo 2: Análise Qualitativa do Grupo Focal -->
-          <div class="liquid-glass p-7 flex flex-col justify-between border-slate-200">
+          <!-- Eixo 2 -->
+          <div class="liquid-glass p-7 flex flex-col justify-between">
             <div>
               <div class="flex items-center gap-2 mb-3">
-                <span class="w-8 h-8 rounded-xl bg-teal-100 text-teal-800 font-mono font-bold flex items-center justify-center text-xs">02</span>
+                <span class="w-8 h-8 rounded-xl bg-teal-100/80 text-teal-800 font-mono font-bold flex items-center justify-center text-xs">02</span>
                 <h3 class="font-bold text-sm text-slate-900">Análise de Dados Qualitativos</h3>
               </div>
               <p class="text-xs text-slate-600 leading-relaxed mb-4">
-                Empregamos a IA como suporte na codificação indutiva e na organização de turnos de fala da transcrição de áudio, auxiliando na categorização temática das falas segundo o método de Análise de Conteúdo de Bardin.
+                A ferramenta apoiou a codificação indutiva e a organização da transcrição da sessão de grupo focal, auxiliando na categorização temático-estrutural dos testemunhos.
               </p>
               
-              <div class="p-3.5 rounded-xl bg-slate-900 text-slate-200 font-mono text-[11px] leading-relaxed border border-slate-800">
-                <span class="text-teal-400 block mb-1">// Prompt utilizado:</span>
+              <div class="p-3.5 rounded-xl bg-slate-900 text-slate-200 font-mono text-[11px] leading-relaxed shadow-sm">
+                <span class="text-teal-400 block mb-1 font-semibold">// Prompt utilizado:</span>
                 "Essa é a transcrição da nossa reunião de grupo focal. Assimile o conteúdo e relacione com o contexto do nosso projeto. Diga as observações que achar mais importantes com base no que já observamos até aqui e que novas conclusões podemos tomar para guiar o projeto?"
               </div>
             </div>
-            <span class="text-[11px] font-mono text-teal-800 mt-4 block font-semibold">Resultado: Identificação da armadilha dos microgastos e rejeição à gamificação.</span>
+            <span class="text-[11px] font-mono text-teal-800 mt-4 block font-semibold">Resultado: Mapeamento do impacto de microgastos e rejeição da gamificação.</span>
           </div>
 
-          <!-- Eixo 3: Refinamento Textual e Elementos do Portfólio -->
-          <div class="liquid-glass p-7 flex flex-col justify-between border-slate-200">
+          <!-- Eixo 3 -->
+          <div class="liquid-glass p-7 flex flex-col justify-between">
             <div>
               <div class="flex items-center gap-2 mb-3">
-                <span class="w-8 h-8 rounded-xl bg-sky-100 text-sky-800 font-mono font-bold flex items-center justify-center text-xs">03</span>
+                <span class="w-8 h-8 rounded-xl bg-sky-100/80 text-sky-800 font-mono font-bold flex items-center justify-center text-xs">03</span>
                 <h3 class="font-bold text-sm text-slate-900">Refinamento Textual e Visual</h3>
               </div>
               <p class="text-xs text-slate-600 leading-relaxed mb-4">
-                A IA atuou na revisão dos conteúdos textuais do portfólio, garantindo consistência e clareza na exposição dos argumentos e formatação da pagina .
+                Apoio na revisão redatorial dos artefactos do portfólio, garantindo uniformidade terminológica de IHC, concisão textual e correção gramatical.
               </p>
               
-              <div class="p-3.5 rounded-xl bg-slate-900 text-slate-200 font-mono text-[11px] leading-relaxed border border-slate-800">
-                <span class="text-sky-400 block mb-1">// Prompt utilizado:</span>
+              <div class="p-3.5 rounded-xl bg-slate-900 text-slate-200 font-mono text-[11px] leading-relaxed shadow-sm">
+                <span class="text-sky-400 block mb-1 font-semibold">// Prompt utilizado:</span>
                 "Revise os textos do portfólio para deixar a leitura mais clara e objetiva, corrigindo erros de português. Mantenha o foco estrito na etapa de pesquisa e validação do problema."
               </div>
             </div>
-            <span class="text-[11px] font-mono text-sky-800 mt-4 block font-semibold">Resultado: Redação clara, fluida e formal em todas as etapas da pesquisa.</span>
+            <span class="text-[11px] font-mono text-sky-800 mt-4 block font-semibold">Resultado: Discurso técnico fluido e consistente com a fase de pesquisa.</span>
           </div>
-
         </div>
-
       </div>
     </section>
 
@@ -1231,22 +1574,20 @@
     <!-- ======================================================== -->
     <section id="time" class="py-24 px-6 lg:px-16 bg-[#0f172a] text-white">
       <div class="max-w-7xl mx-auto">
-        
-        <div class="pb-8 border-b border-slate-800 text-center max-w-2xl mx-auto">
+        <div class="pb-8 text-center max-w-2xl mx-auto">
           <span class="text-xs uppercase tracking-widest font-mono text-emerald-400 font-bold block mb-2">
-            // Equipe Discente
+            // Equipa Discente
           </span>
-          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Equipe do Projeto</h2>
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Equipa do Projeto</h2>
           <p class="text-xs sm:text-sm text-slate-400 mt-2">
-            Desenvolvido para a disciplina de Interface Homem/Máquina.
+            Desenvolvido no âmbito da unidade curricular de Interface Homem/Máquina.
           </p>
         </div>
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-          
           <!-- 1. Guilherme Delavalli Brito -->
-          <div class="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xl text-center flex flex-col items-center hover:border-emerald-400/60 transition-all hover:-translate-y-1">
-            <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-emerald-500/20 to-teal-500/20 border border-emerald-400/40 flex items-center justify-center text-xl font-bold text-emerald-300 mb-4 shadow-sm">
+          <div class="p-6 rounded-2xl bg-white/5 backdrop-blur-xl text-center flex flex-col items-center hover:bg-white/10 transition-all hover:-translate-y-1 shadow-sm">
+            <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-emerald-500/20 to-teal-500/20 flex items-center justify-center text-xl font-bold text-emerald-300 mb-4 shadow-sm">
               GB
             </div>
             <h3 class="text-sm font-bold text-white mb-1">Guilherme Delavalli Brito</h3>
@@ -1254,8 +1595,8 @@
           </div>
 
           <!-- 2. Filipe de Oliveira Daflon -->
-          <div class="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xl text-center flex flex-col items-center hover:border-emerald-400/60 transition-all hover:-translate-y-1">
-            <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-emerald-500/20 to-teal-500/20 border border-emerald-400/40 flex items-center justify-center text-xl font-bold text-emerald-300 mb-4 shadow-sm">
+          <div class="p-6 rounded-2xl bg-white/5 backdrop-blur-xl text-center flex flex-col items-center hover:bg-white/10 transition-all hover:-translate-y-1 shadow-sm">
+            <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-emerald-500/20 to-teal-500/20 flex items-center justify-center text-xl font-bold text-emerald-300 mb-4 shadow-sm">
               FF
             </div>
             <h3 class="text-sm font-bold text-white mb-1">Filipe de Oliveira Daflon</h3>
@@ -1263,8 +1604,8 @@
           </div>
 
           <!-- 3. Caio do Vale Soares -->
-          <div class="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xl text-center flex flex-col items-center hover:border-emerald-400/60 transition-all hover:-translate-y-1">
-            <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-teal-500/20 to-emerald-500/20 border border-teal-400/40 flex items-center justify-center text-xl font-bold text-teal-300 mb-4 shadow-sm">
+          <div class="p-6 rounded-2xl bg-white/5 backdrop-blur-xl text-center flex flex-col items-center hover:bg-white/10 transition-all hover:-translate-y-1 shadow-sm">
+            <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-teal-500/20 to-emerald-500/20 flex items-center justify-center text-xl font-bold text-teal-300 mb-4 shadow-sm">
               CS
             </div>
             <h3 class="text-sm font-bold text-white mb-1">Caio do Vale Soares</h3>
@@ -1272,40 +1613,41 @@
           </div>
 
           <!-- 4. Patrick Santana do Nascimento -->
-          <div class="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xl text-center flex flex-col items-center hover:border-emerald-400/60 transition-all hover:-translate-y-1">
-            <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-emerald-500/20 to-sky-500/20 border border-emerald-400/40 flex items-center justify-center text-xl font-bold text-emerald-300 mb-4 shadow-sm">
+          <div class="p-6 rounded-2xl bg-white/5 backdrop-blur-xl text-center flex flex-col items-center hover:bg-white/10 transition-all hover:-translate-y-1 shadow-sm">
+            <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-emerald-500/20 to-sky-500/20 flex items-center justify-center text-xl font-bold text-emerald-300 mb-4 shadow-sm">
               PN
             </div>
             <h3 class="text-sm font-bold text-white mb-1">Patrick Santana do Nascimento</h3>
             <span class="text-[11px] font-mono text-slate-400">Pesquisa &amp; IHC</span>
           </div>
-
         </div>
-
       </div>
     </section>
 
   </main>
 
-  <!-- Rodapé com Glassmorphism -->
-  <footer class="py-10 border-t border-slate-800 bg-[#090d16] text-xs font-mono text-slate-400">
-    <div class="max-w-7xl mx-auto px-6 lg:px-16 flex flex-col sm:flex-row items-center justify-between gap-4">
+  <!-- Rodapé com Glassmorphism sem Bordas -->
+  <footer class="py-10 bg-[#090d16] text-xs font-mono text-slate-400">
+    <div class="w-full px-4 sm:px-8 xl:px-12 flex flex-col sm:flex-row items-center justify-between gap-4">
       <p>Poupay &bull; Projeto de Interface Homem-Computador</p>
       <div class="flex flex-wrap gap-6 font-semibold">
-        <a href="#home" class="hover:text-emerald-400 transition-colors">Home</a>
+        <a href="#home" class="hover:text-emerald-400 transition-colors">Início</a>
         <a href="#matriz-csd" class="hover:text-emerald-400 transition-colors">Matriz CSD</a>
         <a href="#mapa-empatia" class="hover:text-emerald-400 transition-colors">Mapa de Empatia</a>
         <a href="#analise-competitiva" class="hover:text-emerald-400 transition-colors">Análise Competitiva</a>
         <a href="#questionario" class="hover:text-emerald-400 transition-colors">Questionário</a>
         <a href="#grupo-focal" class="hover:text-emerald-400 transition-colors">Grupo Focal</a>
-        <a href="#time" class="hover:text-emerald-400 transition-colors">Time</a>
+        <a href="#personas" class="hover:text-emerald-400 transition-colors">Personas</a>
+        <a href="#cenarios" class="hover:text-emerald-400 transition-colors">Cenários</a>
+        <a href="#tarefas" class="hover:text-emerald-400 transition-colors">Tarefas</a>
+        <a href="#time" class="hover:text-emerald-400 transition-colors">Equipe</a>
       </div>
     </div>
   </footer>
 
   <!-- Script do Modal da Imagem & Menu Mobile Hambúrguer -->
   <script>
-    // Controle do Menu Mobile Hambúrguer
+    // Controlo do Menu Mobile Hambúrguer
     function toggleMobileMenu() {
       const menu = document.getElementById('mobile-menu');
       const hamburgerIcon = document.getElementById('hamburger-icon');
@@ -1322,7 +1664,7 @@
       }
     }
 
-    // Controle do Modal de Zoom do Mapa de Empatia
+    // Controlo do Modal de Zoom do Mapa de Empatia
     function openImageModal() {
       const modal = document.getElementById('image-modal');
       modal.classList.remove('hidden');
