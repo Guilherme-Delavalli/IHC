@@ -66,8 +66,8 @@
       backdrop-filter: blur(24px);
       -webkit-backdrop-filter: blur(24px);
       border: none;
-      box-shadow: 0 18px 40px -8px rgba(15, 23, 42, 0.12),
-                  0 6px 16px -2px rgba(21, 128, 61, 0.05);
+      box-shadow: 0 16px 36px -8px rgba(15, 23, 42, 0.12),
+                  0 4px 12px -2px rgba(21, 128, 61, 0.06);
     }
 
     /* Chips sem bordas, destacando pelo contraste de cor e blur */
@@ -111,7 +111,7 @@
         <span class="font-bold text-xl tracking-tight text-slate-900">Poupay</span>
       </a>
       
-      <!-- Links Desktop (Visível em ecrãs >= 1024px) -->
+      <!-- Links Desktop (Visível em telas >= 1024px) -->
       <div class="hidden lg:flex items-center gap-8 text-xs uppercase tracking-wider font-semibold text-slate-700">
         
         <a href="#home" class="relative group py-2 hover:text-brand-leaf transition-colors duration-200">
@@ -119,7 +119,7 @@
           <span class="absolute bottom-1 left-0 w-0 h-[2.5px] bg-brand-leaf rounded-full transition-all duration-300 ease-out group-hover:w-full"></span>
         </a>
 
-        <!-- Dropdown 1: Pesquisa & Campo -->
+        <!-- Dropdown 1: Fase 1 (Pesquisa) -->
         <div class="relative group">
           <button class="flex items-center gap-1.5 py-2 hover:text-brand-leaf transition-colors duration-200 uppercase tracking-wider focus:outline-none">
             <span>Fase 1</span>
@@ -154,7 +154,7 @@
           </div>
         </div>
 
-        <!-- Dropdown 2: Espaço do Problema -->
+        <!-- Dropdown 2: Fase 2 (Espaço do Problema) -->
         <div class="relative group">
           <button class="flex items-center gap-1.5 py-2 hover:text-brand-leaf transition-colors duration-200 uppercase tracking-wider focus:outline-none">
             <span>Fase 2</span>
@@ -181,6 +181,37 @@
           </div>
         </div>
 
+        <!-- Dropdown 3: Fase 3 (Solução & Prototipação) -->
+        <div class="relative group">
+          <button class="flex items-center gap-1.5 py-2 hover:text-brand-leaf transition-colors duration-200 uppercase tracking-wider focus:outline-none">
+            <span>Fase 3</span>
+            <svg class="w-3.5 h-3.5 text-slate-400 group-hover:text-brand-leaf group-hover:rotate-180 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          
+          <div class="absolute left-0 top-full pt-2 w-64 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-200">
+            <div class="liquid-glass-dropdown rounded-2xl p-2.5 space-y-1">
+              <a href="#ideacao" class="block px-3 py-2 rounded-xl text-xs normal-case font-medium text-slate-700 hover:bg-emerald-50 hover:text-brand-leaf transition-colors">
+                <span class="font-bold text-[11px] font-mono text-brand-leaf block uppercase">Etapa 09</span>
+                Ideação (Crazy 4)
+              </a>
+              <a href="#engenharia-prompts" class="block px-3 py-2 rounded-xl text-xs normal-case font-medium text-slate-700 hover:bg-emerald-50 hover:text-brand-leaf transition-colors">
+                <span class="font-bold text-[11px] font-mono text-brand-leaf block uppercase">Etapa 10</span>
+                Instruções de Prompt p/ IA
+              </a>
+              <a href="#prompt-figma" class="block px-3 py-2 rounded-xl text-xs normal-case font-medium text-slate-700 hover:bg-emerald-50 hover:text-brand-leaf transition-colors">
+                <span class="font-bold text-[11px] font-mono text-brand-leaf block uppercase">Etapa 11</span>
+                Prompt do Figma Make
+              </a>
+              <a href="#prototipo-final" class="block px-3 py-2 rounded-xl text-xs normal-case font-medium text-slate-700 hover:bg-emerald-50 hover:text-brand-leaf transition-colors">
+                <span class="font-bold text-[11px] font-mono text-brand-leaf block uppercase">Etapa 12</span>
+                Prototipação Final Gerada
+              </a>
+            </div>
+          </div>
+        </div>
+
         <a href="#ia-aplicada" class="relative group py-2 hover:text-brand-leaf transition-colors duration-200">
           <span>Uso de IA</span>
           <span class="absolute bottom-1 left-0 w-0 h-[2.5px] bg-brand-leaf rounded-full transition-all duration-300 ease-out group-hover:w-full"></span>
@@ -195,8 +226,8 @@
 
       <!-- Lado Direito: Botão CTA + Botão Hambúrguer Mobile -->
       <div class="flex items-center gap-3 shrink-0">
-        <a href="#matriz-csd" class="hidden sm:inline-flex px-5 py-2.5 rounded-xl bg-brand-leaf text-white text-xs font-semibold hover:bg-brand-leafHover transition-all duration-200 shadow-xs">
-          Explorar Pesquisa
+        <a href="#prototipo-final" class="hidden sm:inline-flex px-5 py-2.5 rounded-xl bg-brand-leaf text-white text-xs font-semibold hover:bg-brand-leafHover transition-all duration-200 shadow-xs">
+          Ver Protótipo Final
         </a>
 
         <!-- Botão Menu Hambúrguer -->
@@ -221,7 +252,7 @@
           <span class="text-xs text-slate-400 font-mono">&rarr;</span>
         </a>
 
-        <span class="text-[10px] font-mono uppercase tracking-widest text-slate-400 pt-2">Pesquisa de Campo</span>
+        <span class="text-[10px] font-mono uppercase tracking-widest text-slate-400 pt-2">Fase 1: Pesquisa</span>
         <a href="#matriz-csd" onclick="toggleMobileMenu()" class="px-3 py-2 rounded-xl hover:bg-emerald-50 hover:text-brand-leaf transition-colors flex items-center justify-between">
           <span>Matriz CSD</span>
           <span class="text-xs text-slate-400 font-mono">&rarr;</span>
@@ -243,7 +274,7 @@
           <span class="text-xs text-slate-400 font-mono">&rarr;</span>
         </a>
 
-        <span class="text-[10px] font-mono uppercase tracking-widest text-slate-400 pt-2">Espaço do Problema</span>
+        <span class="text-[10px] font-mono uppercase tracking-widest text-slate-400 pt-2">Fase 2: Espaço do Problema</span>
         <a href="#personas" onclick="toggleMobileMenu()" class="px-3 py-2 rounded-xl hover:bg-emerald-50 hover:text-brand-leaf transition-colors flex items-center justify-between">
           <span>Personas</span>
           <span class="text-xs text-slate-400 font-mono">&rarr;</span>
@@ -254,6 +285,24 @@
         </a>
         <a href="#tarefas" onclick="toggleMobileMenu()" class="px-3 py-2 rounded-xl hover:bg-emerald-50 hover:text-brand-leaf transition-colors flex items-center justify-between">
           <span>Análise de Tarefas (HTA)</span>
+          <span class="text-xs text-slate-400 font-mono">&rarr;</span>
+        </a>
+
+        <span class="text-[10px] font-mono uppercase tracking-widest text-slate-400 pt-2">Fase 3: Solução</span>
+        <a href="#ideacao" onclick="toggleMobileMenu()" class="px-3 py-2 rounded-xl hover:bg-emerald-50 hover:text-brand-leaf transition-colors flex items-center justify-between">
+          <span>Ideação (Crazy 4)</span>
+          <span class="text-xs text-slate-400 font-mono">&rarr;</span>
+        </a>
+        <a href="#engenharia-prompts" onclick="toggleMobileMenu()" class="px-3 py-2 rounded-xl hover:bg-emerald-50 hover:text-brand-leaf transition-colors flex items-center justify-between">
+          <span>Instruções de Prompt p/ IA</span>
+          <span class="text-xs text-slate-400 font-mono">&rarr;</span>
+        </a>
+        <a href="#prompt-figma" onclick="toggleMobileMenu()" class="px-3 py-2 rounded-xl hover:bg-emerald-50 hover:text-brand-leaf transition-colors flex items-center justify-between">
+          <span>Prompt do Figma Make</span>
+          <span class="text-xs text-slate-400 font-mono">&rarr;</span>
+        </a>
+        <a href="#prototipo-final" onclick="toggleMobileMenu()" class="px-3 py-2 rounded-xl hover:bg-emerald-50 hover:text-brand-leaf transition-colors flex items-center justify-between">
+          <span>Prototipação Final</span>
           <span class="text-xs text-slate-400 font-mono">&rarr;</span>
         </a>
 
@@ -273,9 +322,7 @@
   <!-- ==================== CORPO PRINCIPAL ==================== -->
   <main class="flex-grow pt-16">
 
-    <!-- ======================================================== -->
-    <!-- SEÇÃO 1: HOME (Verde Suave Apple Glass) -->
-    <!-- ======================================================== -->
+    <!-- SEÇÃO 1: HOME -->
     <section id="home" class="py-24 px-6 lg:px-16 bg-gradient-to-b from-emerald-50/80 via-emerald-50/30 to-slate-50">
       <div class="max-w-7xl mx-auto">
         <div class="grid lg:grid-cols-12 gap-12 items-center">
@@ -296,8 +343,8 @@
               <a href="#matriz-csd" class="px-6 py-3 bg-brand-leaf text-white rounded-xl hover:bg-brand-leafHover transition-all shadow-sm">
                 Ver Pesquisa Completa &darr;
               </a>
-              <a href="#time" class="px-6 py-3 bg-white/80 backdrop-blur-md text-slate-800 rounded-xl hover:bg-white shadow-xs transition-colors">
-                Conhecer a Equipe
+              <a href="#prototipo-final" class="px-6 py-3 bg-white/80 backdrop-blur-md text-slate-800 rounded-xl hover:bg-white shadow-xs transition-colors">
+                Explorar Protótipo Final
               </a>
             </div>
           </div>
@@ -324,7 +371,7 @@
               <div class="w-12 h-12 rounded-xl bg-emerald-100/80 text-brand-leaf flex items-center justify-center text-xl shrink-0 shadow-2xs">🎯</div>
               <div>
                 <h3 class="font-bold text-sm text-slate-900 mb-1">Metas Tangíveis</h3>
-                <p class="text-xs text-slate-600 leading-relaxed">Separação em mealheiros para reserva de emergência sem infantilização ou mecânicas punitivas.</p>
+                <p class="text-xs text-slate-600 leading-relaxed">Separação em reservas para reserva de emergência sem infantilização ou mecânicas punitivas.</p>
               </div>
             </div>
           </div>
@@ -332,9 +379,7 @@
       </div>
     </section>
 
-    <!-- ======================================================== -->
-    <!-- ETAPA 01: MATRIZ CSD (Fundo: Menta Suave & Neutro) -->
-    <!-- ======================================================== -->
+    <!-- ETAPA 01: MATRIZ CSD -->
     <section id="matriz-csd" class="py-24 px-6 lg:px-16 bg-[#f4faf6] scroll-mt-16">
       <div class="max-w-7xl mx-auto">
         <div class="flex flex-col md:flex-row md:items-end justify-between pb-8 gap-4">
@@ -348,7 +393,6 @@
         </div>
 
         <div class="grid lg:grid-cols-3 gap-8 mt-10">
-          <!-- Certezas -->
           <div class="liquid-glass p-7 flex flex-col justify-between">
             <div>
               <div class="font-mono text-xs font-bold text-brand-leaf uppercase mb-5 flex items-center justify-between pb-3">
@@ -403,7 +447,6 @@
             </div>
           </div>
 
-          <!-- Suposições -->
           <div class="liquid-glass p-7 flex flex-col justify-between">
             <div>
               <div class="font-mono text-xs font-bold text-emerald-800 uppercase mb-5 flex items-center justify-between pb-3">
@@ -416,7 +459,7 @@
               <ul class="space-y-4 text-xs text-slate-800 leading-relaxed list-disc pl-4">
                 <li>Jovens gostam de soluções "gamificadas" com pontuações e recompensas lúdicas.</li>
                 <li>Acredita-se que o jovem não investe por achar que precisa de muito dinheiro para começar.</li>
-                <li>Supõe-se que a Geração Z prioriza o orçamento em experiências imediatas (viagens, eventos, lazer) em vez de acumulação de património físico.</li>
+                <li>Supõe-se que a Geração Z prioriza o orçamento em experiências imediatas em vez de acumulação de património físico.</li>
                 <li>Supõe-se que os jovens têm maior inclinação a adotar assistentes virtuais/IA do que utilizar folhas de cálculo tradicionais ou anotações manuais.</li>
                 <li>Supõe-se que a ascensão de carreiras com rendimento variável (freelancers, autonomia) é um dos maiores obstáculos à poupança contínua.</li>
                 <li>Supõe-se que os jovens evitam interações físicas/formais com instituições financeiras e migram para experiências 100% digitais e fluidas.</li>
@@ -424,7 +467,6 @@
             </div>
           </div>
 
-          <!-- Dúvidas -->
           <div class="liquid-glass p-7 flex flex-col justify-between">
             <div>
               <div class="font-mono text-xs font-bold text-sky-800 uppercase mb-5 flex items-center justify-between pb-3">
@@ -451,9 +493,7 @@
       </div>
     </section>
 
-    <!-- ======================================================== -->
-    <!-- ETAPA 02: MAPA DE EMPATIA (Fundo: Esmeralda Claro) -->
-    <!-- ======================================================== -->
+    <!-- ETAPA 02: MAPA DE EMPATIA -->
     <section id="mapa-empatia" class="py-24 px-6 lg:px-16 bg-gradient-to-b from-[#f0fdf4] via-[#ecfdf5] to-[#f8fafc] scroll-mt-16">
       <div class="max-w-7xl mx-auto">
         <div class="flex flex-col md:flex-row md:items-end justify-between pb-8 gap-4">
@@ -477,10 +517,9 @@
                 <span>Clique para expandir</span>
               </div>
             </div>
-            
             <div class="mt-3 text-[11px] font-mono text-slate-600 bg-slate-50/80 p-2.5 rounded-lg flex items-center justify-between">
               <span>Painel original de post-its</span>
-              <span class="text-brand-leaf font-bold cursor-pointer hover:underline" onclick="openImageModal()">Ver em ecrã inteiro &nearr;</span>
+              <span class="text-brand-leaf font-bold cursor-pointer hover:underline" onclick="openImageModal()">Ver em tela inteiro &nearr;</span>
             </div>
           </div>
 
@@ -548,20 +587,7 @@
       </div>
     </section>
 
-    <!-- Modal Lightbox da Imagem sem Bordas -->
-    <div id="image-modal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4 sm:p-8" onclick="closeImageModal()">
-      <div class="relative max-w-5xl w-full bg-white/10 p-2 sm:p-4 rounded-3xl backdrop-blur-2xl shadow-2xl" onclick="event.stopPropagation()">
-        <button onclick="closeImageModal()" class="absolute top-4 right-4 sm:-top-4 sm:-right-4 w-10 h-10 rounded-full bg-white text-slate-900 font-bold flex items-center justify-center hover:bg-slate-100 hover:scale-110 transition-all shadow-lg text-sm z-10">
-          ✕
-        </button>
-        <img src="assets/mapa-empatia-quadro.jpg" alt="Mapa de Empatia em alta resolução" class="w-full h-auto max-h-[85vh] object-contain rounded-2xl shadow-lg">
-        <p class="text-center text-xs font-mono text-emerald-100 mt-3">Registo fotográfico da dinâmica presencial de empatia e agrupamento de post-its.</p>
-      </div>
-    </div>
-
-    <!-- ======================================================== -->
-    <!-- ETAPA 03: ANÁLISE COMPETITIVA (Fundo: Verde Cristalino) -->
-    <!-- ======================================================== -->
+    <!-- ETAPA 03: BENCHMARKING -->
     <section id="analise-competitiva" class="py-24 px-6 lg:px-16 bg-[#f7fbf8] scroll-mt-16">
       <div class="max-w-7xl mx-auto">
         <div class="flex flex-col md:flex-row md:items-end justify-between pb-8 gap-4">
@@ -581,7 +607,6 @@
           </div>
 
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Mozper -->
             <div class="liquid-glass p-6 flex flex-col justify-between">
               <div>
                 <div class="flex justify-between items-start gap-2 pb-3 mb-3">
@@ -599,14 +624,13 @@
               </div>
             </div>
 
-            <!-- Mooney -->
             <div class="liquid-glass p-6 flex flex-col justify-between">
               <div>
                 <div class="flex justify-between items-start gap-2 pb-3 mb-3">
                   <h4 class="font-bold text-sm text-slate-900">Mooney</h4>
                   <span class="text-[10px] font-mono px-2.5 py-1 rounded-md bg-emerald-100/70 text-brand-leaf font-semibold">Edfintech</span>
                 </div>
-                <p class="text-xs text-slate-600 mb-3">Edfintech gamificada com mascotes ("Mooners"), mealheiros para metas e missões.</p>
+                <p class="text-xs text-slate-600 mb-3">Edfintech gamificada com mascotes ("Mooners"), reservas para metas e missões.</p>
                 <div class="space-y-1.5 text-[11px] text-slate-700">
                   <p><strong class="text-brand-leaf">+ Prós:</strong> Forte conexão emocional com mascotes e feedback lúdico.</p>
                   <p><strong class="text-slate-500">- Contras:</strong> Estética excessivamente infantilizada para universitários.</p>
@@ -617,7 +641,6 @@
               </div>
             </div>
 
-            <!-- NextJoy -->
             <div class="liquid-glass p-6 flex flex-col justify-between">
               <div>
                 <div class="flex justify-between items-start gap-2 pb-3 mb-3">
@@ -635,7 +658,6 @@
               </div>
             </div>
 
-            <!-- C6 Yellow -->
             <div class="liquid-glass p-6 flex flex-col justify-between">
               <div>
                 <div class="flex justify-between items-start gap-2 pb-3 mb-3">
@@ -653,7 +675,6 @@
               </div>
             </div>
 
-            <!-- Greenlight -->
             <div class="liquid-glass p-6 flex flex-col justify-between">
               <div>
                 <div class="flex justify-between items-start gap-2 pb-3 mb-3">
@@ -671,7 +692,6 @@
               </div>
             </div>
 
-            <!-- Destaque Síntese -->
             <div class="liquid-glass p-6 bg-gradient-to-br from-emerald-100/95 to-teal-100/90 flex flex-col justify-between">
               <div>
                 <span class="text-xs font-mono font-bold text-brand-leaf uppercase block mb-2">// Diferencial Poupay</span>
@@ -723,9 +743,7 @@
       </div>
     </section>
 
-    <!-- ======================================================== -->
-    <!-- ETAPA 04: QUESTIONÁRIO (Fundo: Esmeralda Suave e Arejado) -->
-    <!-- ======================================================== -->
+    <!-- ETAPA 04: QUESTIONÁRIO -->
     <section id="questionario" class="py-24 px-6 lg:px-16 bg-gradient-to-b from-[#f0fdf4] via-[#ecfdf5] to-[#f4faf6] scroll-mt-16">
       <div class="max-w-7xl mx-auto">
         <div class="flex flex-col md:flex-row md:items-end justify-between pb-8 gap-4">
@@ -800,7 +818,7 @@
                     <td class="py-2.5 px-3 font-semibold text-slate-900">Metas de Economia</td>
                     <td class="py-2.5 px-3 text-brand-leaf font-bold">88,6%</td>
                     <td class="py-2.5 px-3 font-mono">3,20</td>
-                    <td class="py-2.5 px-3 text-slate-600">Mealheiros visuais de reserva</td>
+                    <td class="py-2.5 px-3 text-slate-600">Reservas visuais de reserva</td>
                   </tr>
                   <tr class="hover:bg-slate-50/60">
                     <td class="py-2.5 px-3 font-semibold text-slate-900">Dicas Educativas</td>
@@ -841,9 +859,7 @@
       </div>
     </section>
 
-    <!-- ======================================================== -->
-    <!-- ETAPA 05: GRUPO FOCAL (Fundo: Menta Pálido Analítico) -->
-    <!-- ======================================================== -->
+    <!-- ETAPA 05: GRUPO FOCAL -->
     <section id="grupo-focal" class="py-24 px-6 lg:px-16 bg-[#f4faf6] scroll-mt-16">
       <div class="max-w-7xl mx-auto space-y-12">
         <div class="flex flex-col md:flex-row md:items-end justify-between pb-8 gap-4">
@@ -1143,8 +1159,8 @@
               <p>Exibir notificações preventivas de saldo e alertas antes de atingir o limite orçamental da semana.</p>
             </div>
             <div class="p-4 rounded-xl bg-slate-50/80">
-              <strong class="text-slate-900 block mb-1">4. Mealheiros de Metas Fora do Saldo Corrente:</strong>
-              <p>Ocultar o dinheiro poupado do ecrã inicial para evitar a tentação de gastar a reserva no dia a dia.</p>
+              <strong class="text-slate-900 block mb-1">4. Reservas de Metas Fora do Saldo Corrente:</strong>
+              <p>Ocultar o dinheiro poupado do tela inicial para evitar a tentação de gastar a reserva no dia a dia.</p>
             </div>
             <div class="p-4 rounded-xl bg-slate-50/80">
               <strong class="text-slate-900 block mb-1">5. Vídeos Didáticos de 2 Minutos:</strong>
@@ -1159,9 +1175,7 @@
       </div>
     </section>
 
-    <!-- ======================================================== -->
-    <!-- ETAPA 06: PERSONAS (Fundo: Menta Suave & Neutro) -->
-    <!-- ======================================================== -->
+    <!-- ETAPA 06: PERSONAS -->
     <section id="personas" class="py-24 px-6 lg:px-16 bg-[#f8fafc] scroll-mt-16">
       <div class="max-w-7xl mx-auto space-y-12">
         <div class="flex flex-col md:flex-row md:items-end justify-between pb-8 gap-4">
@@ -1172,7 +1186,6 @@
         </div>
 
         <div class="grid lg:grid-cols-3 gap-8">
-          
           <!-- Persona 1 -->
           <div class="liquid-glass p-7 flex flex-col justify-between">
             <div>
@@ -1185,16 +1198,16 @@
               </div>
 
               <div class="space-y-3 text-xs text-slate-700 leading-relaxed">
-                <p><strong>Perfil Demográfico e Ocupação:</strong> Solteiro, residente em Niterói – RJ. Estagiário presencial de TI e estudante de licenciatura no 5º semestre. Rendimento mensal de R$ 1.400,00 (bolsa de estágio). Mora com os pais e não assume despesas fixas de habitação.</p>
-                <p><strong>Habilidades Técnicas:</strong> Fluente no uso diário de smartphones, redes sociais e apps de entrega/transporte, mas possui conhecimento leigo sobre economia, investimentos e tributação.</p>
-                <p><strong>Objetivos:</strong> Terminar o mês sem entrar no limite da conta; criar uma reserva financeira para imprevistos e lazer; aprender a investir sem necessidade de ler textos extensos.</p>
-                <p><strong>Tarefas Típicas:</strong> Consulta o saldo bancário rapidamente antes de gastar; paga por aproximação ou Pix; calcula mentalmente a margem restante até à próxima bolsa.</p>
-                <p><strong>Dores e Frustrações:</strong> Perda de controlo por microgastos invisíveis (fast food, cafés e Uber); sensação de que o pagamento por aproximação mascara a saída de dinheiro; aversão a folhas de cálculo manuais.</p>
-                <p><strong>Requisitos de Interação:</strong> Automação integral de lançamentos; alertas visuais com barras de limite por cor; pílulas educativas em vídeos curtos de 2 minutos.</p>
+                <p><strong>Perfil Demográfico e Ocupação:</strong> Solteiro, residente em Niterói – RJ. Estagiário presencial de TI e estudante de licenciatura no 5º semestre. Rendimento mensal de R$ 1.400,00 (bolsa de estágio). Mora com os pais e não assume despesas fixas de habitação[cite: 10, 58].</p>
+                <p><strong>Habilidades Técnicas:</strong> Fluente no uso diário de smartphones, redes sociais e apps de entrega/transporte, mas possui conhecimento leigo sobre economia, investimentos e tributação[cite: 10, 58].</p>
+                <p><strong>Objetivos:</strong> Terminar o mês sem entrar no limite da conta; criar uma reserva financeira para imprevistos e lazer; aprender a investir sem necessidade de ler textos extensos[cite: 10, 58].</p>
+                <p><strong>Tarefas Típicas:</strong> Consulta o saldo bancário rapidamente antes de gastar; paga por aproximação ou Pix; calcula mentalmente a margem restante até à próxima bolsa[cite: 10, 58].</p>
+                <p><strong>Dores e Frustrações:</strong> Perda de controlo por microgastos invisíveis (fast food, cafés e Uber); sensação de que o pagamento por aproximação mascara a saída de dinheiro; aversão a folhas de cálculo manuais[cite: 10, 58].</p>
+                <p><strong>Requisitos de Interação:</strong> Automação integral de lançamentos; alertas visuais com barras de limite por cor; pílulas educativas em vídeos curtos de 2 minutos[cite: 10, 58].</p>
               </div>
             </div>
             <div class="mt-5 pt-3 text-[11px] font-mono text-brand-leaf font-semibold">
-              Representa: O jovem pragmático focado em agilidade visual e sem disponibilidade para burocracia.
+              Representa: O jovem pragmático focado em agilidade visual e sem disponibilidade para burocracia[cite: 9, 56].
             </div>
           </div>
 
@@ -1203,23 +1216,23 @@
             <div>
               <div class="flex items-center justify-between pb-4 mb-4 bg-slate-50/60 p-2.5 rounded-xl">
                 <div>
-                  <h3 class="font-extrabold text-base text-slate-900">Beatriz </h3>
+                  <h3 class="font-extrabold text-base text-slate-900">Beatriz</h3>
                   <span class="text-[11px] font-mono text-teal-700 font-semibold">Persona Secundária • 23 anos</span>
                 </div>
                 <span class="w-10 h-10 rounded-xl bg-teal-100/80 text-teal-800 font-mono font-bold flex items-center justify-center text-sm shadow-xs">P2</span>
               </div>
 
               <div class="space-y-3 text-xs text-slate-700 leading-relaxed">
-                <p><strong>Perfil Demográfico e Ocupação:</strong> Solteira, residente em São Gonçalo – RJ. Analista Júnior com contrato formal (jornada de 8h) e estudante universitária no período pós-laboral. Rendimento mensal de R$ 2.500,00 líquidos. Contribui para as despesas domésticas.</p>
-                <p><strong>Habilidades Técnicas:</strong> Boa capacidade analítica; faz anotações em caderno; consome conteúdo financeiro no Instagram, embora mantenha dúvidas sobre alíquotas fiscais (IR, IOF) e renda variável.</p>
-                <p><strong>Objetivos:</strong> Separar rigorosamente 30% a 40% do salário no início do mês para investimento; visualizar despesas por categorias consolidadas; evitar a perda de tempo em folhas de cálculo ao fim de semana.</p>
-                <p><strong>Tarefas Típicas:</strong> Paga despesas fixas e transfere poupanças no dia do ordenado; divide contas de lazer com amigos no cartão; analisa gastos mensais de cabeça ou no caderno.</p>
-                <p><strong>Dores e Frustrações:</strong> Perda de tempo ao ajustar fórmulas em folhas de cálculo; dificuldade em gerir compras a prestações partilhadas; receio de imobilizar capital em aplicações com carência prolongada.</p>
-                <p><strong>Requisitos de Interação:</strong> Gráficos de barras comparativas; transparência clara sobre segurança de dados e Open Finance; isolamento dos fundos investidos face à conta corrente.</p>
+                <p><strong>Perfil Demográfico e Ocupação:</strong> Solteira, residente em São Gonçalo – RJ. Analista Júnior com contrato formal (jornada de 8h) e estudante universitária no período pós-laboral. Rendimento mensal de R$ 2.500,00 líquidos. Contribui para as despesas domésticas[cite: 10, 58].</p>
+                <p><strong>Habilidades Técnicas:</strong> Boa capacidade analítica; faz anotações em caderno; consome conteúdo financeiro no Instagram, embora mantenha dúvidas sobre alíquotas fiscais (IR, IOF) e renda variável[cite: 10, 58].</p>
+                <p><strong>Objetivos:</strong> Separar rigorosamente 30% a 40% do salário no início do mês para investimento; visualizar despesas por categorias consolidadas; evitar a perda de tempo em folhas de cálculo ao fim de semana[cite: 10, 58].</p>
+                <p><strong>Tarefas Típicas:</strong> Paga despesas fixas e transfere poupanças no dia do ordenado; divide contas de lazer com amigos no cartão; analisa gastos mensais de cabeça ou no caderno[cite: 10, 58].</p>
+                <p><strong>Dores e Frustrações:</strong> Perda de tempo ao ajustar fórmulas em folhas de cálculo; dificuldade em gerir compras a prestações partilhadas; receio de imobilizar capital em aplicações com carência prolongada[cite: 10, 58].</p>
+                <p><strong>Requisitos de Interação:</strong> Gráficos de barras comparativas; transparência clara sobre segurança de dados e Open Finance; isolamento dos fundos investidos face à conta corrente[cite: 10, 58].</p>
               </div>
             </div>
             <div class="mt-5 pt-3 text-[11px] font-mono text-teal-800 font-semibold">
-              Representa: A jovem com metas estruturadas que procura consistência e segurança de dados.
+              Representa: A jovem com metas estruturadas que procura consistência e segurança de dados[cite: 9, 56].
             </div>
           </div>
 
@@ -1235,26 +1248,23 @@
               </div>
 
               <div class="space-y-3 text-xs text-slate-700 leading-relaxed">
-                <p><strong>Perfil Demográfico e Ocupação:</strong> Solteiro, residente em Niterói – RJ. Estudante universitário em regime integral e designer freelancer. Rendimento variável entre R$ 600,00 e R$ 1.900,00 mensais, conforme o volume de trabalho.</p>
-                <p><strong>Habilidades Técnicas:</strong> Utilizador experiente de softwares gráficos e redes sociais; uso contínuo de dispositivos móveis, contudo sem formação em gestão de fluxo de caixa.</p>
-                <p><strong>Objetivos:</strong> Construir um fundo de maneio para períodos de menor procura; evitar gastos por impulso quando o saldo está temporariamente elevado; organizar despesas sem burocracia.</p>
-                <p><strong>Tarefas Típicas:</strong> Recebe pagamentos via Pix de forma dispersa; aponta valores soltos em blocos de notas; consome sem planeamento prévio nos dias de maior liquidez.</p>
-                <p><strong>Dores e Frustrações:</strong> Insegurança orçamental gerada pela volatilidade dos ganhos; impulsividade motivada por estímulos de compras online; descontinuidade de controlos por ausência de rotina fixa.</p>
-                <p><strong>Requisitos de Interação:</strong> Mealheiros com propósitos definidos para salvaguarda de reserva; notificações inteligentes antes de fins de semana; linguagem acessível e madura.</p>
+                <p><strong>Perfil Demográfico e Ocupação:</strong> Solteiro, residente em Niterói – RJ. Estudante universitário em regime integral e designer freelancer. Rendimento variável entre R$ 600,00 e R$ 1.900,00 mensais, conforme o volume de trabalho[cite: 10, 58].</p>
+                <p><strong>Habilidades Técnicas:</strong> Utilizador experiente de softwares gráficos e redes sociais; uso contínuo de dispositivos móveis, contudo sem formação em gestão de fluxo de caixa[cite: 10, 58].</p>
+                <p><strong>Objetivos:</strong> Construir um fundo de maneio para períodos de menor procura; evitar gastos por impulso quando o saldo está temporariamente elevado; organizar despesas sem burocracia[cite: 10, 58].</p>
+                <p><strong>Tarefas Típicas:</strong> Recebe pagamentos via Pix de forma dispersa; aponta valores soltos em blocos de notas; consome sem planeamento prévio nos dias de maior liquidez[cite: 10, 58].</p>
+                <p><strong>Dores e Frustrações:</strong> Insegurança orçamental gerada pela volatilidade dos ganhos; impulsividade motivada por estímulos de compras online; descontinuidade de controlos por ausência de rotina fixa[cite: 10, 58].</p>
+                <p><strong>Requisitos de Interação:</strong> Reservas com propósitos definidos para salvaguarda de reserva; notificações inteligentes antes de fins de semana; linguagem acessível e madura[cite: 10, 58].</p>
               </div>
             </div>
             <div class="mt-5 pt-3 text-[11px] font-mono text-sky-800 font-semibold">
-              Representa: O estudante trabalhador independente com rendimentos sazonais que necessita de contenção preventiva.
+              Representa: O estudante trabalhador independente com rendimentos sazonais que necessita de contenção preventiva[cite: 9, 56].
             </div>
           </div>
-
         </div>
       </div>
     </section>
 
-    <!-- ======================================================== -->
-    <!-- ETAPA 07: CENÁRIOS DE PROBLEMA (Fundo: Esmeralda Suave) -->
-    <!-- ======================================================== -->
+    <!-- ETAPA 07: CENÁRIOS DE PROBLEMA -->
     <section id="cenarios" class="py-24 px-6 lg:px-16 bg-[#f4faf6] scroll-mt-16">
       <div class="max-w-7xl mx-auto space-y-12">
         <div class="flex flex-col md:flex-row md:items-end justify-between pb-8 gap-4">
@@ -1265,23 +1275,22 @@
         </div>
 
         <div class="grid lg:grid-cols-3 gap-8">
-          
           <!-- Cenário 1 -->
           <div class="liquid-glass p-7 flex flex-col justify-between">
             <div>
               <span class="text-[10px] font-mono px-2.5 py-1 rounded-md bg-emerald-100/70 text-brand-leaf font-bold block w-max mb-3">Cenário 1 • Microgastos</span>
               <h3 class="font-bold text-sm text-slate-900 mb-2">A Ilusão da Aproximação e o Descontrolo Invisível</h3>
-              <p class="text-[11px] text-slate-500 font-mono mb-3">Ator Principal: Lucas Rocha (Estagiário)</p>
+              <p class="text-[11px] text-slate-500 font-mono mb-3">Ator Principal: Lucas Rocha (Estagiário)[cite: 18, 62]</p>
               <p class="text-xs text-slate-600 leading-relaxed mb-4">
-                Numa quinta-feira, Lucas sai do estágio cansado antes de seguir para a faculdade. Entra num café com o intuito de fazer um lanche rápido e económico. Ao verificar a conta de R$ 18,50, aproxima o telemóvel do terminal de pagamento. A transação é concluída em 3 segundos, sem solicitação de código e sem indicação do saldo remanescente. No intervalo das aulas, repete o procedimento na cantina (R$ 9,00) e mais tarde recorre a um Uber de R$ 14,00 devido ao atraso do autocarro. No domingo, ao aceder à app bancária para verificar a disponibilidade de fundos para sair, descobre que o saldo se esgotou. Ao consultar o extrato, depara-se com inúmeros pequenos débitos acumulados que passaram despercebidos.
+                Numa quinta-feira, Lucas sai do estágio cansado antes de seguir para a faculdade[cite: 18, 62]. Entra num café com o intuito de fazer um lanche rápido e económico[cite: 18, 62]. Ao verificar a conta de R$ 18,50, aproxima o telemóvel do terminal de pagamento[cite: 18, 62]. A transação é concluída em 3 segundos, sem solicitação de código e sem indicação do saldo remanescente[cite: 18, 62]. No intervalo das aulas, repete o procedimento na cantina (R$ 9,00) e mais tarde recorre a um Uber de R$ 14,00 devido ao atraso do autocarro[cite: 18, 62]. No domingo, ao aceder à app bancária para verificar a disponibilidade de fundos para sair, descobre que o saldo se esgotou[cite: 18, 62]. Ao consultar o extrato, depara-se com inúmeros pequenos débitos acumulados que passaram despercebidos[cite: 18, 62].
               </p>
             </div>
             <div class="p-4 bg-slate-50/80 rounded-xl text-xs text-slate-700">
               <strong class="text-brand-leaf block mb-1.5 font-bold">Pontos Problemáticos:</strong>
               <ul class="list-disc pl-4 space-y-1 text-[11px]">
-                <li>A aproximação reduz a perceção psicológica do gasto e oculta o saldo final.</li>
-                <li>Inexistência de avisos preventivos antes de atingir valores acumulados elevados.</li>
-                <li>O extrato bancário linear contínuo prejudica a análise consolidada por categorias.</li>
+                <li>A aproximação reduz a perceção psicológica do gasto e oculta o saldo final[cite: 19, 64].</li>
+                <li>Inexistência de avisos preventivos antes de atingir valores acumulados elevados[cite: 19, 64].</li>
+                <li>O extrato bancário linear contínuo prejudica a análise consolidada por categorias[cite: 19, 64].</li>
               </ul>
             </div>
           </div>
@@ -1291,17 +1300,17 @@
             <div>
               <span class="text-[10px] font-mono px-2.5 py-1 rounded-md bg-teal-100/70 text-teal-800 font-bold block w-max mb-3">Cenário 2 • Registo Manual</span>
               <h3 class="font-bold text-sm text-slate-900 mb-2">A Sobrecarga de Preenchimento e o Abandono</h3>
-              <p class="text-[11px] text-slate-500 font-mono mb-3">Atora Principal: Beatriz  (Analista)</p>
+              <p class="text-[11px] text-slate-500 font-mono mb-3">Atora Principal: Beatriz (Analista)[cite: 18, 62]</p>
               <p class="text-xs text-slate-600 leading-relaxed mb-4">
-                Após uma semana intensa de trabalho e aulas, Beatriz tenta organizar as suas contas numa sexta-feira à noite. O seu objetivo consiste em validar se poupou a quantia definida de R$ 800,00 e preparar a liquidação do cartão. Abre o computador e a folha de cálculo iniciada semanas antes. Para a atualizar, precisa de consultar no telemóvel os movimentos dos últimos 7 dias, rever recibos e introduzir linha a linha os valores no Excel. Durante o processo, uma fórmula na categoria de lazer gera um erro de cálculo. Exausta, passa 15 minutos a tentar solucionar o problema técnico, desiste face à complexidade de compras partilhadas e fecha o programa sem guardar as alterações.
+                Após uma semana intensa de trabalho e aulas, Beatriz tenta organizar as suas contas numa sexta-feira à noite[cite: 18, 62]. O seu objetivo consiste em validar se poupou a quantia definida de R$ 800,00 e preparar a liquidação do cartão[cite: 18, 62]. Abre o computador e a folha de cálculo iniciada semanas antes[cite: 18, 62]. Para a atualizar, precisa de consultar no telemóvel os movimentos dos últimos 7 dias, rever recibos e introduzir linha a linha os valores no Excel[cite: 18, 62]. Durante o processo, uma fórmula na categoria de lazer gera um erro de cálculo[cite: 18, 62]. Exausta, passa 15 minutos a tentar solucionar o problema técnico, desiste face à complexidade de compras partilhadas e fecha o programa sem guardar as alterações[cite: 18, 62].
               </p>
             </div>
             <div class="p-4 bg-slate-50/80 rounded-xl text-xs text-slate-700">
               <strong class="text-teal-800 block mb-1.5 font-bold">Pontos Problemáticos:</strong>
               <ul class="list-disc pl-4 space-y-1 text-[11px]">
-                <li>A transcrição manual sistemática acarreta fadiga mental e forte atrito cognitivo.</li>
-                <li>Incidentes técnicos em fórmulas desviam a atenção da atividade primordial de planeamento.</li>
-                <li>Ausência de suporte para conciliação expedita de débitos partilhados e compras faseadas.</li>
+                <li>A transcrição manual sistemática acarreta fadiga mental e forte atrito cognitivo[cite: 19, 64].</li>
+                <li>Incidentes técnicos em fórmulas desviam a atenção da atividade primordial de planeamento[cite: 19, 64].</li>
+                <li>Ausência de suporte para conciliação expedita de débitos partilhados e compras faseadas[cite: 19, 64].</li>
               </ul>
             </div>
           </div>
@@ -1311,28 +1320,25 @@
             <div>
               <span class="text-[10px] font-mono px-2.5 py-1 rounded-md bg-sky-100/70 text-sky-800 font-bold block w-max mb-3">Cenário 3 • Investimentos</span>
               <h3 class="font-bold text-sm text-slate-900 mb-2">Insegurança Conceitual e Capital Desprotegido</h3>
-              <p class="text-[11px] text-slate-500 font-mono mb-3">Ator Principal: Lucas (Estagiário)</p>
+              <p class="text-[11px] text-slate-500 font-mono mb-3">Ator Principal: Lucas (Estagiário)[cite: 18, 62]</p>
               <p class="text-xs text-slate-600 leading-relaxed mb-4">
-                Com o recebimento da bolsa de estágio (R$ 1.400,00), Lucas decide alocar R$ 300,00 para constituir a sua reserva de emergência. No menu de investimentos da aplicação bancária, identifica instrumentos como CDB e Tesouro Selic. Contudo, ao selecionar um produto, depara-se com terminologias tais como "Carência de 90 dias", "Tabela Regressiva de IR", "Come-cotas" e "IOF nos primeiros 30 dias". Temendo perder liquidez imediata ou ver o montante diminuído por impostos em caso de emergência, procura esclarecimento. A aplicação sugere um documento denso de três páginas com terminologia hermética, o que desmotiva a leitura. Inseguro, abandona a operação e mantém o dinheiro na conta à ordem, sendo este absorvido nas semanas seguintes por despesas correntes.
+                Com o recebimento da bolsa de estágio (R$ 1.400,00), Lucas decide alocar R$ 300,00 para constituir a sua reserva de emergência[cite: 18, 62]. No menu de investimentos da aplicação bancária, identifica instrumentos como CDB e Tesouro Selic[cite: 18, 62]. Contudo, ao selecionar um produto, depara-se com terminologias tais como "Carência de 90 dias", "Tabela Regressiva de IR", "Come-cotas" e "IOF nos primeiros 30 dias"[cite: 18, 62]. Temendo perder liquidez imediata ou ver o montante diminuído por impostos em caso de emergência, procura esclarecimento[cite: 18, 62]. A aplicação sugere um documento denso de três páginas com terminologia hermética, o que desmotiva a leitura[cite: 18, 62]. Inseguro, abandona a operação e mantém o dinheiro na conta à ordem, sendo este absorvido nas semanas seguintes por despesas correntes[cite: 18, 62].
               </p>
             </div>
             <div class="p-4 bg-slate-50/80 rounded-xl text-xs text-slate-700">
               <strong class="text-sky-800 block mb-1.5 font-bold">Pontos Problemáticos:</strong>
               <ul class="list-disc pl-4 space-y-1 text-[11px]">
-                <li>Vocabulário financeiro hermético sem apoio explicativo contextual no fluxo da tarefa.</li>
-                <li>Textos técnicos extensos incompatíveis com a preferência por microformatos didáticos.</li>
-                <li>Inexistência de segregação visual dos valores poupados, permitindo o seu gasto acidental.</li>
+                <li>Vocabulário financeiro hermético sem apoio explicativo contextual no fluxo da tarefa[cite: 19, 64].</li>
+                <li>Textos técnicos extensos incompatíveis com a preferência por microformatos didáticos[cite: 19, 64].</li>
+                <li>Inexistência de segregação visual dos valores poupados, permitindo o seu gasto acidental[cite: 19, 64].</li>
               </ul>
             </div>
           </div>
-
         </div>
       </div>
     </section>
 
-    <!-- ======================================================== -->
-    <!-- ETAPA 08: ANÁLISE DE TAREFAS - HTA (Fundo: Branco/Neutro) -->
-    <!-- ======================================================== -->
+    <!-- ETAPA 08: ANÁLISE DE TAREFAS (HTA) -->
     <section id="tarefas" class="py-24 px-6 lg:px-16 bg-[#f8fafc] scroll-mt-16">
       <div class="max-w-7xl mx-auto space-y-12">
         <div class="flex flex-col md:flex-row md:items-end justify-between pb-8 gap-4">
@@ -1343,7 +1349,6 @@
         </div>
 
         <div class="grid lg:grid-cols-3 gap-8">
-          
           <!-- Tarefa 1 -->
           <div class="liquid-glass p-7 flex flex-col justify-between">
             <div>
@@ -1351,7 +1356,7 @@
                 <span class="w-8 h-8 rounded-xl bg-emerald-100/80 text-brand-leaf font-mono font-bold flex items-center justify-center text-xs">T1</span>
                 <h3 class="font-bold text-sm text-slate-900">Controlar Gastos Quotidianos</h3>
               </div>
-              <p class="text-[11px] text-slate-500 font-mono mb-3">Objetivo 0: Conter despesas semanais para evitar défice</p>
+              <p class="text-[11px] text-slate-500 font-mono mb-3">Objetivo 0: Conter despesas semanais para evitar défice[cite: 31, 32]</p>
               
               <div class="space-y-2 text-xs text-slate-700 leading-relaxed font-mono bg-slate-50/80 p-4 rounded-xl">
                 <p><strong>1. Definir teto para o período</strong></p>
@@ -1371,7 +1376,7 @@
               <div class="mt-4 p-3.5 bg-emerald-100/40 rounded-xl text-[11px] text-slate-700 leading-relaxed">
                 <strong>Planos de Execução:</strong><br>
                 <strong>Plano 0:</strong> Executar 1 no início do ciclo. Realizar 2 reiteradamente. Realizar 3 a cada 2 ou 3 dias. Caso 3.3 acuse margem crítica, executar 4.<br>
-                <strong>Plano 3:</strong> Executar 3.1 e 3.2. Em caso de divergência de saldo, executar 3.3.
+                <strong>Plano 3:</strong> Executar 3.1 e 3.2. Em caso de divergência de saldo, executar 3.3[cite: 31, 32].
               </div>
             </div>
           </div>
@@ -1383,7 +1388,7 @@
                 <span class="w-8 h-8 rounded-xl bg-teal-100/80 text-teal-800 font-mono font-bold flex items-center justify-center text-xs">T2</span>
                 <h3 class="font-bold text-sm text-slate-900">Registar Despesas Periódicas</h3>
               </div>
-              <p class="text-[11px] text-slate-500 font-mono mb-3">Objetivo 0: Consolidar balanço em caderno ou folha de cálculo</p>
+              <p class="text-[11px] text-slate-500 font-mono mb-3">Objetivo 0: Consolidar balanço em caderno ou folha de cálculo[cite: 31, 32]</p>
               
               <div class="space-y-2 text-xs text-slate-700 leading-relaxed font-mono bg-slate-50/80 p-4 rounded-xl">
                 <p><strong>1. Reunir dados financeiros dispersos</strong></p>
@@ -1402,7 +1407,7 @@
               <div class="mt-4 p-3.5 bg-teal-100/40 rounded-xl text-[11px] text-slate-700 leading-relaxed">
                 <strong>Planos de Execução:</strong><br>
                 <strong>Plano 0:</strong> Executar 1 e 2 no termo da semana ou mês. Posteriormente executar 3. Se ocorrer falha técnica em 2, interromper a tarefa.<br>
-                <strong>Plano 2:</strong> Se em suporte de papel, executar 2.1 e 2.2 em caderno. Se em computador, executar 2.1, 2.2 e 2.3 em folha de cálculo.
+                <strong>Plano 2:</strong> Se em suporte de papel, executar 2.1 e 2.2 em caderno. Se em computador, executar 2.1, 2.2 e 2.3 em folha de cálculo[cite: 31, 32].
               </div>
             </div>
           </div>
@@ -1414,7 +1419,7 @@
                 <span class="w-8 h-8 rounded-xl bg-sky-100/80 text-sky-800 font-mono font-bold flex items-center justify-center text-xs">T3</span>
                 <h3 class="font-bold text-sm text-slate-900">Poupar e Efetuar Aplicação</h3>
               </div>
-              <p class="text-[11px] text-slate-500 font-mono mb-3">Objetivo 0: Alocar capital em produto financeiro conservador</p>
+              <p class="text-[11px] text-slate-500 font-mono mb-3">Objetivo 0: Alocar capital em produto financeiro conservador[cite: 31, 32]</p>
               
               <div class="space-y-2 text-xs text-slate-700 leading-relaxed font-mono bg-slate-50/80 p-4 rounded-xl">
                 <p><strong>1. Segregar o montante a poupar</strong></p>
@@ -1433,11 +1438,10 @@
               <div class="mt-4 p-3.5 bg-sky-100/40 rounded-xl text-[11px] text-slate-700 leading-relaxed">
                 <strong>Planos de Execução:</strong><br>
                 <strong>Plano 0:</strong> Executar 1 no dia de recebimento. Executar 2. Estando as regras em 2.3 assimiladas e seguras, executar 3; caso contrário, cancelar 3.<br>
-                <strong>Plano 2:</strong> Executar 2.1 e 2.2. Existindo dúvidas fiscais (IOF/IR) em 2.3, realizar pesquisa externa antes de prosseguir.
+                <strong>Plano 2:</strong> Executar 2.1 e 2.2. Existindo dúvidas fiscais (IOF/IR) em 2.3, realizar pesquisa externa antes de prosseguir[cite: 31, 32].
               </div>
             </div>
           </div>
-
         </div>
 
         <!-- Análise Comparativa -->
@@ -1447,7 +1451,7 @@
             <h3 class="font-mono text-xs font-bold text-slate-900 uppercase tracking-wider">// Análise Comparativa de Cenário: Utilizador Inexperiente vs. Experiente</h3>
           </div>
           <p class="text-xs text-slate-600 leading-relaxed">
-            Avaliação comparativa da realização da tarefa de subscrição de investimento (Cenário 3 / Tarefa 3) tendo em conta as diferenças de modelo mental entre um perfil novato (Lucas) e um experiente (Beatriz):
+            Avaliação comparativa da realização da tarefa de subscrição de investimento (Cenário 3 / Tarefa 3) tendo em conta as diferenças de modelo mental entre um perfil novato (Lucas) e um experiente (Beatriz)[cite: 47]:
           </p>
 
           <div class="overflow-x-auto">
@@ -1462,40 +1466,375 @@
               <tbody class="text-slate-700 leading-relaxed">
                 <tr class="hover:bg-slate-50/60">
                   <td class="py-2.5 px-3 font-semibold text-slate-900">Planeamento Mental</td>
-                  <td class="py-2.5 px-3 text-slate-600">Hesitante e inseguro; receia imobilizar o dinheiro e sofrer penalizações por taxas desconhecidas.</td>
-                  <td class="py-2.5 px-3 text-slate-600">Automatizado; concebe a alocação como um compromisso mensal prévio de rotina.</td>
+                  <td class="py-2.5 px-3 text-slate-600">Hesitante e inseguro; receia imobilizar o dinheiro e sofrer penalizações por taxas desconhecidas[cite: 18, 62].</td>
+                  <td class="py-2.5 px-3 text-slate-600">Automatizado; concebe a alocação como um compromisso mensal prévio de rotina[cite: 18, 62].</td>
                 </tr>
                 <tr class="hover:bg-slate-50/60">
                   <td class="py-2.5 px-3 font-semibold text-slate-900">Navegação e Pesquisa</td>
-                  <td class="py-2.5 px-3 text-slate-600">Exploração por tentativa e erro; despende tempo a inspecionar alternativas inadequadas ao seu perfil.</td>
-                  <td class="py-2.5 px-3 text-slate-600">Filtra imediatamente instrumentos de dívida pública e CDB com liquidez diária.</td>
+                  <td class="py-2.5 px-3 text-slate-600">Exploração por tentativa e erro; despende tempo a inspecionar alternativas inadequadas ao seu perfil[cite: 31, 32].</td>
+                  <td class="py-2.5 px-3 text-slate-600">Filtra imediatamente instrumentos de dívida pública e CDB com liquidez diária[cite: 31, 32].</td>
                 </tr>
                 <tr class="hover:bg-slate-50/60">
                   <td class="py-2.5 px-3 font-semibold text-slate-900">Interpretação de Regras</td>
-                  <td class="py-2.5 px-3 text-slate-600">Bloqueio perante siglas como "IOF regressivo", "D+1" e "Come-cotas"; necessita de esclarecimento conciso.</td>
-                  <td class="py-2.5 px-3 text-slate-600">Compreende as taxas e indexadores de imediato; projeta o ganho líquido de forma autónoma.</td>
+                  <td class="py-2.5 px-3 text-slate-600">Bloqueio perante siglas como "IOF regressivo", "D+1" e "Come-cotas"; necessita de esclarecimento conciso[cite: 31, 32].</td>
+                  <td class="py-2.5 px-3 text-slate-600">Compreende as taxas e indexadores de imediato; projeta o ganho líquido de forma autónoma[cite: 31, 32].</td>
                 </tr>
                 <tr class="hover:bg-slate-50/60">
                   <td class="py-2.5 px-3 font-semibold text-slate-900">Conclusão da Tarefa</td>
-                  <td class="py-2.5 px-3 text-red-600 font-semibold">Elevada taxa de abandono: o excesso de termos técnicos desprovidos de apoio instrucional provoca desistência.</td>
-                  <td class="py-2.5 px-3 text-brand-leaf font-semibold">Conclusão bem-sucedida: valida a transação e regista o comprovativo rapidamente.</td>
+                  <td class="py-2.5 px-3 text-red-600 font-semibold">Elevada taxa de abandono: o excesso de termos técnicos desprovidos de apoio instrucional provoca desistência[cite: 31, 32].</td>
+                  <td class="py-2.5 px-3 text-brand-leaf font-semibold">Conclusão bem-sucedida: valida a transação e regista o comprovativo rapidamente[cite: 31, 32].</td>
                 </tr>
                 <tr class="hover:bg-slate-50/60">
                   <td class="py-2.5 px-3 font-semibold text-slate-900">Esforço de Interação (KLM)</td>
-                  <td class="py-2.5 px-3 text-slate-600">Tempo dilatado de preparação mental (M) e paragens sistemáticas para leitura e avaliação (W).</td>
-                  <td class="py-2.5 px-3 text-slate-600">Tempo residual de preparação mental (M); interação fluida de toques e autenticação célere.</td>
+                  <td class="py-2.5 px-3 text-slate-600">Tempo dilatado de preparação mental (M) e paragens sistemáticas para leitura e avaliação (W)[cite: 38].</td>
+                  <td class="py-2.5 px-3 text-slate-600">Tempo residual de preparação mental (M); interação fluida de toques e autenticação célere[cite: 38].</td>
                 </tr>
               </tbody>
             </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ETAPA 09: IDEAÇÃO (CRAZY 4) -->
+    <section id="ideacao" class="py-24 px-6 lg:px-16 bg-[#f4faf6] scroll-mt-16">
+      <div class="max-w-7xl mx-auto space-y-12">
+        <div class="flex flex-col md:flex-row md:items-end justify-between pb-8 gap-4">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-widest text-brand-leaf font-bold block mb-1">Etapa 09 // Geração Rápida de Ideias</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Ideação (Crazy 4)</h2>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-600 max-w-lg">
+            Sessão divergente de geração de ideias esboçadas pela equipe, variando entre abordagens utópicas, tradicionais, gamificadas e tecnológicas.
+          </p>
+        </div>
+
+        <!-- 4 Esboços Analisados do Crazy 4 -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="liquid-glass p-6 flex flex-col justify-between">
+            <div>
+              <span class="text-[10px] font-mono px-2.5 py-1 rounded-md bg-emerald-100/70 text-brand-leaf font-bold block w-max mb-3">Esboço 1 • Consultoria</span>
+              <h3 class="font-bold text-sm text-slate-900 mb-2">Consultor Particular Governamental</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                "Todo jovem em início de vida adulta teria um consultor financeiro particular pago pelo governo para ser auxiliado na gestão e planejamento futuro."[cite: 75]
+              </p>
+            </div>
+            <div class="mt-4 pt-3 text-[11px] font-mono text-slate-500">
+              Veredito: Ideia utópica / Foco em orientação humana especializada[cite: 75].
+            </div>
+          </div>
+
+          <div class="liquid-glass p-6 flex flex-col justify-between">
+            <div>
+              <span class="text-[10px] font-mono px-2.5 py-1 rounded-md bg-teal-100/70 text-teal-800 font-bold block w-max mb-3">Esboço 2 • Tradicional</span>
+              <h3 class="font-bold text-sm text-slate-900 mb-2">Planilha e Anotação Manual</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                "Oferecer uma planilha de controle. Anotar movimentação financeira manualmente."[cite: 75]
+              </p>
+            </div>
+            <div class="mt-4 pt-3 text-[11px] font-mono text-red-600 font-semibold">
+              Veredito: Refutado por pesquisa (Causa de abandono e cansaço)[cite: 75].
+            </div>
+          </div>
+
+          <div class="liquid-glass p-6 flex flex-col justify-between">
+            <div>
+              <span class="text-[10px] font-mono px-2.5 py-1 rounded-md bg-sky-100/70 text-sky-800 font-bold block w-max mb-3">Esboço 3 • Visual &amp; Metas</span>
+              <h3 class="font-bold text-sm text-slate-900 mb-2">Barras de Progresso e Conquistas</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                "Barras de progresso, evolução visual, trilha de conquistas e pontos por cumprir metas de gestão e aprendizado."[cite: 75]
+              </p>
+            </div>
+            <div class="mt-4 pt-3 text-[11px] font-mono text-brand-leaf font-semibold">
+              Veredito: Aproveitamento visual de barras / Descarte de pontos lúdicos[cite: 75].
+            </div>
+          </div>
+
+          <div class="liquid-glass p-6 flex flex-col justify-between">
+            <div>
+              <span class="text-[10px] font-mono px-2.5 py-1 rounded-md bg-emerald-100/70 text-brand-leaf font-bold block w-max mb-3">Esboço 4 • Hardware</span>
+              <h3 class="font-bold text-sm text-slate-900 mb-2">Assistente no Meta Glass</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                "Assistente financeiro em smart glasses (Meta Glass), exibindo alertas e dados em tempo real no campo de visão."[cite: 75]
+              </p>
+            </div>
+            <div class="mt-4 pt-3 text-[11px] font-mono text-slate-500">
+              Veredito: Visão de futuro / Adaptado para push notification mobile[cite: 75].
+            </div>
+          </div>
+        </div>
+
+        <!-- Conclusão Metodológica do Crazy 4 -->
+        <div class="liquid-glass p-8 space-y-4">
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-brand-leaf"></span>
+            <h3 class="font-mono text-xs font-bold text-slate-900 uppercase tracking-wider">// Conclusão da Dinâmica do Crazy 4</h3>
+          </div>
+          <p class="text-xs text-slate-700 leading-relaxed">
+            A técnica do Crazy 4 cumpriu seu papel de divergência criativa, gerando caminhos extremos que foram submetidos à validação com a literatura e os dados reais coletados[cite: 75]:
+          </p>
+          <div class="grid md:grid-cols-2 gap-4 text-xs text-slate-700 pt-2">
+            <div class="p-4 bg-slate-50/80 rounded-2xl space-y-1.5">
+              <strong class="text-slate-900 block font-bold">1. A Ideia 3 foi a base do protótipo final (com filtro):</strong>
+              <p>Adotamos integralmente as <strong>barras de progresso visual de metas</strong> e o acompanhamento horizontal comparativo, pois o grupo focal validou que ver a evolução visual gera dopamina real[cite: 75]. Contudo, podamos o sistema de "pontos lúdicos" e "medalhas", já que 62,9% dos respondentes rejeitaram gamificação infantil[cite: 75].</p>
+            </div>
+
+            <div class="p-4 bg-slate-50/80 rounded-2xl space-y-1.5">
+              <strong class="text-slate-900 block font-bold">2. A Ideia 2 serviu como contraexemplo metodológico:</strong>
+              <p>O esboço de "anotar movimentações manualmente em planilha" foi fundamental para comprovar o erro de insistir em modelos legados[cite: 75]. A pesquisa de campo demonstrou que isso é a raiz do abandono diário, justificando a decisão de implementar **automação total de extrato**[cite: 75].</p>
+            </div>
+
+            <div class="p-4 bg-slate-50/80 rounded-2xl space-y-1.5">
+              <strong class="text-slate-900 block font-bold">3. A Ideia 1 convergiu para o design instrucional:</strong>
+              <p>Embora ter um consultor humano individual seja inviável, transformamos a essência da consultoria em <strong>microvídeos didáticos de 2 minutos</strong> e simulações de rentabilidade líquida, entregando orientação transparente sem linguagem bancária hermética[cite: 75].</p>
+            </div>
+
+            <div class="p-4 bg-slate-50/80 rounded-2xl space-y-1.5">
+              <strong class="text-slate-900 block font-bold">4. A Ideia 4 virou notificação preventiva no smartphone:</strong>
+              <p>Em vez de exigir óculos de realidade aumentada (Meta Glass), adaptamos o conceito de alerta em tempo real para <strong>notificações push imediatas e cartões de tela de bloqueio</strong>, cortando a ilusão da aproximação no exato momento da compra[cite: 75].</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ETAPA 10: INSTRUÇÕES DE ENGENHARIA DE PROMPTS PARA IA -->
+    <section id="engenharia-prompts" class="py-24 px-6 lg:px-16 bg-[#f8fafc] scroll-mt-16">
+      <div class="max-w-7xl mx-auto space-y-12">
+        <div class="flex flex-col md:flex-row md:items-end justify-between pb-8 gap-4">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-widest text-brand-leaf font-bold block mb-1">Etapa 10 // Estrutura Metodológica de Prompt</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Instruções de Prompt para a IA</h2>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-600 max-w-lg">
+            Template rigoroso de engenharia de prompt passado ao LLM (Gemini/ChatGPT) para gerar a entrada que alimenta o Figma Make[cite: 69].
+          </p>
+        </div>
+
+        <div class="liquid-glass p-8">
+          <div class="p-6 bg-slate-900 text-slate-200 font-mono text-xs rounded-2xl space-y-4 leading-relaxed overflow-x-auto shadow-md">
+            <p><span class="text-emerald-400 font-bold">#PAPEL</span>[cite: 69]<br>
+            Assuma a posição de um especialista sênior em UI/UX com ampla experiência em Design de Interação Humano-Computador (IHC) e prototipação mobile de alta fidelidade no Figma[cite: 71].</p>
+
+            <p><span class="text-emerald-400 font-bold">#CONSIDERAÇÕES</span>[cite: 69]<br>
+            Considere o aplicativo mobile "Poupay", desenvolvido para auxiliar jovens universitários e em início de carreira gerenciarem finanças sem sobrecarga cognitiva.<br>
+            Considere os dados da Matriz CSD: 55% dos jovens sustentam finanças sem educação prévia e 67% sofrem ansiedade com o futuro.<br>
+            Considere os dados do Questionário (N=35): 85,7% nunca usaram app de finanças, 97,1% exigem gráficos claros e 88,6% demandam automação.<br>
+            Considere os achados do Grupo Focal Real: rejeição completa de gamificação infantil (sem mascotes ou moedas falsas), queixa de cegueira nos pagamentos por aproximação e aversão a planilhas manuais.<br>
+            Considere as 3 Personas: Lucas (pragmático), Beatriz (analista CLT) e Matheus (freelancer renda variável)[cite: 71].<br>
+            Considere os 3 Cenários de Problema: microgastos invisíveis, quebra de fórmulas em planilhas e medo de termos tributários (IOF/IR)[cite: 71].<br>
+            Considere as 3 Tarefas HTA: controle diário de saldo real, consolidação automática e aplicação em reservas de reserva[cite: 71].<br>
+            Considere as ideias do Crazy 4: dashboard de saldo livre real, reservas isolados da conta corrente, descarte de planilhas manuais e notificações preventivas no celular[cite: 69].</p>
+
+            <p><span class="text-emerald-400 font-bold">#TAREFA</span>[cite: 69]<br>
+            Crie para mim o prompt detalhado e completo que eu vou utilizar para dar entrada no Figma Make para criar os protótipos de alta fidelidade através de inteligência artificial[cite: 69, 71].</p>
+
+            <p><span class="text-emerald-400 font-bold">#RESTRIÇÕES</span>[cite: 69]<br>
+            A interface deve ser totalmente em português do Brasil[cite: 72].<br>
+            Elimine contornos e linhas rígidas (outlines). As caixas e cartões devem contrastar suavemente usando cartões translúcidos (estilo Liquid Glass), fundos levemente destacados e sombras suaves difusas.<br>
+            Paleta de cores: Verde Esmeralda (#15803D) como cor primária de crescimento e segurança, Verde Menta suave (#DCFCE7 / #F0FDF4) para fundos e tags, Cinza quase branco (#F8FAFC) como base neutra e acentos em âmbar/vermelho suave exclusivamente para indicar limites semafóricos de gastos[cite: 69].<br>
+            Aplique a Lei de Fitts: CTAs primários largos (altura mínima de 48px) posicionados na parte inferior da tela (área de alcance natural do polegar).<br>
+            Aplique a Lei de Hick-Hyman: reduza a quantidade de opções por tela; categorize os investimentos em apenas 3 modalidades diretas.<br>
+            Siga as 4 regras de UX Writing: textos claros, concisos, úteis e consistentes, com CTAs acionáveis focados em verbos (ex.: "Guardar no Reserva", "Ativar Alerta Semanal")[cite: 70].<br>
+            Não inclua mascotes, pets virtuais, pontuações de jogos ou qualquer mecânica infantilizada[cite: 69].<br>
+            Não crie telas de preenchimento manual de despesas linha por linha[cite: 69].</p>
+
+            <p><span class="text-emerald-400 font-bold">#FORMATO</span>[cite: 69]<br>
+            Texto formatado como prompt pronto para envio ao gerador de UI do Figma Make[cite: 72].</p>
+
+            <p><span class="text-emerald-400 font-bold">#CRITÉRIOS DE QUALIDADE</span>[cite: 69]<br>
+            O prompt deve conter detalhes minuciosos de cada tela, componentes, regras de acessibilidade e interação para que nenhuma informação adicional precise ser solicitada[cite: 72].</p>
+
+            <p><span class="text-emerald-400 font-bold">#EXEMPLOS</span>[cite: 70]<br>
+            Inspire-se na clareza visual de potes da Greenlight/Mozper e na transparência de rentabilidade do C6 Bank[cite: 72].</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ETAPA 11: PROMPT UTILIZADO NO FIGMA MAKE -->
+    <section id="prompt-figma" class="py-24 px-6 lg:px-16 bg-[#f4faf6] scroll-mt-16">
+      <div class="max-w-7xl mx-auto space-y-12">
+        <div class="flex flex-col md:flex-row md:items-end justify-between pb-8 gap-4">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-widest text-brand-leaf font-bold block mb-1">Etapa 11 // Comando de Execução de UI</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Prompt Utilizado no Figma Make</h2>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-600 max-w-lg">
+            O comando textual consolidado gerado pelo LLM e introduzido no Figma Make para sintetizar as interfaces[cite: 72].
+          </p>
+        </div>
+
+        <div class="liquid-glass p-8">
+          <div class="p-6 bg-slate-900 text-slate-200 font-mono text-xs rounded-2xl space-y-4 leading-relaxed overflow-x-auto shadow-md">
+            <p class="text-emerald-300 font-bold">// PROMPT EXECUTADO NO FIGMA MAKE:</p>
+            <p>
+              "Crie um protótipo de UI mobile de alta fidelidade para o aplicativo 'Poupay' (iOS e Android), focado em saúde financeira e investimentos para jovens universitários e freelancers. O design deve transmitir sobriedade moderna, clareza cognitiva e confiança, eliminando a sobrecarga de planilhas e a infantilização de apps com mascotes.
+            </p>
+            <p class="text-slate-400">
+              [Estilo Visual e Ergonomia]: Design sem contornos (no outlines/borders). Cartões em estilo Liquid Glass translúcido com fundo ligeiramente mais escuro que o background geral (tons #FFFFFF e #F1F5F9 sobre fundo #F8FAFC) e sombras difusas suaves. Paleta de cores baseada em Verde Esmeralda (#15803D), toques de menta suave (#DCFCE7) e acentos âmbar suaves para alertas. Botões primários largos (altura mínima 48px) posicionados na parte inferior da tela para facilitar o alcance do polegar (Lei de Fitts). Tipografia sem serifa geométrica limpa.
+            </p>
+            <p class="text-slate-400">
+              [Telas e Fluxos Principais]:<br>
+              1. Tela Inicial (Dashboard de Saldo Livre Real): No topo, destaque do 'Saldo Livre para Gastar na Semana' (já descontando despesas fixas e reservas). Card semafórico mostrando a barra de gastos por categoria (cinza para seguro, vermelho suave para alerta de estouro). Lista com as 3 últimas despesas lidas automaticamente do extrato bancário. Botão inferior de ação rápida: 'Separar Dinheiro no Reserva'.<br>
+              2. Tela de Reservas / Potes de Reserva: Visualização de reservas dedicados ('Reserva de Emergência', 'Viagem', 'Carro/PC') com barras de progresso visual de percentagem atingida (sem rankings ou moedas fictícias). Valores nominais protegidos por alternador de privacidade.<br>
+              3. Tela de Aprendizagem Didática: Feed com cards curtos de pílulas educativas em vídeo de 2 minutos ('O que é liquidez diária?', 'Por que o IOF zera após 30 dias?'). Simulador interativo direto: 'Se eu guardar R$ 100 hoje no CDB, quanto resgato limpo no mês que vem?'.<br>
+              4. Tela de Confirmação de Aporte Seguro: Exibição transparente das regras do produto (sem juridiquês), selo oficial de regulação do Banco Central / Open Finance e CTA perfeito com verbo de ação claro: 'Confirmar e Proteger Reserva'.<br>
+              5. Tela de Bloqueio com Card de Notificação Preventiva: Notificação push translúcida exibindo 'Compra por Aproximação Detectada (R$ 18,50)', informando o atingimento de 80% do limite semanal de alimentação e o saldo livre restante para o fim de semana.
+            </p>
+            <p class="text-slate-400">
+              [Regras de UX Writing]: Textos objetivos, sem jargões econômicos complexos. CTAs acionáveis ('Guardar na Reserva', 'Criar Reserva', 'Ver Limite da Semana'). Sem elementos infantis de gamificação."
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================== -->
+    <!-- ETAPA 12: PROTOTIPAÇÃO FINAL GERADA (GALERIA REAL & LINK) -->
+    <!-- ======================================================== -->
+    <section id="prototipo-final" class="py-24 px-6 lg:px-16 bg-[#f8fafc] scroll-mt-16">
+      <div class="max-w-7xl mx-auto space-y-12">
+        <div class="flex flex-col md:flex-row md:items-end justify-between pb-8 gap-4">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-widest text-brand-leaf font-bold block mb-1">Etapa 12 // Resultado Final de Design</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Prototipação Final Gerada</h2>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-600 max-w-lg">
+            A interface móvel de alta fidelidade sintetizada com base em todas as decisões ergonômicas e empíricas do projeto.
+          </p>
+        </div>
+
+        <!-- Banner de Destaque com Link Direto para o Figma -->
+        <div class="liquid-glass p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6 bg-gradient-to-r from-emerald-50/60 via-white to-emerald-50/40">
+          <div class="space-y-2 text-center md:text-left">
+            <span class="text-[10px] font-mono px-3 py-1 rounded-full bg-emerald-100 text-brand-leaf font-bold uppercase tracking-wider">
+              ✦ Protótipo Funcional Interativo
+            </span>
+            <h3 class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">
+              Experimente a Navegação Completa no Figma
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-600 max-w-xl leading-relaxed">
+              Acesse diretamente o arquivo do Figma para interagir com o fluxo mobile completo, simular microgastos, conferir as transições de tela e testar os alertas semafóricos.
+            </p>
+          </div>
+
+          <a href="https://www.figma.com/design/N2wo4thcqOZOnxCkX2RfpT/Sem-t%C3%ADtulo?node-id=1-3" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="px-8 py-4 bg-brand-leaf hover:bg-brand-leafHover text-white text-sm font-bold rounded-2xl transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center gap-3 shrink-0 group">
+            <span>Abrir Prévia no Figma</span>
+            <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+          </a>
+        </div>
+
+        <!-- Galeria dos 4 Telas Reais do Protótipo -->
+        <div class="space-y-6">
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-brand-leaf"></span>
+            <h3 class="font-mono text-sm font-bold text-slate-900 uppercase tracking-wider">// Telas Centrais do Protótipo de Alta Fidelidade</h3>
+          </div>
+
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <!-- Tela 1: Dashboard Principal -->
+            <div class="liquid-glass p-4 flex flex-col justify-between">
+              <div class="space-y-3">
+                <div class="rounded-2xl overflow-hidden bg-slate-900/5 aspect-[9/19] flex items-center justify-center">
+                  <img src="assets/prototipo-dashboard.png" alt="Dashboard Principal do Poupay" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300">
+                </div>
+                <div>
+                  <span class="text-[10px] font-mono text-brand-leaf font-bold block uppercase">Tela 01</span>
+                  <h4 class="font-bold text-sm text-slate-900 mt-0.5">Dashboard Principal</h4>
+                  <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+                    Exibição do saldo disponível da semana, barra semafórica por categorias e ritmo de gastos seguro.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tela 2: Suas Reservas -->
+            <div class="liquid-glass p-4 flex flex-col justify-between">
+              <div class="space-y-3">
+                <div class="rounded-2xl overflow-hidden bg-slate-900/5 aspect-[9/19] flex items-center justify-center">
+                  <img src="assets/prototipo-reservas.png" alt="Tela de Reservas e Metas do Poupay" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300">
+                </div>
+                <div>
+                  <span class="text-[10px] font-mono text-teal-700 font-bold block uppercase">Tela 02</span>
+                  <h4 class="font-bold text-sm text-slate-900 mt-0.5">Suas Reservas</h4>
+                  <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+                    Reservas dedicados para Emergência, PC Novo e Viagem, isolando o patrimônio da conta corrente.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tela 3: Aprenda em 2 Minutos -->
+            <div class="liquid-glass p-4 flex flex-col justify-between">
+              <div class="space-y-3">
+                <div class="rounded-2xl overflow-hidden bg-slate-900/5 aspect-[9/19] flex items-center justify-center">
+                  <img src="assets/prototipo-aprendizado.png" alt="Tela Aprenda em 2 Minutos com Simulador" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300">
+                </div>
+                <div>
+                  <span class="text-[10px] font-mono text-sky-800 font-bold block uppercase">Tela 03</span>
+                  <h4 class="font-bold text-sm text-slate-900 mt-0.5">Aprenda em 2 Minutos</h4>
+                  <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+                    Pílulas didáticas em vídeo vertical de criadores e simulador transparente de rendimento líquido.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tela 4: Extrato Automatizado -->
+            <div class="liquid-glass p-4 flex flex-col justify-between">
+              <div class="space-y-3">
+                <div class="rounded-2xl overflow-hidden bg-slate-900/5 aspect-[9/19] flex items-center justify-center">
+                  <img src="assets/prototipo-extrato.png" alt="Tela Extrato Automatizado do Poupay" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300">
+                </div>
+                <div>
+                  <span class="text-[10px] font-mono text-emerald-800 font-bold block uppercase">Tela 04</span>
+                  <h4 class="font-bold text-sm text-slate-900 mt-0.5">Extrato Automatizado</h4>
+                  <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+                    Captura direta via Open Finance com geolocalização e classificação inteligente de despesas.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Resumo dos Artefatos de IHC -->
+        <div class="liquid-glass p-8">
+          <span class="text-[10px] font-mono px-2.5 py-1 rounded-md bg-emerald-100/70 text-brand-leaf font-bold block w-max mb-3">Síntese dos Artefatos de UI</span>
+          <h3 class="font-bold text-lg text-slate-900 mb-3">Interface Centrada na Redução da Sobrecarga Cognitiva</h3>
+          <p class="text-xs text-slate-600 leading-relaxed mb-4">
+            O protótipo mobile materializa as respostas aos pontos problemáticos levantados na pesquisa de campo:
+          </p>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs text-slate-700">
+            <div class="p-4 bg-slate-50/80 rounded-2xl">
+              <strong class="text-slate-900 block mb-1">1. Dashboard de Saldo Livre</strong>
+              <p>Mostra na hora o dinheiro disponível real da semana, reduzindo o Golfo de Avaliação do Lucas.</p>
+            </div>
+            <div class="p-4 bg-slate-50/80 rounded-2xl">
+              <strong class="text-slate-900 block mb-1">2. Captura Automática</strong>
+              <p>Elimina o preenchimento manual em planilhas, atendendo à dor central da Beatriz.</p>
+            </div>
+            <div class="p-4 bg-slate-50/80 rounded-2xl">
+              <strong class="text-slate-900 block mb-1">3. Reservas Isolados</strong>
+              <p>Dinheiro guardado fica fora da conta corrente, contendo a impulsividade do Matheus.</p>
+            </div>
+            <div class="p-4 bg-slate-50/80 rounded-2xl">
+              <strong class="text-slate-900 block mb-1">4. Notificação Preventiva</strong>
+              <p>Alerta instantâneo no telemóvel combatendo a cegueira do pagamento por aproximação.</p>
+            </div>
           </div>
         </div>
 
       </div>
     </section>
 
-    <!-- ======================================================== -->
-    <!-- SEÇÃO: USO DE INTELIGÊNCIA ARTIFICIAL NO PROJETO -->
-    <!-- ======================================================== -->
+    <!-- SEÇÃO USO DE IA -->
     <section id="ia-aplicada" class="py-24 px-6 lg:px-16 bg-[#f8fafc]">
       <div class="max-w-7xl mx-auto space-y-12">
         <div class="flex flex-col md:flex-row md:items-end justify-between pb-8 gap-4">
@@ -1503,13 +1842,9 @@
             <span class="text-xs font-mono uppercase tracking-widest text-brand-leaf font-bold block mb-1">Documentação Metodológica // Apoio Computacional</span>
             <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Uso de Inteligência Artificial no Projeto</h2>
           </div>
-          <p class="text-xs sm:text-sm text-slate-600 max-w-lg">
-            Transparência metodológica sobre a utilização de Modelos de Linguagem (LLMs) como ferramentas de apoio na análise de dados e na redação técnica de IHC.
-          </p>
         </div>
 
         <div class="grid lg:grid-cols-3 gap-8">
-          <!-- Eixo 1 -->
           <div class="liquid-glass p-7 flex flex-col justify-between">
             <div>
               <div class="flex items-center gap-2 mb-3">
@@ -1528,7 +1863,6 @@
             <span class="text-[11px] font-mono text-brand-leaf mt-4 block font-semibold">Resultado: Estruturação de prioridades e correlação de confiança.</span>
           </div>
 
-          <!-- Eixo 2 -->
           <div class="liquid-glass p-7 flex flex-col justify-between">
             <div>
               <div class="flex items-center gap-2 mb-3">
@@ -1547,7 +1881,6 @@
             <span class="text-[11px] font-mono text-teal-800 mt-4 block font-semibold">Resultado: Mapeamento do impacto de microgastos e rejeição da gamificação.</span>
           </div>
 
-          <!-- Eixo 3 -->
           <div class="liquid-glass p-7 flex flex-col justify-between">
             <div>
               <div class="flex items-center gap-2 mb-3">
@@ -1569,24 +1902,21 @@
       </div>
     </section>
 
-    <!-- ======================================================== -->
-    <!-- SEÇÃO TIME (Fundo: Ardósia Escura Elegante) -->
-    <!-- ======================================================== -->
+    <!-- SEÇÃO EQUIPE -->
     <section id="time" class="py-24 px-6 lg:px-16 bg-[#0f172a] text-white">
       <div class="max-w-7xl mx-auto">
         <div class="pb-8 text-center max-w-2xl mx-auto">
           <span class="text-xs uppercase tracking-widest font-mono text-emerald-400 font-bold block mb-2">
-            // Equipa Discente
+            // Equipe Discente
           </span>
-          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Equipa do Projeto</h2>
+          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Equipe do Projeto</h2>
           <p class="text-xs sm:text-sm text-slate-400 mt-2">
-            Desenvolvido no âmbito da unidade curricular de Interface Homem/Máquina.
+            Desenvolvido no âmbito da disciplina de Interface Homem/Máquina (IC/UFF).
           </p>
         </div>
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-          <!-- 1. Guilherme Delavalli Brito -->
-          <div class="p-6 rounded-2xl bg-white/5 backdrop-blur-xl text-center flex flex-col items-center hover:bg-white/10 transition-all hover:-translate-y-1 shadow-sm">
+          <div class="p-6 rounded-2xl bg-white/5 backdrop-blur-xl text-center flex flex-col items-center hover:bg-white/10 transition-all shadow-sm">
             <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-emerald-500/20 to-teal-500/20 flex items-center justify-center text-xl font-bold text-emerald-300 mb-4 shadow-sm">
               GB
             </div>
@@ -1594,8 +1924,7 @@
             <span class="text-[11px] font-mono text-slate-400">Design &amp; Pesquisa</span>
           </div>
 
-          <!-- 2. Filipe de Oliveira Daflon -->
-          <div class="p-6 rounded-2xl bg-white/5 backdrop-blur-xl text-center flex flex-col items-center hover:bg-white/10 transition-all hover:-translate-y-1 shadow-sm">
+          <div class="p-6 rounded-2xl bg-white/5 backdrop-blur-xl text-center flex flex-col items-center hover:bg-white/10 transition-all shadow-sm">
             <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-emerald-500/20 to-teal-500/20 flex items-center justify-center text-xl font-bold text-emerald-300 mb-4 shadow-sm">
               FF
             </div>
@@ -1603,8 +1932,7 @@
             <span class="text-[11px] font-mono text-slate-400">Pesquisa &amp; IHC</span>
           </div>
 
-          <!-- 3. Caio do Vale Soares -->
-          <div class="p-6 rounded-2xl bg-white/5 backdrop-blur-xl text-center flex flex-col items-center hover:bg-white/10 transition-all hover:-translate-y-1 shadow-sm">
+          <div class="p-6 rounded-2xl bg-white/5 backdrop-blur-xl text-center flex flex-col items-center hover:bg-white/10 transition-all shadow-sm">
             <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-teal-500/20 to-emerald-500/20 flex items-center justify-center text-xl font-bold text-teal-300 mb-4 shadow-sm">
               CS
             </div>
@@ -1612,8 +1940,7 @@
             <span class="text-[11px] font-mono text-slate-400">Pesquisa &amp; IHC</span>
           </div>
 
-          <!-- 4. Patrick Santana do Nascimento -->
-          <div class="p-6 rounded-2xl bg-white/5 backdrop-blur-xl text-center flex flex-col items-center hover:bg-white/10 transition-all hover:-translate-y-1 shadow-sm">
+          <div class="p-6 rounded-2xl bg-white/5 backdrop-blur-xl text-center flex flex-col items-center hover:bg-white/10 transition-all shadow-sm">
             <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-emerald-500/20 to-sky-500/20 flex items-center justify-center text-xl font-bold text-emerald-300 mb-4 shadow-sm">
               PN
             </div>
@@ -1626,7 +1953,7 @@
 
   </main>
 
-  <!-- Rodapé com Glassmorphism sem Bordas -->
+  <!-- Rodapé sem Bordas -->
   <footer class="py-10 bg-[#090d16] text-xs font-mono text-slate-400">
     <div class="w-full px-4 sm:px-8 xl:px-12 flex flex-col sm:flex-row items-center justify-between gap-4">
       <p>Poupay &bull; Projeto de Interface Homem-Computador</p>
@@ -1640,6 +1967,8 @@
         <a href="#personas" class="hover:text-emerald-400 transition-colors">Personas</a>
         <a href="#cenarios" class="hover:text-emerald-400 transition-colors">Cenários</a>
         <a href="#tarefas" class="hover:text-emerald-400 transition-colors">Tarefas</a>
+        <a href="#ideacao" class="hover:text-emerald-400 transition-colors">Ideação</a>
+        <a href="#prototipo-final" class="hover:text-emerald-400 transition-colors">Protótipo Final</a>
         <a href="#time" class="hover:text-emerald-400 transition-colors">Equipe</a>
       </div>
     </div>
@@ -1647,7 +1976,6 @@
 
   <!-- Script do Modal da Imagem & Menu Mobile Hambúrguer -->
   <script>
-    // Controlo do Menu Mobile Hambúrguer
     function toggleMobileMenu() {
       const menu = document.getElementById('mobile-menu');
       const hamburgerIcon = document.getElementById('hamburger-icon');
@@ -1664,7 +1992,6 @@
       }
     }
 
-    // Controlo do Modal de Zoom do Mapa de Empatia
     function openImageModal() {
       const modal = document.getElementById('image-modal');
       modal.classList.remove('hidden');
@@ -1677,7 +2004,6 @@
       document.body.classList.remove('overflow-hidden');
     }
 
-    // Fechar ao pressionar ESC
     document.addEventListener('keydown', function(event) {
       if (event.key === 'Escape') {
         closeImageModal();
